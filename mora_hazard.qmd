@@ -474,7 +474,8 @@ $$
 e^*=\frac{s}{c} \left[\frac{\sigma_y^2+4\sigma_x^2}{\sigma_x^2+\sigma_y^2} \right]
 $${#eq-effort_with_signals}
 
-Relative to our initial result ($e^*=s/c$),  @eq-effort_with_signals shows that having the aggregated metric $\pi$ in the contract increases the optimal effort level. This is because the aggregated metric is more sensitive to the agent's effort than the individual signals.
+Again, for any given performance incentive $s$, the principal can infer the optimal effort of the agent. Relative to our initial result ($e^*=s/c$),  @eq-effort_with_signals shows that having the aggregated metric $\pi$ in the contract increases the optimal effort level for any given value of performance incentive $s$. This is because the aggregated metric is more sensitive to the agent's effort than the individual signals.
+
 The updated principal's problem is
 $$
 \underset{t,s}{\max} \ \mu_{\pi}(e^*)-t-s\mu_{\pi}(e^*)

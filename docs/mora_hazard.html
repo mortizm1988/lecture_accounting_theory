@@ -528,7 +528,7 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 \end{align*}
 </span></p>
 <p>so the variable compensation is high when the cost of effort <span class="math inline">c</span> is low, the degree of risk aversion <span class="math inline">\eta</span> is low, and randomness of the output <span class="math inline">\sigma</span> is low.</p>
-<div id="0dc7c43c" class="cell" data-execution_count="1">
+<div id="680f9f45" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -561,7 +561,7 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 </div>
 </div>
 </div>
-<div id="da402546" class="cell" data-execution_count="2">
+<div id="08b628c3" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the utility of the agent and principal for different values of sigma</span></span>
@@ -600,7 +600,7 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 \frac{\beta_x}{\beta_y} = \frac{1-2\frac{\rho \sigma_x \sigma_y}{\sigma_y^2}}{\sigma_x^2}\frac{\sigma_y^2}{2-\frac{\rho \sigma_x \sigma_y}{\sigma_x^2}}
 </span></p>
 <p>Let’s see the comparative statics of the optimal weights for different values of <span class="math inline">\rho</span> and <span class="math inline">\sigma_y</span>. First, let’s assume that both signals have the same noise, <span class="math inline">\sigma_x=\sigma_y=2.5</span>.</p>
-<div id="18f7c8f2" class="cell" data-execution_count="3">
+<div id="1f4dff4d" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the beta_x/beta_y for different values of rho </span></span>
@@ -627,7 +627,7 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 </div>
 <p>so, if <span class="math inline">\rho=0</span>, the optimal contract weight for <span class="math inline">x</span> is half of the weight for <span class="math inline">y</span>, as this second signal is more sensitive to effort and has the same noise. If <span class="math inline">\rho=-1</span>, then both both signal have full positive weight in the contract. If <span class="math inline">\rho=1</span>, then the signals are substracted from each other in the contract to remove the common noise.</p>
 <p>Now, let’s see the comparative statics for different values of <span class="math inline">\sigma_y</span>, considering <span class="math inline">\rho=0</span> and <span class="math inline">\sigma_x=2.5</span>.</p>
-<div id="7da1d7ce" class="cell" data-execution_count="4">
+<div id="d163d3fe" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the beta_x/beta_y for different values of sigma_y</span></span>
@@ -671,7 +671,8 @@ e \in\arg\max\hat{w}(e)=t+s\mu_{\pi}-\frac{1}{2}ce^{2}-s^{2}\eta\frac{\sigma_{\p
 <p>obtaining optimal effort equals to <span id="eq-effort_with_signals"><span class="math display">
 e^*=\frac{s}{c} \left[\frac{\sigma_y^2+4\sigma_x^2}{\sigma_x^2+\sigma_y^2} \right]
 \tag{8}</span></span></p>
-<p>Relative to our initial result (<span class="math inline">e^*=s/c</span>), <a href="#eq-effort_with_signals" class="quarto-xref">Equation&nbsp;8</a> shows that having the aggregated metric <span class="math inline">\pi</span> in the contract increases the optimal effort level. This is because the aggregated metric is more sensitive to the agent’s effort than the individual signals. The updated principal’s problem is <span class="math display">
+<p>Again, for any given performance incentive <span class="math inline">s</span>, the principal can infer the optimal effort of the agent. Relative to our initial result (<span class="math inline">e^*=s/c</span>), <a href="#eq-effort_with_signals" class="quarto-xref">Equation&nbsp;8</a> shows that having the aggregated metric <span class="math inline">\pi</span> in the contract increases the optimal effort level for any given value of performance incentive <span class="math inline">s</span>. This is because the aggregated metric is more sensitive to the agent’s effort than the individual signals.</p>
+<p>The updated principal’s problem is <span class="math display">
 \underset{t,s}{\max} \ \mu_{\pi}(e^*)-t-s\mu_{\pi}(e^*)
 </span> Subject to <span class="math display">
 t+s[e^*]-\frac{1}{2}c[e^*]^{2}-s^{2}\eta\frac{\sigma_{\pi}^2(e^*)}{2}= \overline{w}
