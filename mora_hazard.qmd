@@ -1,7 +1,7 @@
 ---
 title: "Contract Theory and Accounting"
 author: "Marcelo Ortiz, Universitat Pompeu Fabra"
-date: "2024"
+date: "September 2024"
 bibliography: references.bib
 format:
     html:
@@ -41,7 +41,7 @@ In this setting, accounting is naturally embedded into moral hazard problems. **
 
 This reading note starts by developing a simple example of a moral hazard problem to illustrate the nature of the problem and the trade-offs involved in solving it. We then move on to a more general moral hazard model, allowing us to add further features to the model. We will also discuss how accounting systems must generate **performance measures**, and how these measures can be used to design optimal contracts. Then, we discuss the role of comparability for **relative performance evaluation** and the role of disclosure of **verifiable** private information in the context of moral hazard. Lastly, we will discuss how the **timeliness** of accounting information can be used to design dynamic incentive contracts.
 
-The notes borrow heavily from @Lambert_2001, @Bolton_Dewatripont_2005, and the PhD material elaborated by [Jeremy Bertomeu](https://sites.google.com/site/jeremybertomeu/) and  [Edwige Cheynel](https://olin.wustl.edu/faculty/edwige-cheynel), available from their website.
+The notes borrow heavily from @Lambert_2001, @Bolton_Dewatripont_2005, and the PhD material elaborated by [Jeremy Bertomeu](https://sites.google.com/site/jeremybertomeu/) and  [Edwige Cheynel](https://olin.wustl.edu/faculty/edwige-cheynel), available from their websites.
 
 ## A very simple example
 
@@ -222,7 +222,7 @@ For example, assuming the the principal is risk neutral and the agent's has an h
 
 $$
 \begin{align*}
-U(x) &=\frac{1}{1-\gamma}\left(\delta_0+\delta_1 x\right)^(1-\gamma)\\
+U(x) &=\frac{1}{1-\gamma}\left(\delta_0+\delta_1 x\right)^{(1-\gamma)}\\
 w^*(x) &= -\frac{ \delta_0}{ \delta_1 x} + \delta_1^{(1-\gamma)/\gamma} \left[ \lambda + \mu \frac{p_i'(e)}{p_i(e)} \right]^{1/\gamma}
 \end{align*}
 $$ {#eq-hara}
@@ -261,7 +261,7 @@ where $W$ is the inverse of the agent's marginal utility function. Let's define 
 
 $$ 
 \beta_x  = \frac{\frac{\partial E(x;e)}{ \partial e} var(y) }{ \left[ var(x)+var(y) \right]}
-$$
+$$ {#eq-optimal_beta}
 
 and 
 $$
@@ -302,7 +302,7 @@ In these models, the compensaiton follows a linear form such as $w=t+sx$ where $
 
 The problem for the principal is then:
 
-$$ \underset{e,t,s}{\max}\mathbb{E}\left[x-w\right] $$
+$$ \underset{e,t,s}{\max} \ \mathbb{E}\left[x-w\right] $$
 
 subject to:
 
@@ -323,10 +323,23 @@ $$ \mathbb{E}\left[u(w,e)\right] =-e^{-\eta\left[t+se-\frac{1}{2}ce^{2}-s^{2}\et
 Now we can reformulate the agent's problem as 
 
 $$
-a\in\arg\max\hat{w}(a)=t+sa-\frac{1}{2}ca^{2}-s^{2}\eta\frac{\sigma^{2}}{2}
+e \in\arg\max\hat{w}(e)=t+se-\frac{1}{2}ce^{2}-s^{2}\eta\frac{\sigma^{2}}{2}
 $$
 
-obtaining $a^*=\frac{s}{c}$. So for any given performance incentive s, the principal knows the effort choice of the agent. Introducing this condition into the principal problem reduces the optimization variables (now only the contract terms) and the number of restrictions. By solving the principal model, we obtain the optimal contract:
+obtaining $e^*=\frac{s}{c}$. So for any given performance incentive s, the principal knows the effort choice of the agent. 
+
+Introducing the optimal effort into the principal's problem reduces the optimization variables (now depending only on the contract terms) and the number of restrictions. The principal's problem is now
+
+$$
+\underset{t,s}{\max} \ \frac{s}{c}-t-s\left(\frac{s}{c}\right)
+$$
+Subject to
+$$
+t+s\left[\frac{s}{c}\right]-\frac{1}{2}c\left[\frac{s}{c}\right]^{2}-s^{2}\eta\frac{\sigma^{2}}{2}= \overline{w} 
+$$
+
+
+By solving the principal's problem, we obtain the optimal compensation terms:
 
 $$ 
 \begin{align*}
@@ -390,7 +403,7 @@ $$
  \Sigma_{x,y} = \left(\begin{array}{cc} \sigma_x^2 & \rho \sigma_x \sigma_y \\ \rho \sigma_x \sigma_y & \sigma_y^2 \end{array}\right)
 $$
 
-where  $\sigma_x^2$ is the variance of $\epsilon_x$, $\sigma_y^2$ is the variance of $\epsilon_y$, and $\rho$ is the correlation coefficient between $\epsilon_x$ and $\epsilon_y$. The **accounting system** aggregates both signals into a performance measure  $\pi=\pi(x,y)$.The @eq-optimal_weights_2  becomes
+where  $\sigma_x^2$ is the variance of $\epsilon_x$, $\sigma_y^2$ is the variance of $\epsilon_y$, and $\rho$ is the correlation coefficient between $\epsilon_x$ and $\epsilon_y$. The **accounting system** aggregates both signals into a single performance measure  $\pi=\pi(x,y)$. The @eq-optimal_weights_2  becomes
 
 $$
 \frac{\beta_x}{\beta_y} = \frac{1-2\frac{\rho \sigma_x \sigma_y}{\sigma_y^2}}{\sigma_x^2}\frac{\sigma_y^2}{2-\frac{\rho \sigma_x \sigma_y}{\sigma_x^2}}
@@ -432,11 +445,44 @@ plt.title('Relative Optimal Weights')
 plt.show()
 
 ```
-Here the red line the same situation than in the previous plot, meaning that when both signals have the same noise, the optimal weight for $x$ is half of the weight for $y$. If $\sigma_y$ gets closer to zero, then the weight for $x$ decreases as $y$ gets better signal-to-noise ratio. 
+Here the red line despicts the same situation than in the previous plot, meaning that when both signals have the same noise. The optimal weight for $x$ is half of the weight for $y$. If $\sigma_y$ gets closer to zero, then the weight for $x$ decreases as $y$ gets a better relative  signal-to-noise ratio. 
 
 ## Optimal contract with performance measures
 
+To evaluate how the optimal contract changes with the use of the aggregate performance metric we should compute the aggregated signal $\pi(x,y)=\beta_x x+ \beta_y y$ using @eq-optimal_beta and $x$ and $y$ as defined in the previous section with $\rho=0$.
 
+$$
+\pi(x,y)=\frac{\sigma_y^2}{\sigma_x^2+\sigma_y^2} x+ 2 \frac{\sigma_x^2}{\sigma_x^2+\sigma_y^2} y
+$$
+
+Now, the compensation functions depens on the aggregated signal $\pi$ (rather than on the output $x$), meaning that now $w(\pi)=t+s\pi$. Notice that $\pi \sim N(\mu_{\pi},\sigma_{\pi}^2)$, with
+
+$$
+\begin{align}
+\mu_{\pi}(e) &= \frac{e}{\sigma_x^2+\sigma_y^2} \left[  \sigma_y^2+4\sigma_x^2 \right]\\
+\sigma_{\pi}^2(e) &= \frac{\sigma_x^2\sigma_y^2}{(\sigma_x^2+\sigma_y^2)^2}\left[  \sigma_y^2+4\sigma_x^2 \right]
+\end{align}
+$$
+
+We can reformulate agent's problem as
+$$
+e \in\arg\max\hat{w}(e)=t+s\mu_{\pi}-\frac{1}{2}ce^{2}-s^{2}\eta\frac{\sigma_{\pi}^2 }{2}
+$$
+
+obtaining optimal effort equals to 
+$$
+e^*=\frac{s}{c} \left[\frac{\sigma_y^2+4\sigma_x^2}{\sigma_x^2+\sigma_y^2} \right]
+$${#eq-effort_with_signals}
+
+Relative to our initial result ($e^*=s/c$),  @eq-effort_with_signals shows that having the aggregated metric $\pi$ in the contract increases the optimal effort level. This is because the aggregated metric is more sensitive to the agent's effort than the individual signals.
+The updated principal's problem is
+$$
+\underset{t,s}{\max} \ \mu_{\pi}(e^*)-t-s\mu_{\pi}(e^*)
+$$
+Subject to
+$$
+t+s[e^*]-\frac{1}{2}c[e^*]^{2}-s^{2}\eta\frac{\sigma_{\pi}^2(e^*)}{2}= \overline{w} 
+$$
 
 ## Recent papers in Accounting
 

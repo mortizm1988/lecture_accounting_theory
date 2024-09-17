@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Marcelo Ortiz, Universitat Pompeu Fabra">
-<meta name="dcterms.date" content="2024-01-01">
+<meta name="dcterms.date" content="2024-09-01">
 
 <title>Contract Theory and Accounting</title>
 <style>
@@ -227,7 +227,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 1, 2024</p>
+      <p class="date">September 1, 2024</p>
     </div>
   </div>
   
@@ -256,7 +256,7 @@ window.Quarto = {
 <p>The focus of this class will be moral hazard conflicts arising within a firm, typically between a shareholder (the pricipal) and a manager (the agent). The principal aims to hire the agent for running a risky project, and offers the agent a contract which stablishes the agent’s compensation conditional on the outcome of the risky project. The agent first decides whether to accept the contract and then how much effort put into managing the project. The principal requires informations to infer the value of the project’s outcome and the agent’s effort to be able to compute the agent’s compensation and its own net profits.</p>
 <p>In this setting, accounting is naturally embedded into moral hazard problems. <strong>Accounting information</strong> must have several key characteristics to be useful for decision-making. Accounting information must be relevant, comparable, verifiable, and timeliness. Scholars have studied how these characteristics can be used to design optimal contracts that mitigate moral hazard problems.</p>
 <p>This reading note starts by developing a simple example of a moral hazard problem to illustrate the nature of the problem and the trade-offs involved in solving it. We then move on to a more general moral hazard model, allowing us to add further features to the model. We will also discuss how accounting systems must generate <strong>performance measures</strong>, and how these measures can be used to design optimal contracts. Then, we discuss the role of comparability for <strong>relative performance evaluation</strong> and the role of disclosure of <strong>verifiable</strong> private information in the context of moral hazard. Lastly, we will discuss how the <strong>timeliness</strong> of accounting information can be used to design dynamic incentive contracts.</p>
-<p>The notes borrow heavily from <span class="citation" data-cites="Lambert_2001">Lambert (<a href="#ref-Lambert_2001" role="doc-biblioref">2001</a>)</span>, <span class="citation" data-cites="Bolton_Dewatripont_2005">Bolton and Dewatripont (<a href="#ref-Bolton_Dewatripont_2005" role="doc-biblioref">2005</a>)</span>, and the PhD material elaborated by <a href="https://sites.google.com/site/jeremybertomeu/">Jeremy Bertomeu</a> and <a href="https://olin.wustl.edu/faculty/edwige-cheynel">Edwige Cheynel</a>, available from their website.</p>
+<p>The notes borrow heavily from <span class="citation" data-cites="Lambert_2001">Lambert (<a href="#ref-Lambert_2001" role="doc-biblioref">2001</a>)</span>, <span class="citation" data-cites="Bolton_Dewatripont_2005">Bolton and Dewatripont (<a href="#ref-Bolton_Dewatripont_2005" role="doc-biblioref">2005</a>)</span>, and the PhD material elaborated by <a href="https://sites.google.com/site/jeremybertomeu/">Jeremy Bertomeu</a> and <a href="https://olin.wustl.edu/faculty/edwige-cheynel">Edwige Cheynel</a>, available from their websites.</p>
 <section id="a-very-simple-example" class="level2">
 <h2 class="anchored" data-anchor-id="a-very-simple-example">A very simple example</h2>
 <p>Let’s assume that a company (principal) hires a manager (agent) responsible for running the business. The company’s outcomes depend on both random factors and the manager’s effort. For now, let’s assume the effort can be either high (A) or low (B), and the company’s outcomes can either be success (E) or failure (F). The company’s profit in the success scenario is $360, and in the failure scenario, it is $200. The probability of success is 75% with high effort and 25% with low effort.</p>
@@ -416,7 +416,7 @@ Linearity in the Outcome
 <p>For example, assuming the the principal is risk neutral and the agent’s has an hyperbolic absolute risk aversion (HARA) utility function, then the optimal compensation is a concave function of the outcome, as shown in <a href="#eq-hara" class="quarto-xref">Equation&nbsp;3</a>.</p>
 <p><span id="eq-hara"><span class="math display">
 \begin{align*}
-U(x) &amp;=\frac{1}{1-\gamma}\left(\delta_0+\delta_1 x\right)^(1-\gamma)\\
+U(x) &amp;=\frac{1}{1-\gamma}\left(\delta_0+\delta_1 x\right)^{(1-\gamma)}\\
 w^*(x) &amp;= -\frac{ \delta_0}{ \delta_1 x} + \delta_1^{(1-\gamma)/\gamma} \left[ \lambda + \mu \frac{p_i'(e)}{p_i(e)} \right]^{1/\gamma}
 \end{align*}
 \tag{3}</span></span></p>
@@ -460,16 +460,16 @@ Sufficient Statistic
 w^*(x,y)= W \left[ \lambda + \mu \frac{p_i'(x,y;e)}{p_i(x,y;e)} \right]
 </span></p>
 <p>where <span class="math inline">W</span> is the inverse of the agent’s marginal utility function. Let’s define a new compensation function <span class="math inline">s(\phi)</span> which depends on the aggregate performance measure <span class="math inline">\pi=\pi(x,y)=\lambda + \mu \frac{p_i'(x,y;e)}{p_i(x,y;e)}</span>. For many probability distributions, such as those in the exponential family, the likelihood ratio is linear in <span class="math inline">x</span> and <span class="math inline">y</span>, thus the optimal contract supports linear aggregation. In terms of the optimal weights, <span class="citation" data-cites="Banker_1989">Banker and Datar (<a href="#ref-Banker_1989" role="doc-biblioref">1989</a>)</span> shows that for the exponential family of distribution, when both metrics are independently distributed given the agent’s effort, then the optimal weights are proportional to (1) the sensitivity of the metric to the effort, and (2) to the inverse of the variance of the performance metrics. If we denote the weights as <span class="math inline">\beta_x</span> and <span class="math inline">\beta_y</span>, then the optimal weights are given by</p>
-<p><span class="math display">
+<p><span id="eq-optimal_beta"><span class="math display">
 \beta_x  = \frac{\frac{\partial E(x;e)}{ \partial e} var(y) }{ \left[ var(x)+var(y) \right]}
-</span></p>
+\tag{5}</span></span></p>
 <p>and <span class="math display">
 \beta_y  = \frac{\frac{\partial E(y;e)}{ \partial e} var(x) }{ \left[ var(x)+var(y) \right]}
 </span></p>
 <p>and the relative weights are</p>
 <p><span id="eq-optimal_weights"><span class="math display">
 \frac{\beta_x}{\beta_y} = \frac{\partial E(x;e)/ \partial e}{var(x)} \frac{var(y)}{\partial E(y;e)/ \partial e}
-\tag{5}</span></span></p>
+\tag{6}</span></span></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -483,10 +483,10 @@ The relevance of variables not controlled by the agent
 <p>If the principal or other agent invest in technology or capital such as the agent’s effort is more productive or the performance metric is more sensitive to its effort, then it is optimal to introduce those variables into the contract even though are not controlled by the agent. In this case, the optimal contract adjusts the compensation to subtract the principal’s investment effect on the mean outcome or adjusts the weights of the performance metrics to reflect their new informativeness.</p>
 </div>
 </div>
-<p>How the optimal contract should weights performance metrics that are correlated? In that case, <a href="#eq-optimal_weights" class="quarto-xref">Equation&nbsp;5</a> is rewritten as</p>
+<p>How the optimal contract should weights performance metrics that are correlated? In that case, <a href="#eq-optimal_weights" class="quarto-xref">Equation&nbsp;6</a> is rewritten as</p>
 <p><span id="eq-optimal_weights_2"><span class="math display">
 \frac{\beta_x}{\beta_y} = \frac{ \frac{\partial E(x;e)}{\partial e} - \frac{cov(x,y)}{var(y)}\frac{\partial E(y;e)}{\partial e} }{var(x)} \frac{var(y)}{\frac{\partial E(y;e)}{\partial e} - \frac{cov(x,y)}{var(x)}\frac{\partial E(x;e)}{\partial e}}
-\tag{6}</span></span></p>
+\tag{7}</span></span></p>
 <p>so, even if the agent does not control <span class="math inline">y</span> (e.g., <span class="math inline">\frac{\partial E(y;e)}{\partial e}=0</span>) then both metrics should be included in the contract with weights that reflect the correlation between them.</p>
 <p><span class="math display">
 \frac{\beta_x}{\beta_y} = -\frac{var(y)}{covar(x,y)}
@@ -499,7 +499,7 @@ The relevance of variables not controlled by the agent
 <p>Now we develop another widely used model considering linear contracts, normally distributed performance and exponential utility for the agent. The performance outcome is assumed to be equal to effort (in monetary terms) plus noise: <span class="math inline">x=e+\epsilon</span>, with <span class="math inline">\epsilon\sim N(0,\sigma^{2})</span>. We keep considering the principal to be risk neutral while the agent’s utility function is CARA represented by a negative exponential utility function <span class="math inline">u(w,e)=-e^{-\eta\left[w-\psi(e)\right]}</span>, with <span class="math inline">\psi(e)=\frac{1}{2}ce^{2}</span>. Therefore, the principal only cares about the expected cost of motivating the agent to accept the contract and exert effort and not about how much risk he bears.</p>
 <p>In these models, the compensaiton follows a linear form such as <span class="math inline">w=t+sx</span> where <span class="math inline">t</span> is a fix component and <span class="math inline">s</span> is the performance-related component.</p>
 <p>The problem for the principal is then:</p>
-<p><span class="math display"> \underset{e,t,s}{\max}\mathbb{E}\left[x-w\right] </span></p>
+<p><span class="math display"> \underset{e,t,s}{\max} \ \mathbb{E}\left[x-w\right] </span></p>
 <p>subject to:</p>
 <p><span class="math display"> \mathbb{E}\left[u(w,e)\right]\geq u(\overline{w},e) </span></p>
 <p>as the agent’s participation constraint where <span class="math inline">\overline{w}</span> denotes the minimum acceptable certain monetary equivalent , and</p>
@@ -511,9 +511,16 @@ The relevance of variables not controlled by the agent
 <p><span class="math display"> \mathbb{E}\left[u(w,e)\right] =-e^{-\eta\left[t+se-\frac{1}{2}ce^{2}-s^{2}\eta\frac{\sigma^{2}}{2}\right]}.</span></p>
 <p>Now we can reformulate the agent’s problem as</p>
 <p><span class="math display">
-a\in\arg\max\hat{w}(a)=t+sa-\frac{1}{2}ca^{2}-s^{2}\eta\frac{\sigma^{2}}{2}
+e \in\arg\max\hat{w}(e)=t+se-\frac{1}{2}ce^{2}-s^{2}\eta\frac{\sigma^{2}}{2}
 </span></p>
-<p>obtaining <span class="math inline">a^*=\frac{s}{c}</span>. So for any given performance incentive s, the principal knows the effort choice of the agent. Introducing this condition into the principal problem reduces the optimization variables (now only the contract terms) and the number of restrictions. By solving the principal model, we obtain the optimal contract:</p>
+<p>obtaining <span class="math inline">e^*=\frac{s}{c}</span>. So for any given performance incentive s, the principal knows the effort choice of the agent.</p>
+<p>Introducing the optimal effort into the principal’s problem reduces the optimization variables (now depending only on the contract terms) and the number of restrictions. The principal’s problem is now</p>
+<p><span class="math display">
+\underset{t,s}{\max} \ \frac{s}{c}-t-s\left(\frac{s}{c}\right)
+</span> Subject to <span class="math display">
+t+s\left[\frac{s}{c}\right]-\frac{1}{2}c\left[\frac{s}{c}\right]^{2}-s^{2}\eta\frac{\sigma^{2}}{2}= \overline{w}
+</span></p>
+<p>By solving the principal’s problem, we obtain the optimal compensation terms:</p>
 <p><span class="math display">
 \begin{align*}
 s^{*} &amp;= \frac{1}{\left[1+c\eta\sigma^{2}\right]}\\
@@ -521,7 +528,7 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 \end{align*}
 </span></p>
 <p>so the variable compensation is high when the cost of effort <span class="math inline">c</span> is low, the degree of risk aversion <span class="math inline">\eta</span> is low, and randomness of the output <span class="math inline">\sigma</span> is low.</p>
-<div id="c3e44d5c" class="cell" data-execution_count="1">
+<div id="0dc7c43c" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -554,7 +561,7 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 </div>
 </div>
 </div>
-<div id="b68ed796" class="cell" data-execution_count="2">
+<div id="da402546" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the utility of the agent and principal for different values of sigma</span></span>
@@ -588,12 +595,12 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 \Sigma_{x,y} = \left(\begin{array}{cc} \sigma_x^2 &amp; \rho \sigma_x \sigma_y \\ \rho \sigma_x \sigma_y &amp; \sigma_y^2 \end{array}\right)
 </span></p></li>
 </ul>
-<p>where <span class="math inline">\sigma_x^2</span> is the variance of <span class="math inline">\epsilon_x</span>, <span class="math inline">\sigma_y^2</span> is the variance of <span class="math inline">\epsilon_y</span>, and <span class="math inline">\rho</span> is the correlation coefficient between <span class="math inline">\epsilon_x</span> and <span class="math inline">\epsilon_y</span>. The <strong>accounting system</strong> aggregates both signals into a performance measure <span class="math inline">\pi=\pi(x,y)</span>.The <a href="#eq-optimal_weights_2" class="quarto-xref">Equation&nbsp;6</a> becomes</p>
+<p>where <span class="math inline">\sigma_x^2</span> is the variance of <span class="math inline">\epsilon_x</span>, <span class="math inline">\sigma_y^2</span> is the variance of <span class="math inline">\epsilon_y</span>, and <span class="math inline">\rho</span> is the correlation coefficient between <span class="math inline">\epsilon_x</span> and <span class="math inline">\epsilon_y</span>. The <strong>accounting system</strong> aggregates both signals into a single performance measure <span class="math inline">\pi=\pi(x,y)</span>. The <a href="#eq-optimal_weights_2" class="quarto-xref">Equation&nbsp;7</a> becomes</p>
 <p><span class="math display">
 \frac{\beta_x}{\beta_y} = \frac{1-2\frac{\rho \sigma_x \sigma_y}{\sigma_y^2}}{\sigma_x^2}\frac{\sigma_y^2}{2-\frac{\rho \sigma_x \sigma_y}{\sigma_x^2}}
 </span></p>
 <p>Let’s see the comparative statics of the optimal weights for different values of <span class="math inline">\rho</span> and <span class="math inline">\sigma_y</span>. First, let’s assume that both signals have the same noise, <span class="math inline">\sigma_x=\sigma_y=2.5</span>.</p>
-<div id="31559181" class="cell" data-execution_count="3">
+<div id="18f7c8f2" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the beta_x/beta_y for different values of rho </span></span>
@@ -620,7 +627,7 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 </div>
 <p>so, if <span class="math inline">\rho=0</span>, the optimal contract weight for <span class="math inline">x</span> is half of the weight for <span class="math inline">y</span>, as this second signal is more sensitive to effort and has the same noise. If <span class="math inline">\rho=-1</span>, then both both signal have full positive weight in the contract. If <span class="math inline">\rho=1</span>, then the signals are substracted from each other in the contract to remove the common noise.</p>
 <p>Now, let’s see the comparative statics for different values of <span class="math inline">\sigma_y</span>, considering <span class="math inline">\rho=0</span> and <span class="math inline">\sigma_x=2.5</span>.</p>
-<div id="6111f316" class="cell" data-execution_count="4">
+<div id="7da1d7ce" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the beta_x/beta_y for different values of sigma_y</span></span>
@@ -643,10 +650,32 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 </div>
 </div>
 </div>
-<p>Here the red line the same situation than in the previous plot, meaning that when both signals have the same noise, the optimal weight for <span class="math inline">x</span> is half of the weight for <span class="math inline">y</span>. If <span class="math inline">\sigma_y</span> gets closer to zero, then the weight for <span class="math inline">x</span> decreases as <span class="math inline">y</span> gets better signal-to-noise ratio.</p>
+<p>Here the red line despicts the same situation than in the previous plot, meaning that when both signals have the same noise. The optimal weight for <span class="math inline">x</span> is half of the weight for <span class="math inline">y</span>. If <span class="math inline">\sigma_y</span> gets closer to zero, then the weight for <span class="math inline">x</span> decreases as <span class="math inline">y</span> gets a better relative signal-to-noise ratio.</p>
 </section>
 <section id="optimal-contract-with-performance-measures" class="level2">
 <h2 class="anchored" data-anchor-id="optimal-contract-with-performance-measures">Optimal contract with performance measures</h2>
+<p>To evaluate how the optimal contract changes with the use of the aggregate performance metric we should compute the aggregated signal <span class="math inline">\pi(x,y)=\beta_x x+ \beta_y y</span> using <a href="#eq-optimal_beta" class="quarto-xref">Equation&nbsp;5</a> and <span class="math inline">x</span> and <span class="math inline">y</span> as defined in the previous section with <span class="math inline">\rho=0</span>.</p>
+<p><span class="math display">
+\pi(x,y)=\frac{\sigma_y^2}{\sigma_x^2+\sigma_y^2} x+ 2 \frac{\sigma_x^2}{\sigma_x^2+\sigma_y^2} y
+</span></p>
+<p>Now, the compensation functions depens on the aggregated signal <span class="math inline">\pi</span> (rather than on the output <span class="math inline">x</span>), meaning that now <span class="math inline">w(\pi)=t+s\pi</span>. Notice that <span class="math inline">\pi \sim N(\mu_{\pi},\sigma_{\pi}^2)</span>, with</p>
+<p><span class="math display">
+\begin{align}
+\mu_{\pi}(e) &amp;= \frac{e}{\sigma_x^2+\sigma_y^2} \left[  \sigma_y^2+4\sigma_x^2 \right]\\
+\sigma_{\pi}^2(e) &amp;= \frac{\sigma_x^2\sigma_y^2}{(\sigma_x^2+\sigma_y^2)^2}\left[  \sigma_y^2+4\sigma_x^2 \right]
+\end{align}
+</span></p>
+<p>We can reformulate agent’s problem as <span class="math display">
+e \in\arg\max\hat{w}(e)=t+s\mu_{\pi}-\frac{1}{2}ce^{2}-s^{2}\eta\frac{\sigma_{\pi}^2 }{2}
+</span></p>
+<p>obtaining optimal effort equals to <span id="eq-effort_with_signals"><span class="math display">
+e^*=\frac{s}{c} \left[\frac{\sigma_y^2+4\sigma_x^2}{\sigma_x^2+\sigma_y^2} \right]
+\tag{8}</span></span></p>
+<p>Relative to our initial result (<span class="math inline">e^*=s/c</span>), <a href="#eq-effort_with_signals" class="quarto-xref">Equation&nbsp;8</a> shows that having the aggregated metric <span class="math inline">\pi</span> in the contract increases the optimal effort level. This is because the aggregated metric is more sensitive to the agent’s effort than the individual signals. The updated principal’s problem is <span class="math display">
+\underset{t,s}{\max} \ \mu_{\pi}(e^*)-t-s\mu_{\pi}(e^*)
+</span> Subject to <span class="math display">
+t+s[e^*]-\frac{1}{2}c[e^*]^{2}-s^{2}\eta\frac{\sigma_{\pi}^2(e^*)}{2}= \overline{w}
+</span></p>
 </section>
 <section id="recent-papers-in-accounting" class="level2">
 <h2 class="anchored" data-anchor-id="recent-papers-in-accounting">Recent papers in Accounting</h2>
