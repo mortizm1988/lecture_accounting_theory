@@ -186,12 +186,12 @@ window.Quarto = {
   <li><a href="#general-model-of-moral-hazard" id="toc-general-model-of-moral-hazard" class="nav-link" data-scroll-target="#general-model-of-moral-hazard">General model of moral hazard</a>
   <ul class="collapse">
   <li><a href="#first-order-simplification" id="toc-first-order-simplification" class="nav-link" data-scroll-target="#first-order-simplification">First-order simplification</a></li>
-  <li><a href="#solving-optimal-contract" id="toc-solving-optimal-contract" class="nav-link" data-scroll-target="#solving-optimal-contract">Solving optimal contract</a></li>
+  <li><a href="#solving-the-optimal-contract" id="toc-solving-the-optimal-contract" class="nav-link" data-scroll-target="#solving-the-optimal-contract">Solving the optimal contract</a></li>
   <li><a href="#accounting-performance-measures" id="toc-accounting-performance-measures" class="nav-link" data-scroll-target="#accounting-performance-measures">Accounting performance measures</a></li>
   </ul></li>
   <li><a href="#linear-exponential-normal-len-models" id="toc-linear-exponential-normal-len-models" class="nav-link" data-scroll-target="#linear-exponential-normal-len-models">Linear-exponential-normal (LEN) models</a>
   <ul class="collapse">
-  <li><a href="#solving-optimal-contract-1" id="toc-solving-optimal-contract-1" class="nav-link" data-scroll-target="#solving-optimal-contract-1">Solving optimal contract</a></li>
+  <li><a href="#solving-the-optimal-contract-1" id="toc-solving-the-optimal-contract-1" class="nav-link" data-scroll-target="#solving-the-optimal-contract-1">Solving the optimal contract</a></li>
   <li><a href="#accounting-perfomance-measures" id="toc-accounting-perfomance-measures" class="nav-link" data-scroll-target="#accounting-perfomance-measures">Accounting perfomance measures</a></li>
   <li><a href="#optimal-contract-with-performance-measures" id="toc-optimal-contract-with-performance-measures" class="nav-link" data-scroll-target="#optimal-contract-with-performance-measures">Optimal contract with performance measures</a></li>
   <li><a href="#recent-papers-in-accounting" id="toc-recent-papers-in-accounting" class="nav-link" data-scroll-target="#recent-papers-in-accounting">Recent papers in Accounting</a></li>
@@ -388,8 +388,8 @@ e \in \max \sum_{i=1}^n p_i(e)U(w(x_i)) - v(e)
 </span></p>
 <p>The issue with this method is that the first-order condition is necessary but not sufficient. Effort is present in both the disutility function <span class="math inline">v(e)</span> and the probability distribution of results, implying that the expected utility function is not necessarily concave. Therefore, the first-order approach may yield more solutions than the original problem, potentially leading to suboptimal outcomes for the principal. We must impose restrictions on the conditional distribution of outcomes given effort to ensure that the second-order condition holds.</p>
 </section>
-<section id="solving-optimal-contract" class="level2">
-<h2 class="anchored" data-anchor-id="solving-optimal-contract">Solving optimal contract</h2>
+<section id="solving-the-optimal-contract" class="level2">
+<h2 class="anchored" data-anchor-id="solving-the-optimal-contract">Solving the optimal contract</h2>
 <p>The Lagrangian for the principal’s problem using the first-condition approach is:</p>
 <p><span class="math display">
 L(w(x),e) = \sum_{i=1}^n p_i(e)[B(x_i - w(x_i))]+ \lambda \left[ \sum_{i=1}^n p_i(e)U(w(x_i)) - v(e) -\underline{U}  \right] + \mu \left[\sum_{i=1}^n p_i'(e)U(w(x_i)) - v'(e)\right]
@@ -459,7 +459,7 @@ Sufficient Statistic
 <p><span class="math display">
 w^*(x,y)= W \left[ \lambda + \mu \frac{p_i'(x,y;e)}{p_i(x,y;e)} \right]
 </span></p>
-<p>where <span class="math inline">W</span> is the inverse of the agent’s marginal utility function. Let’s define the aggregate performance measure as <span class="math inline">\pi(x,y)=\lambda + \mu \frac{p_i'(x,y;e)}{p_i(x,y;e)}</span>. For many probability distributions, such as those in the exponential family, the likelihood ratio is linear in <span class="math inline">x</span> and <span class="math inline">y</span>, thus the optimal contract supports linear aggregation. In terms of the optimal weights, <span class="citation" data-cites="Banker_1989">Banker and Datar (<a href="#ref-Banker_1989" role="doc-biblioref">1989</a>)</span> shows that for the exponential family of distribution, when both metrics are independently distributed given the agent’s effort, then the optimal weights are proportional to (1) the sensitivity of the metric to the effort, and (2) to the inverse of the variance of the performance metrics. If we denote the weights as <span class="math inline">\beta_x</span> and <span class="math inline">\beta_y</span>, then the optimal weights are given by</p>
+<p>where <span class="math inline">W</span> is the inverse of the agent’s marginal utility function. Let’s define a new compensation function <span class="math inline">s(\phi)</span> which depends on the aggregate performance measure <span class="math inline">\pi=\pi(x,y)=\lambda + \mu \frac{p_i'(x,y;e)}{p_i(x,y;e)}</span>. For many probability distributions, such as those in the exponential family, the likelihood ratio is linear in <span class="math inline">x</span> and <span class="math inline">y</span>, thus the optimal contract supports linear aggregation. In terms of the optimal weights, <span class="citation" data-cites="Banker_1989">Banker and Datar (<a href="#ref-Banker_1989" role="doc-biblioref">1989</a>)</span> shows that for the exponential family of distribution, when both metrics are independently distributed given the agent’s effort, then the optimal weights are proportional to (1) the sensitivity of the metric to the effort, and (2) to the inverse of the variance of the performance metrics. If we denote the weights as <span class="math inline">\beta_x</span> and <span class="math inline">\beta_y</span>, then the optimal weights are given by</p>
 <p><span class="math display">
 \beta_x  = \frac{\frac{\partial E(x;e)}{ \partial e} var(y) }{ \left[ var(x)+var(y) \right]}
 </span></p>
@@ -505,8 +505,8 @@ The relevance of variables not controlled by the agent
 <p>as the agent’s participation constraint where <span class="math inline">\overline{w}</span> denotes the minimum acceptable certain monetary equivalent , and</p>
 <p><span class="math display"> e\in\arg\max\mathbb{E}\left[u(w,\tilde{e})\right] </span></p>
 <p>as the agent’s incentive compatibility constraint.</p>
-<section id="solving-optimal-contract-1" class="level2">
-<h2 class="anchored" data-anchor-id="solving-optimal-contract-1">Solving optimal contract</h2>
+<section id="solving-the-optimal-contract-1" class="level2">
+<h2 class="anchored" data-anchor-id="solving-the-optimal-contract-1">Solving the optimal contract</h2>
 <p>As <span class="math inline">\mathbb{E}\left[e^{k\epsilon}\right]=e^{k^{2}\frac{\sigma^{2}}{2}}</span> for any <span class="math inline">k</span>, the expected agent’s utility is</p>
 <p><span class="math display"> \mathbb{E}\left[u(w,e)\right] =-e^{-\eta\left[t+se-\frac{1}{2}ce^{2}-s^{2}\eta\frac{\sigma^{2}}{2}\right]}.</span></p>
 <p>Now we can reformulate the agent’s problem as</p>
@@ -521,7 +521,7 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 \end{align*}
 </span></p>
 <p>so the variable compensation is high when the cost of effort <span class="math inline">c</span> is low, the degree of risk aversion <span class="math inline">\eta</span> is low, and randomness of the output <span class="math inline">\sigma</span> is low.</p>
-<div id="59d6c1fa" class="cell" data-execution_count="1">
+<div id="b7f0770e" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -554,7 +554,7 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 </div>
 </div>
 </div>
-<div id="816e521e" class="cell" data-execution_count="2">
+<div id="e0e2a067" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the utility of the agent and principal for different values of sigma</span></span>
@@ -588,12 +588,12 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 \Sigma_{x,y} = \left(\begin{array}{cc} \sigma_x^2 &amp; \rho \sigma_x \sigma_y \\ \rho \sigma_x \sigma_y &amp; \sigma_y^2 \end{array}\right)
 </span></p></li>
 </ul>
-<p>where <span class="math inline">\sigma_x^2</span> is the variance of <span class="math inline">\epsilon_x</span>, <span class="math inline">\sigma_y^2</span> is the variance of <span class="math inline">\epsilon_y</span>, and <span class="math inline">\rho</span> is the correlation coefficient between <span class="math inline">\epsilon_x</span> and <span class="math inline">\epsilon_y</span>. The <a href="#eq-optimal_weights_2" class="quarto-xref">Equation&nbsp;6</a> becomes</p>
+<p>where <span class="math inline">\sigma_x^2</span> is the variance of <span class="math inline">\epsilon_x</span>, <span class="math inline">\sigma_y^2</span> is the variance of <span class="math inline">\epsilon_y</span>, and <span class="math inline">\rho</span> is the correlation coefficient between <span class="math inline">\epsilon_x</span> and <span class="math inline">\epsilon_y</span>. The <strong>accounting system</strong> aggregates both signals into a performance measure <span class="math inline">\pi=\pi(x,y)</span>.The <a href="#eq-optimal_weights_2" class="quarto-xref">Equation&nbsp;6</a> becomes</p>
 <p><span class="math display">
 \frac{\beta_x}{\beta_y} = \frac{1-2\frac{\rho \sigma_x \sigma_y}{\sigma_y^2}}{\sigma_x^2}\frac{\sigma_y^2}{2-\frac{\rho \sigma_x \sigma_y}{\sigma_x^2}}
 </span></p>
 <p>Let’s see the comparative statics of the optimal weights for different values of <span class="math inline">\rho</span> and <span class="math inline">\sigma_y</span>. First, let’s assume that both signals have the same noise, <span class="math inline">\sigma_x=\sigma_y=2.5</span>.</p>
-<div id="f0842a23" class="cell" data-execution_count="3">
+<div id="0b55b6ab" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the beta_x/beta_y for different values of rho </span></span>
@@ -620,7 +620,7 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 </div>
 <p>so, if <span class="math inline">\rho=0</span>, the optimal contract weight for <span class="math inline">x</span> is half of the weight for <span class="math inline">y</span>, as this second signal is more sensitive to effort and has the same noise. If <span class="math inline">\rho=-1</span>, then both both signal have full positive weight in the contract. If <span class="math inline">\rho=1</span>, then the signals are substracted from each other in the contract to remove the common noise.</p>
 <p>Now, let’s see the comparative statics for different values of <span class="math inline">\sigma_y</span>, considering <span class="math inline">\rho=0</span> and <span class="math inline">\sigma_x=2.5</span>.</p>
-<div id="0c3e1c69" class="cell" data-execution_count="4">
+<div id="ba6ca941" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the beta_x/beta_y for different values of sigma_y</span></span>

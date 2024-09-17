@@ -194,7 +194,7 @@ $$
 
 The issue with this method is that the first-order condition is necessary but not sufficient. Effort is present in both the disutility function $v(e)$ and the probability distribution of results, implying that the expected utility function is not necessarily concave. Therefore, the first-order approach may yield more solutions than the original problem, potentially leading to suboptimal outcomes for the principal. We must impose restrictions on the conditional distribution of outcomes given effort to ensure that the second-order condition holds.
 
-## Solving optimal contract
+## Solving the optimal contract
 
 The Lagrangian for the principal’s problem using the first-condition approach is:
 
@@ -257,7 +257,7 @@ $$
 w^*(x,y)= W \left[ \lambda + \mu \frac{p_i'(x,y;e)}{p_i(x,y;e)} \right]
 $$
 
-where $W$ is the inverse of the agent's marginal utility function. Let's define the aggregate performance measure as $\pi(x,y)=\lambda + \mu \frac{p_i'(x,y;e)}{p_i(x,y;e)}$. For many probability distributions, such as those in the exponential family, the likelihood ratio is linear in $x$ and $y$, thus the optimal contract supports linear aggregation. In terms of the optimal weights, @Banker_1989 shows that for the exponential family of distribution, when both metrics are independently distributed given the agent's effort, then the optimal weights are proportional to (1) the sensitivity of the metric to the effort, and (2) to the inverse of the variance of the performance metrics. If we denote the weights as $\beta_x$ and $\beta_y$, then the optimal weights are given by
+where $W$ is the inverse of the agent's marginal utility function. Let's define a new compensation function $s(\phi)$ which depends on the aggregate performance measure $\pi=\pi(x,y)=\lambda + \mu \frac{p_i'(x,y;e)}{p_i(x,y;e)}$. For many probability distributions, such as those in the exponential family, the likelihood ratio is linear in $x$ and $y$, thus the optimal contract supports linear aggregation. In terms of the optimal weights, @Banker_1989 shows that for the exponential family of distribution, when both metrics are independently distributed given the agent's effort, then the optimal weights are proportional to (1) the sensitivity of the metric to the effort, and (2) to the inverse of the variance of the performance metrics. If we denote the weights as $\beta_x$ and $\beta_y$, then the optimal weights are given by
 
 $$ 
 \beta_x  = \frac{\frac{\partial E(x;e)}{ \partial e} var(y) }{ \left[ var(x)+var(y) \right]}
@@ -314,7 +314,7 @@ $$ e\in\arg\max\mathbb{E}\left[u(w,\tilde{e})\right] $$
 
 as the agent's incentive compatibility constraint.
 
-## Solving optimal contract
+## Solving the optimal contract
 
 As $\mathbb{E}\left[e^{k\epsilon}\right]=e^{k^{2}\frac{\sigma^{2}}{2}}$ for any $k$, the expected agent's utility is
 
@@ -390,7 +390,7 @@ $$
  \Sigma_{x,y} = \left(\begin{array}{cc} \sigma_x^2 & \rho \sigma_x \sigma_y \\ \rho \sigma_x \sigma_y & \sigma_y^2 \end{array}\right)
 $$
 
-where  $\sigma_x^2$ is the variance of $\epsilon_x$, $\sigma_y^2$ is the variance of $\epsilon_y$, and $\rho$ is the correlation coefficient between $\epsilon_x$ and $\epsilon_y$. The @eq-optimal_weights_2  becomes
+where  $\sigma_x^2$ is the variance of $\epsilon_x$, $\sigma_y^2$ is the variance of $\epsilon_y$, and $\rho$ is the correlation coefficient between $\epsilon_x$ and $\epsilon_y$. The **accounting system** aggregates both signals into a performance measure  $\pi=\pi(x,y)$.The @eq-optimal_weights_2  becomes
 
 $$
 \frac{\beta_x}{\beta_y} = \frac{1-2\frac{\rho \sigma_x \sigma_y}{\sigma_y^2}}{\sigma_x^2}\frac{\sigma_y^2}{2-\frac{\rho \sigma_x \sigma_y}{\sigma_x^2}}
