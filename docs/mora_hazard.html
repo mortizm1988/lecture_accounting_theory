@@ -181,23 +181,23 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#introduction-to-moral-hazard" id="toc-introduction-to-moral-hazard" class="nav-link active" data-scroll-target="#introduction-to-moral-hazard">Introduction to Moral Hazard</a>
   <ul class="collapse">
-  <li><a href="#a-very-simple-example" id="toc-a-very-simple-example" class="nav-link" data-scroll-target="#a-very-simple-example">A Very Simple Example</a></li>
+  <li><a href="#a-very-simple-example" id="toc-a-very-simple-example" class="nav-link" data-scroll-target="#a-very-simple-example">A very simple example</a></li>
   </ul></li>
-  <li><a href="#general-model-of-moral-hazard" id="toc-general-model-of-moral-hazard" class="nav-link" data-scroll-target="#general-model-of-moral-hazard">General Model of Moral Hazard</a>
+  <li><a href="#general-model-of-moral-hazard" id="toc-general-model-of-moral-hazard" class="nav-link" data-scroll-target="#general-model-of-moral-hazard">General model of moral hazard</a>
   <ul class="collapse">
-  <li><a href="#first-order-simplification" id="toc-first-order-simplification" class="nav-link" data-scroll-target="#first-order-simplification">First-Order Simplification</a></li>
+  <li><a href="#first-order-simplification" id="toc-first-order-simplification" class="nav-link" data-scroll-target="#first-order-simplification">First-order simplification</a></li>
   <li><a href="#solving-optimal-contract" id="toc-solving-optimal-contract" class="nav-link" data-scroll-target="#solving-optimal-contract">Solving optimal contract</a></li>
-  <li><a href="#accounting-performance-measures" id="toc-accounting-performance-measures" class="nav-link" data-scroll-target="#accounting-performance-measures">Accounting Performance Measures</a></li>
+  <li><a href="#accounting-performance-measures" id="toc-accounting-performance-measures" class="nav-link" data-scroll-target="#accounting-performance-measures">Accounting performance measures</a></li>
   </ul></li>
   <li><a href="#linear-exponential-normal-len-models" id="toc-linear-exponential-normal-len-models" class="nav-link" data-scroll-target="#linear-exponential-normal-len-models">Linear-exponential-normal (LEN) models</a>
   <ul class="collapse">
   <li><a href="#solving-optimal-contract-1" id="toc-solving-optimal-contract-1" class="nav-link" data-scroll-target="#solving-optimal-contract-1">Solving optimal contract</a></li>
-  <li><a href="#accounting-perfomance-measures" id="toc-accounting-perfomance-measures" class="nav-link" data-scroll-target="#accounting-perfomance-measures">Accounting Perfomance Measures</a></li>
-  <li><a href="#optimal-contract-with-performance-measures" id="toc-optimal-contract-with-performance-measures" class="nav-link" data-scroll-target="#optimal-contract-with-performance-measures">Optimal contract with Performance Measures</a></li>
+  <li><a href="#accounting-perfomance-measures" id="toc-accounting-perfomance-measures" class="nav-link" data-scroll-target="#accounting-perfomance-measures">Accounting perfomance measures</a></li>
+  <li><a href="#optimal-contract-with-performance-measures" id="toc-optimal-contract-with-performance-measures" class="nav-link" data-scroll-target="#optimal-contract-with-performance-measures">Optimal contract with performance measures</a></li>
   <li><a href="#recent-papers-in-accounting" id="toc-recent-papers-in-accounting" class="nav-link" data-scroll-target="#recent-papers-in-accounting">Recent papers in Accounting</a></li>
   </ul></li>
   <li><a href="#multiple-action-models" id="toc-multiple-action-models" class="nav-link" data-scroll-target="#multiple-action-models">Multiple-action models</a></li>
-  <li><a href="#disclosure-of-private-information" id="toc-disclosure-of-private-information" class="nav-link" data-scroll-target="#disclosure-of-private-information">Disclosure of Private information</a></li>
+  <li><a href="#disclosure-of-private-information" id="toc-disclosure-of-private-information" class="nav-link" data-scroll-target="#disclosure-of-private-information">Disclosure of private information</a></li>
   </ul>
 </nav>
 </nav>
@@ -241,20 +241,23 @@ window.Quarto = {
 
 <section id="introduction-to-moral-hazard" class="level1">
 <h1>Introduction to Moral Hazard</h1>
-<p>Moral hazard arises when the value of a transaction for one party can be influenced by actions or decisions taken by the other party. Two additional conditions are required for the problem of moral hazard to occur:</p>
-<ul>
-<li>Hidden action: This action is not directly observable or perfectly inferable by the party whose results are affected.</li>
-<li>Risk aversion: At least one of the parties must be risk-averse.</li>
-</ul>
-<p>The essence of the moral hazard problem lies in the conflict between two fundamental objectives:</p>
-<ul>
-<li>Provision of adequate incentives.</li>
-<li>Efficient risk distribution.</li>
-</ul>
-<p>There is a substitution effect: the extent to which one party is shielded from risk influences their incentives to take actions that are efficient for the other party.</p>
-<p>The challenge is to design an compensation scheme or incentive mechanism that minimizes the conflict between the two objectives. The optimal solution depends on the characteristics of the parties involved, such as their risk aversion, the observability of their actions, and the nature of the relationship between them.</p>
+<p>Moral hazard arises when one party in a transaction can take actions that affect the value of the transaction for the other party. However, those actions are either unobservable or only imperfectly inferable by the affected party. This problem typically occurs in situations where two conditions are present: <strong>hidden action</strong> and <strong>risk aversion</strong>.</p>
+<ol type="1">
+<li><p><strong>Hidden action</strong>: Refers to actions taken by one party that cannot be directly monitored or measured by the other party. As a result, the affected party cannot perfectly determine whether adverse outcomes are due to poor performance, lack of effort, or external factors.</p></li>
+<li><p><strong>Risk aversion</strong>: At least one of the parties involved must prefer avoiding risk. They value stability and predictability, often making them cautious about transactions or agreements that expose them to unpredictable outcomes.</p></li>
+</ol>
+<p>The moral hazard problem is fundamentally about the misalignment of incentives between parties. Specifically, the party whose actions are unobservable might not have adequate incentives to act in the best interest of the other party.</p>
+<p>Solving Moral hazard conflicts implies solving two challenges:</p>
+<ol type="1">
+<li><strong>Provision of adequate incentives</strong>: Designing mechanisms to motivate the party taking the hidden action to behave in a way that aligns with the other party’s goals.</li>
+<li><strong>Efficient risk distribution</strong>: Finding a balance in how risk is shared between the parties, so that each party bears the appropriate level of risk without undermining incentives.</li>
+</ol>
+<p>These two objectives often conflict. There is a substitution effect: when one party is overly shielded from risk, they may lack the incentive to take efficient actions that benefit the other party. As a result, designing an optimal compensation or incentive scheme requires balancing risk-sharing with providing the right incentives.</p>
+<p>The focus of this class will be moral hazard conflicts arising within a firm, typically between a shareholder (the pricipal) and a manager (the agent). The principal aims to hire the agent for running a risky project, and offers the agent a contract which stablishes the agent’s compensation conditional on the outcome of the risky project. The agent first decides whether to accept the contract and then how much effort put into managing the project. The principal requires informations to infer the value of the project’s outcome and the agent’s effort to be able to compute the agent’s compensation and its own net profits.</p>
+<p>In this setting, accounting is naturally embedded into moral hazard problems. <strong>Accounting information</strong> must have several key characteristics to be useful for decision-making. Accounting information must be relevant, comparable, verifiable, and timeliness. Scholars have studied how these characteristics can be used to design optimal contracts that mitigate moral hazard problems.</p>
+<p>This reading note starts by developing a simple example of a moral hazard problem to illustrate the nature of the problem and the trade-offs involved in solving it. We then move on to a more general moral hazard model, allowing us to add further features to the model. We will also discuss how accounting systems must generate <strong>performance measures</strong>, and how these measures can be used to design optimal contracts. Then, we discuss the role of comparability for <strong>relative performance evaluation</strong> and the role of disclosure of <strong>verifiable</strong> private information in the context of moral hazard. Lastly, we will discuss how the <strong>timeliness</strong> of accounting information can be used to design dynamic incentive contracts.</p>
 <section id="a-very-simple-example" class="level2">
-<h2 class="anchored" data-anchor-id="a-very-simple-example">A Very Simple Example</h2>
+<h2 class="anchored" data-anchor-id="a-very-simple-example">A very simple example</h2>
 <p>Let’s assume that a company (principal) hires a manager (agent) responsible for running the business. The company’s outcomes depend on both random factors and the manager’s effort. For now, let’s assume the effort can be either high (A) or low (B), and the company’s outcomes can either be success (E) or failure (F). The company’s profit in the success scenario is $360, and in the failure scenario, it is $200. The probability of success is 75% with high effort and 25% with low effort.</p>
 <p>Therefore, the expected profit of the principal when effort is high is: <span class="math inline">360 \times 0.75 + 200 \times 0.25 = 320</span>. In contrast, when the effort is low the expected profit is: <span class="math inline">360 \times 0.25 + 200 \times 0.75 = 240</span>.</p>
 <p>This can be summarized in the following table:</p>
@@ -353,7 +356,7 @@ W_E = 184, \quad W_F = 24.
 </section>
 </section>
 <section id="general-model-of-moral-hazard" class="level1">
-<h1>General Model of Moral Hazard</h1>
+<h1>General model of moral hazard</h1>
 <p>This section borrows from <span class="citation" data-cites="Lambert_2001">Lambert (<a href="#ref-Lambert_2001" role="doc-biblioref">2001</a>)</span> Chapter 2 and <span class="citation" data-cites="Bolton_Dewatripont_2005">Bolton and Dewatripont (<a href="#ref-Bolton_Dewatripont_2005" role="doc-biblioref">2005</a>)</span> Chapter 4. Here we develop more general version of the moral hazard problem. We start by stating the more general framework, and then applying for specific functional forms for the level of effort and performance outcome.</p>
 <p>Moral hazard problems can be modeled as sequential games where, in the first stage, the principal offers a contract, and in the second stage, the agent must accept or reject it and then choose their level of effort. Thus, it is a problem that can be solved using backward induction.</p>
 <p>In the final stage of the game, the agent chooses a level of effort considering the <span class="math inline">n</span> potential performance outcomes.</p>
@@ -377,7 +380,7 @@ e \in \max \sum_{i=1}^n p_i(e)U(w(x_i)) - v(e)
 e \in \max \sum_{i=1}^n p_i(e)U(w(x_i)) - v(e)
 \tag{1}</span></span></p>
 <section id="first-order-simplification" class="level2">
-<h2 class="anchored" data-anchor-id="first-order-simplification">First-Order Simplification</h2>
+<h2 class="anchored" data-anchor-id="first-order-simplification">First-order simplification</h2>
 <p>The constraint in <a href="#eq-agent_problem" class="quarto-xref">Equation&nbsp;1</a> is not very tractable, and theorist have develop conditions where it can be replaced by the agent’s first-order condition on effort. If we assume that the agent’s optimal effort is in the interior of the effort set, then the agent first-order condition is</p>
 <p><span class="math display">
 \sum_{i=1}^n p_i'(e)U(w(x_i)) - v'(e)=0
@@ -432,7 +435,7 @@ Limited Liability
 </div>
 </section>
 <section id="accounting-performance-measures" class="level2">
-<h2 class="anchored" data-anchor-id="accounting-performance-measures">Accounting Performance Measures</h2>
+<h2 class="anchored" data-anchor-id="accounting-performance-measures">Accounting performance measures</h2>
 <p>Now let’s add an additional performance measure to the model to check in which conditions they reduced the welfare loss relative to the first-best solution. This will be the case if they increase the agent’s incentive to exert effort or improve the risk-sharing between the principal and the agent. Be <span class="math inline">y</span> the performance measure. In this case, <a href="#eq-op_sharing" class="quarto-xref">Equation&nbsp;2</a> becomes</p>
 <p><span id="eq-op_sharing_2"><span class="math display">
 \frac{B'(x_i - w(x_i,y_i))}{U'(w(x_i,y_i)) }= \lambda + \mu \frac{p_i'(x,y;e)}{p_i(x,y;e)}
@@ -517,7 +520,7 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 \end{align*}
 </span></p>
 <p>so the variable compensation is high when the cost of effort <span class="math inline">c</span> is low, the degree of risk aversion <span class="math inline">\eta</span> is low, and randomness of the output <span class="math inline">\sigma</span> is low.</p>
-<div id="79a078e1" class="cell" data-execution_count="1">
+<div id="dc5f841d" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -550,7 +553,7 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 </div>
 </div>
 </div>
-<div id="1fc1cac5" class="cell" data-execution_count="2">
+<div id="aad2132f" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the utility of the agent and principal for different values of sigma</span></span>
@@ -574,7 +577,7 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 </div>
 </section>
 <section id="accounting-perfomance-measures" class="level2">
-<h2 class="anchored" data-anchor-id="accounting-perfomance-measures">Accounting Perfomance Measures</h2>
+<h2 class="anchored" data-anchor-id="accounting-perfomance-measures">Accounting perfomance measures</h2>
 <p>Let’s again assume again that <span class="math inline">x</span> and <span class="math inline">y</span> are both accounting signals, such as <span class="math inline">x=e+\epsilon_x</span> and <span class="math inline">y=2e+\epsilon_y</span>, where <span class="math inline">\epsilon_x</span> and <span class="math inline">\epsilon_y</span> are joinly normally distributed with zero means. Then, the joint distribution function <span class="math inline">f(x,y;e)</span> is a bivariate normal distribution with</p>
 <ul>
 <li><p>Mean vector: <span class="math display">
@@ -589,7 +592,7 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 \frac{\beta_x}{\beta_y} = \frac{1-2\frac{\rho \sigma_x \sigma_y}{\sigma_y^2}}{\sigma_x^2}\frac{\sigma_y^2}{2-\frac{\rho \sigma_x \sigma_y}{\sigma_x^2}}
 </span></p>
 <p>Let’s see the comparative statics of the optimal weights for different values of <span class="math inline">\rho</span> and <span class="math inline">\sigma_y</span>. First, let’s assume that both signals have the same noise, <span class="math inline">\sigma_x=\sigma_y=2.5</span>.</p>
-<div id="8794125f" class="cell" data-execution_count="3">
+<div id="371d4454" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the beta_x/beta_y for different values of rho </span></span>
@@ -616,7 +619,7 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 </div>
 <p>so, if <span class="math inline">\rho=0</span>, the optimal contract weight for <span class="math inline">x</span> is half of the weight for <span class="math inline">y</span>, as this second signal is more sensitive to effort and has the same noise. If <span class="math inline">\rho=-1</span>, then both both signal have full positive weight in the contract. If <span class="math inline">\rho=1</span>, then the signals are substracted from each other in the contract to remove the common noise.</p>
 <p>Now, let’s see the comparative statics for different values of <span class="math inline">\sigma_y</span>, considering <span class="math inline">\rho=0</span> and <span class="math inline">\sigma_x=2.5</span>.</p>
-<div id="5ea2c038" class="cell" data-execution_count="4">
+<div id="7fb485b9" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the beta_x/beta_y for different values of sigma_y</span></span>
@@ -642,7 +645,7 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 <p>Here the red line the same situation than in the previous plot, meaning that when both signals have the same noise, the optimal weight for <span class="math inline">x</span> is half of the weight for $y. If <span class="math inline">\sigma_y</span> gets closer to zero, then the weight for <span class="math inline">x</span> decreases as <span class="math inline">y</span> gets better signal-to-noise ratio.</p>
 </section>
 <section id="optimal-contract-with-performance-measures" class="level2">
-<h2 class="anchored" data-anchor-id="optimal-contract-with-performance-measures">Optimal contract with Performance Measures</h2>
+<h2 class="anchored" data-anchor-id="optimal-contract-with-performance-measures">Optimal contract with performance measures</h2>
 </section>
 <section id="recent-papers-in-accounting" class="level2">
 <h2 class="anchored" data-anchor-id="recent-papers-in-accounting">Recent papers in Accounting</h2>
@@ -659,7 +662,7 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 <p>This section borrows from <span class="citation" data-cites="Lambert_2001">Lambert (<a href="#ref-Lambert_2001" role="doc-biblioref">2001</a>)</span> Chapter 3 and <span class="citation" data-cites="Bolton_Dewatripont_2005">Bolton and Dewatripont (<a href="#ref-Bolton_Dewatripont_2005" role="doc-biblioref">2005</a>)</span> Chapter 6.</p>
 </section>
 <section id="disclosure-of-private-information" class="level1">
-<h1>Disclosure of Private information</h1>
+<h1>Disclosure of private information</h1>
 <p>This section borrows from <span class="citation" data-cites="Lambert_2001">Lambert (<a href="#ref-Lambert_2001" role="doc-biblioref">2001</a>)</span> Chapter 4 and <span class="citation" data-cites="Bolton_Dewatripont_2005">Bolton and Dewatripont (<a href="#ref-Bolton_Dewatripont_2005" role="doc-biblioref">2005</a>)</span> Chapter 5.</p>
 
 
