@@ -10,8 +10,7 @@ format:
         toc-depth: 2
         toc-expand: true
         html-math-method: katex
-        number-sections: true
-        theme: simplex
+        number-sections: false
         code-fold: true
         code-overflow: wrap
 execute:

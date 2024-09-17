@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.552">
+<meta name="generator" content="quarto-1.5.49">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -35,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -79,18 +79,50 @@ div.csl-indent {
 }</style>
 
 
-<script src="mora_hazard_files/libs/clipboard/clipboard.min.js"></script>
-<script src="mora_hazard_files/libs/quarto-html/quarto.js"></script>
-<script src="mora_hazard_files/libs/quarto-html/popper.min.js"></script>
-<script src="mora_hazard_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="mora_hazard_files/libs/quarto-html/anchor.min.js"></script>
-<link href="mora_hazard_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="mora_hazard_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="mora_hazard_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="mora_hazard_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="mora_hazard_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
@@ -105,7 +137,7 @@ div.csl-indent {
    });
 }}});
   </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -136,38 +168,44 @@ window.Quarto = {
 
 </head>
 
-<body>
+<body class="floating">
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
-<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
-  <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
-    <h2 id="toc-title">Table of contents</h2>
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#introduction-to-moral-hazard" id="toc-introduction-to-moral-hazard" class="nav-link active" data-scroll-target="#introduction-to-moral-hazard"><span class="header-section-number">1</span> Introduction to Moral Hazard</a>
+  <li><a href="#introduction-to-moral-hazard" id="toc-introduction-to-moral-hazard" class="nav-link active" data-scroll-target="#introduction-to-moral-hazard">Introduction to Moral Hazard</a>
   <ul class="collapse">
-  <li><a href="#a-very-simple-example" id="toc-a-very-simple-example" class="nav-link" data-scroll-target="#a-very-simple-example"><span class="header-section-number">1.1</span> A Very Simple Example</a></li>
+  <li><a href="#a-very-simple-example" id="toc-a-very-simple-example" class="nav-link" data-scroll-target="#a-very-simple-example">A Very Simple Example</a></li>
   </ul></li>
-  <li><a href="#general-model-of-moral-hazard" id="toc-general-model-of-moral-hazard" class="nav-link" data-scroll-target="#general-model-of-moral-hazard"><span class="header-section-number">2</span> General Model of Moral Hazard</a>
+  <li><a href="#general-model-of-moral-hazard" id="toc-general-model-of-moral-hazard" class="nav-link" data-scroll-target="#general-model-of-moral-hazard">General Model of Moral Hazard</a>
   <ul class="collapse">
-  <li><a href="#first-order-simplification" id="toc-first-order-simplification" class="nav-link" data-scroll-target="#first-order-simplification"><span class="header-section-number">2.1</span> First-Order Simplification</a></li>
-  <li><a href="#solving-optimal-contract" id="toc-solving-optimal-contract" class="nav-link" data-scroll-target="#solving-optimal-contract"><span class="header-section-number">2.2</span> Solving optimal contract</a></li>
-  <li><a href="#accounting-performance-measures" id="toc-accounting-performance-measures" class="nav-link" data-scroll-target="#accounting-performance-measures"><span class="header-section-number">2.3</span> Accounting Performance Measures</a></li>
+  <li><a href="#first-order-simplification" id="toc-first-order-simplification" class="nav-link" data-scroll-target="#first-order-simplification">First-Order Simplification</a></li>
+  <li><a href="#solving-optimal-contract" id="toc-solving-optimal-contract" class="nav-link" data-scroll-target="#solving-optimal-contract">Solving optimal contract</a></li>
+  <li><a href="#accounting-performance-measures" id="toc-accounting-performance-measures" class="nav-link" data-scroll-target="#accounting-performance-measures">Accounting Performance Measures</a></li>
   </ul></li>
-  <li><a href="#linear-exponential-normal-len-models" id="toc-linear-exponential-normal-len-models" class="nav-link" data-scroll-target="#linear-exponential-normal-len-models"><span class="header-section-number">3</span> Linear-exponential-normal (LEN) models</a>
+  <li><a href="#linear-exponential-normal-len-models" id="toc-linear-exponential-normal-len-models" class="nav-link" data-scroll-target="#linear-exponential-normal-len-models">Linear-exponential-normal (LEN) models</a>
   <ul class="collapse">
-  <li><a href="#solving-optimal-contract-1" id="toc-solving-optimal-contract-1" class="nav-link" data-scroll-target="#solving-optimal-contract-1"><span class="header-section-number">3.1</span> Solving optimal contract</a></li>
-  <li><a href="#accounting-perfomance-measures" id="toc-accounting-perfomance-measures" class="nav-link" data-scroll-target="#accounting-perfomance-measures"><span class="header-section-number">3.2</span> Accounting Perfomance Measures</a></li>
-  <li><a href="#optimal-contract-with-performance-measures" id="toc-optimal-contract-with-performance-measures" class="nav-link" data-scroll-target="#optimal-contract-with-performance-measures"><span class="header-section-number">3.3</span> Optimal contract with Performance Measures</a></li>
-  <li><a href="#recent-papers-in-accounting" id="toc-recent-papers-in-accounting" class="nav-link" data-scroll-target="#recent-papers-in-accounting"><span class="header-section-number">3.4</span> Recent papers in Accounting:</a></li>
+  <li><a href="#solving-optimal-contract-1" id="toc-solving-optimal-contract-1" class="nav-link" data-scroll-target="#solving-optimal-contract-1">Solving optimal contract</a></li>
+  <li><a href="#accounting-perfomance-measures" id="toc-accounting-perfomance-measures" class="nav-link" data-scroll-target="#accounting-perfomance-measures">Accounting Perfomance Measures</a></li>
+  <li><a href="#optimal-contract-with-performance-measures" id="toc-optimal-contract-with-performance-measures" class="nav-link" data-scroll-target="#optimal-contract-with-performance-measures">Optimal contract with Performance Measures</a></li>
+  <li><a href="#recent-papers-in-accounting" id="toc-recent-papers-in-accounting" class="nav-link" data-scroll-target="#recent-papers-in-accounting">Recent papers in Accounting</a></li>
   </ul></li>
-  <li><a href="#multiple-action-models" id="toc-multiple-action-models" class="nav-link" data-scroll-target="#multiple-action-models"><span class="header-section-number">4</span> Multiple-action models</a></li>
-  <li><a href="#disclosure-of-private-information" id="toc-disclosure-of-private-information" class="nav-link" data-scroll-target="#disclosure-of-private-information"><span class="header-section-number">5</span> Disclosure of Private information</a></li>
+  <li><a href="#multiple-action-models" id="toc-multiple-action-models" class="nav-link" data-scroll-target="#multiple-action-models">Multiple-action models</a></li>
+  <li><a href="#disclosure-of-private-information" id="toc-disclosure-of-private-information" class="nav-link" data-scroll-target="#disclosure-of-private-information">Disclosure of Private information</a></li>
   </ul>
 </nav>
-</div>
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-</div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -201,8 +239,8 @@ window.Quarto = {
 </header>
 
 
-<section id="introduction-to-moral-hazard" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Introduction to Moral Hazard</h1>
+<section id="introduction-to-moral-hazard" class="level1">
+<h1>Introduction to Moral Hazard</h1>
 <p>Moral hazard arises when the value of a transaction for one party can be influenced by actions or decisions taken by the other party. Two additional conditions are required for the problem of moral hazard to occur:</p>
 <ul>
 <li>Hidden action: This action is not directly observable or perfectly inferable by the party whose results are affected.</li>
@@ -215,12 +253,12 @@ window.Quarto = {
 </ul>
 <p>There is a substitution effect: the extent to which one party is shielded from risk influences their incentives to take actions that are efficient for the other party.</p>
 <p>The challenge is to design an compensation scheme or incentive mechanism that minimizes the conflict between the two objectives. The optimal solution depends on the characteristics of the parties involved, such as their risk aversion, the observability of their actions, and the nature of the relationship between them.</p>
-<section id="a-very-simple-example" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="a-very-simple-example"><span class="header-section-number">1.1</span> A Very Simple Example</h2>
+<section id="a-very-simple-example" class="level2">
+<h2 class="anchored" data-anchor-id="a-very-simple-example">A Very Simple Example</h2>
 <p>Let’s assume that a company (principal) hires a manager (agent) responsible for running the business. The company’s outcomes depend on both random factors and the manager’s effort. For now, let’s assume the effort can be either high (A) or low (B), and the company’s outcomes can either be success (E) or failure (F). The company’s profit in the success scenario is $360, and in the failure scenario, it is $200. The probability of success is 75% with high effort and 25% with low effort.</p>
 <p>Therefore, the expected profit of the principal when effort is high is: <span class="math inline">360 \times 0.75 + 200 \times 0.25 = 320</span>. In contrast, when the effort is low the expected profit is: <span class="math inline">360 \times 0.25 + 200 \times 0.75 = 240</span>.</p>
 <p>This can be summarized in the following table:</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th></th>
@@ -259,15 +297,15 @@ U = U(w) - v(e)
 <li>Observable effort, risk-averse agent</li>
 <li>Non-observable effort, risk-averse agent</li>
 </ol>
-<section id="observable-effort-risk-neutral-agent" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="observable-effort-risk-neutral-agent"><span class="header-section-number">1.1.1</span> Observable Effort, Risk-Neutral Agent</h3>
+<section id="observable-effort-risk-neutral-agent" class="level3">
+<h3 class="anchored" data-anchor-id="observable-effort-risk-neutral-agent">Observable Effort, Risk-Neutral Agent</h3>
 <p>Let’s assume an agent with a utility function <span class="math inline">U = w - v(e)</span>, and a reservation utility of <span class="math inline">\underline{U} = 81</span>. The costs of effort are <span class="math inline">v(B) = 0</span> and <span class="math inline">v(A) = 63</span>. (The numbers are arbitrary and chosen to facilitate later comparisons).</p>
 <p>If the principal settles for low effort, they offer the agent a salary equal to the reservation utility <span class="math inline">w = 81</span>. The expected profit for the principal is 240, and the net benefit is <span class="math inline">240 - 81 = 159</span>.</p>
 <p>If the principal wants to ensure high effort, the agent’s remuneration must cover the disutility of effort, i.e., <span class="math inline">w = 81 + 63 = 144</span>. The net profit for the principal in this case is <span class="math inline">320 - 144 = 176</span>.</p>
 <p>Thus, for the principal, the best alternative is to offer a fixed payment of 144 and obtain an expected profit of 176.</p>
 </section>
-<section id="non-observable-effort-risk-neutral-agent" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="non-observable-effort-risk-neutral-agent"><span class="header-section-number">1.1.2</span> Non-Observable Effort, Risk-Neutral Agent</h3>
+<section id="non-observable-effort-risk-neutral-agent" class="level3">
+<h3 class="anchored" data-anchor-id="non-observable-effort-risk-neutral-agent">Non-Observable Effort, Risk-Neutral Agent</h3>
 <p>Now, consider the case where the effort (A or B) is non-observable and the agent continue being risk-neutral. In this case, the conflict between incentives and risk distribution is easily resolved. The most effective way to provide incentives is to make the agent bear all the consequences of their decisions.</p>
 <p>The contract cannot depend on effort because effort is neither observable nor verifiable. However, results such as profits are observable. Therefore, the principal can exploit the correlation between effort and profits to incentivize the agent. The principal will pay <span class="math inline">X</span> in case of success ($E$), and <span class="math inline">Y</span> in case of failure (<span class="math inline">F</span>). This introduces uncertainty for the agent.</p>
 <p>The principal can induce high effort by offering the agent a contract characterized by a compensation conditional on the outcome: <span class="math inline">W_E</span> and <span class="math inline">W_F</span>, with the following requirements:</p>
@@ -286,15 +324,15 @@ U = U(w) - v(e)
 W_E = 184, \quad W_F = 24.
 </span></p>
 </section>
-<section id="observable-effort-risk-averse-agent" class="level3" data-number="1.1.3">
-<h3 data-number="1.1.3" class="anchored" data-anchor-id="observable-effort-risk-averse-agent"><span class="header-section-number">1.1.3</span> Observable Effort, Risk-Averse Agent</h3>
+<section id="observable-effort-risk-averse-agent" class="level3">
+<h3 class="anchored" data-anchor-id="observable-effort-risk-averse-agent">Observable Effort, Risk-Averse Agent</h3>
 <p>Qhat happens when we have a risk-averse agent? For example, assume the utility function <span class="math inline">U = W^{1/2} - v(e)</span>, where <span class="math inline">v(A) = 3</span> and <span class="math inline">v(B) = 0</span>, and the reservation utility is <span class="math inline">\underline{U} = 9</span>.</p>
 <p>To induce low effort, it is sufficient to offer a fixed salary that yields a utility level equal to or greater than the reservation utility (<span class="math inline">W=\underline{U}^2=81</span>). The principal’s expected net profit is <span class="math inline">240 - 81 = 159</span>, the same as in the scenario with a risk-neutral agent.</p>
 <p>To induce high effort, the agent needs to be compensated for the additional disutility of the high effort. As effort can be observed, this can be achieved with a fixed salary of <span class="math inline">144=(\underline{U}+3)^2</span>, conditioned on high effort . Thus, the expected net profit for the principal is <span class="math inline">320 - 144 = 176</span>, higher than the profit for low effort (though it may not always be optimal to pay for high effort).</p>
 <p>In this case, the agent’s risk aversion does not pose a problem since there is no uncertainty involved. The agent’s action and payment are not contingent on the state of nature.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 </section>
-<section id="non-observable-effort-and-risk-averse-agent" class="level3" data-number="1.1.4">
-<h3 data-number="1.1.4" class="anchored" data-anchor-id="non-observable-effort-and-risk-averse-agent"><span class="header-section-number">1.1.4</span> Non-Observable Effort and Risk-Averse Agent</h3>
+<section id="non-observable-effort-and-risk-averse-agent" class="level3">
+<h3 class="anchored" data-anchor-id="non-observable-effort-and-risk-averse-agent">Non-Observable Effort and Risk-Averse Agent</h3>
 <p>The lack of observability of effort forces to create the compensation contract contingent on outcomes (which are correlated with effort) or abandoning variable compensation altogether. In this scenario we can see the main conflict in moral hazard problems:</p>
 <ul>
 <li><p><strong>Efficient Risk Distribution</strong>: the risk-neutral party (the principal) should bear all the risk, while the risk-averse party (the agent) remains on the certainty line.</p></li>
@@ -314,8 +352,8 @@ W_E = 184, \quad W_F = 24.
 </section>
 </section>
 </section>
-<section id="general-model-of-moral-hazard" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> General Model of Moral Hazard</h1>
+<section id="general-model-of-moral-hazard" class="level1">
+<h1>General Model of Moral Hazard</h1>
 <p>This section borrows from <span class="citation" data-cites="Lambert_2001">Lambert (<a href="#ref-Lambert_2001" role="doc-biblioref">2001</a>)</span> Chapter 2 and <span class="citation" data-cites="Bolton_Dewatripont_2005">Bolton and Dewatripont (<a href="#ref-Bolton_Dewatripont_2005" role="doc-biblioref">2005</a>)</span> Chapter 4. Here we develop more general version of the moral hazard problem. We start by stating the more general framework, and then applying for specific functional forms for the level of effort and performance outcome.</p>
 <p>Moral hazard problems can be modeled as sequential games where, in the first stage, the principal offers a contract, and in the second stage, the agent must accept or reject it and then choose their level of effort. Thus, it is a problem that can be solved using backward induction.</p>
 <p>In the final stage of the game, the agent chooses a level of effort considering the <span class="math inline">n</span> potential performance outcomes.</p>
@@ -338,16 +376,16 @@ e \in \max \sum_{i=1}^n p_i(e)U(w(x_i)) - v(e)
 <p><span id="eq-agent_problem"><span class="math display">
 e \in \max \sum_{i=1}^n p_i(e)U(w(x_i)) - v(e)
 \tag{1}</span></span></p>
-<section id="first-order-simplification" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="first-order-simplification"><span class="header-section-number">2.1</span> First-Order Simplification</h2>
+<section id="first-order-simplification" class="level2">
+<h2 class="anchored" data-anchor-id="first-order-simplification">First-Order Simplification</h2>
 <p>The constraint in <a href="#eq-agent_problem" class="quarto-xref">Equation&nbsp;1</a> is not very tractable, and theorist have develop conditions where it can be replaced by the agent’s first-order condition on effort. If we assume that the agent’s optimal effort is in the interior of the effort set, then the agent first-order condition is</p>
 <p><span class="math display">
 \sum_{i=1}^n p_i'(e)U(w(x_i)) - v'(e)=0
 </span></p>
 <p>The issue with this method is that the first-order condition is necessary but not sufficient. Effort is present in both the disutility function <span class="math inline">v(e)</span> and the probability distribution of results, implying that the expected utility function is not necessarily concave. Therefore, the first-order approach may yield more solutions than the original problem, potentially leading to suboptimal outcomes for the principal. We must impose restrictions on the conditional distribution of outcomes given effort to ensure that the second-order condition holds.</p>
 </section>
-<section id="solving-optimal-contract" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="solving-optimal-contract"><span class="header-section-number">2.2</span> Solving optimal contract</h2>
+<section id="solving-optimal-contract" class="level2">
+<h2 class="anchored" data-anchor-id="solving-optimal-contract">Solving optimal contract</h2>
 <p>The Lagrangian for the principal’s problem using the first-condition approach is:</p>
 <p><span class="math display">
 L(w(x),e) = \sum_{i=1}^n p_i(e)[B(x_i - w(x_i))]+ \lambda \left[ \sum_{i=1}^n p_i(e)U(w(x_i)) - v(e) -\underline{U}  \right] + \mu \left[\sum_{i=1}^n p_i'(e)U(w(x_i)) - v'(e)\right]
@@ -393,8 +431,8 @@ Limited Liability
 </div>
 </div>
 </section>
-<section id="accounting-performance-measures" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="accounting-performance-measures"><span class="header-section-number">2.3</span> Accounting Performance Measures</h2>
+<section id="accounting-performance-measures" class="level2">
+<h2 class="anchored" data-anchor-id="accounting-performance-measures">Accounting Performance Measures</h2>
 <p>Now let’s add an additional performance measure to the model to check in which conditions they reduced the welfare loss relative to the first-best solution. This will be the case if they increase the agent’s incentive to exert effort or improve the risk-sharing between the principal and the agent. Be <span class="math inline">y</span> the performance measure. In this case, <a href="#eq-op_sharing" class="quarto-xref">Equation&nbsp;2</a> becomes</p>
 <p><span id="eq-op_sharing_2"><span class="math display">
 \frac{B'(x_i - w(x_i,y_i))}{U'(w(x_i,y_i)) }= \lambda + \mu \frac{p_i'(x,y;e)}{p_i(x,y;e)}
@@ -452,8 +490,8 @@ The relevance of variables not controlled by the agent
 <p>Thus, if the metrics are positively correlated, then their weights have opposite signs. The interpretation is that the positive correlation is driven by an exogenous common factor, and by adjusting <span class="math inline">y</span> with a negative weight some of the noise driven by the common factor in <span class="math inline">x</span> is removed.</p>
 </section>
 </section>
-<section id="linear-exponential-normal-len-models" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Linear-exponential-normal (LEN) models</h1>
+<section id="linear-exponential-normal-len-models" class="level1">
+<h1>Linear-exponential-normal (LEN) models</h1>
 <p>Now we develop another widely used model considering linear contracts, normally distributed performance and exponential utility for the agent. The performance outcome is assumed to be equal to effort (in monetary terms) plus noise: <span class="math inline">x=e+\epsilon</span>, with <span class="math inline">\epsilon\sim N(0,\sigma^{2})</span>. We keep considering the principal to be risk neutral while the agent’s utility function is CARA represented by a negative exponential utility function <span class="math inline">u(w,e)=-e^{-\eta\left[w-\psi(e)\right]}</span>, with <span class="math inline">\psi(e)=\frac{1}{2}ce^{2}</span>. Therefore, the principal only cares about the expected cost of motivating the agent to accept the contract and exert effort and not about risk sharing.</p>
 <p>In these models, the contract follows a linear form such as <span class="math inline">w=t+sx</span> where <span class="math inline">t</span> is a fix component and <span class="math inline">s</span> is the performance-related component.</p>
 <p>The problem for the principal is then:</p>
@@ -463,8 +501,8 @@ The relevance of variables not controlled by the agent
 <p>as the agent’s participation constraint where <span class="math inline">\overline{w}</span> denotes the minimum acceptable certain monetary equivalent , and</p>
 <p><span class="math display"> e\in\arg\max\mathbb{E}\left[u(w,\tilde{e})\right] </span></p>
 <p>as the agent’s incentive compatibility constraint.</p>
-<section id="solving-optimal-contract-1" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="solving-optimal-contract-1"><span class="header-section-number">3.1</span> Solving optimal contract</h2>
+<section id="solving-optimal-contract-1" class="level2">
+<h2 class="anchored" data-anchor-id="solving-optimal-contract-1">Solving optimal contract</h2>
 <p>As <span class="math inline">\mathbb{E}\left[e^{k\epsilon}\right]=e^{k^{2}\frac{\sigma^{2}}{2}}</span> for any <span class="math inline">k</span>, the expected agent’s utility is</p>
 <p><span class="math display"> \mathbb{E}\left[u(w,e)\right] =-e^{-\eta\left[t+se-\frac{1}{2}ce^{2}-s^{2}\eta\frac{\sigma^{2}}{2}\right]}.</span></p>
 <p>Now we can reformulate the agent’s problem as</p>
@@ -479,7 +517,7 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 \end{align*}
 </span></p>
 <p>so the variable compensation is high when the cost of effort <span class="math inline">c</span> is low, the degree of risk aversion <span class="math inline">\eta</span> is low, and randomness of the output <span class="math inline">\sigma</span> is low.</p>
-<div id="daa297d2" class="cell" data-execution_count="1">
+<div id="79a078e1" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -512,7 +550,7 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 </div>
 </div>
 </div>
-<div id="35cddcad" class="cell" data-execution_count="2">
+<div id="1fc1cac5" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the utility of the agent and principal for different values of sigma</span></span>
@@ -535,8 +573,8 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 </div>
 </div>
 </section>
-<section id="accounting-perfomance-measures" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="accounting-perfomance-measures"><span class="header-section-number">3.2</span> Accounting Perfomance Measures</h2>
+<section id="accounting-perfomance-measures" class="level2">
+<h2 class="anchored" data-anchor-id="accounting-perfomance-measures">Accounting Perfomance Measures</h2>
 <p>Let’s again assume again that <span class="math inline">x</span> and <span class="math inline">y</span> are both accounting signals, such as <span class="math inline">x=e+\epsilon_x</span> and <span class="math inline">y=2e+\epsilon_y</span>, where <span class="math inline">\epsilon_x</span> and <span class="math inline">\epsilon_y</span> are joinly normally distributed with zero means. Then, the joint distribution function <span class="math inline">f(x,y;e)</span> is a bivariate normal distribution with</p>
 <ul>
 <li><p>Mean vector: <span class="math display">
@@ -551,7 +589,7 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 \frac{\beta_x}{\beta_y} = \frac{1-2\frac{\rho \sigma_x \sigma_y}{\sigma_y^2}}{\sigma_x^2}\frac{\sigma_y^2}{2-\frac{\rho \sigma_x \sigma_y}{\sigma_x^2}}
 </span></p>
 <p>Let’s see the comparative statics of the optimal weights for different values of <span class="math inline">\rho</span> and <span class="math inline">\sigma_y</span>. First, let’s assume that both signals have the same noise, <span class="math inline">\sigma_x=\sigma_y=2.5</span>.</p>
-<div id="a3a8279f" class="cell" data-execution_count="3">
+<div id="8794125f" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the beta_x/beta_y for different values of rho </span></span>
@@ -578,7 +616,7 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 </div>
 <p>so, if <span class="math inline">\rho=0</span>, the optimal contract weight for <span class="math inline">x</span> is half of the weight for <span class="math inline">y</span>, as this second signal is more sensitive to effort and has the same noise. If <span class="math inline">\rho=-1</span>, then both both signal have full positive weight in the contract. If <span class="math inline">\rho=1</span>, then the signals are substracted from each other in the contract to remove the common noise.</p>
 <p>Now, let’s see the comparative statics for different values of <span class="math inline">\sigma_y</span>, considering <span class="math inline">\rho=0</span> and <span class="math inline">\sigma_x=2.5</span>.</p>
-<div id="fd89e7e5" class="cell" data-execution_count="4">
+<div id="5ea2c038" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the beta_x/beta_y for different values of sigma_y</span></span>
@@ -603,11 +641,11 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 </div>
 <p>Here the red line the same situation than in the previous plot, meaning that when both signals have the same noise, the optimal weight for <span class="math inline">x</span> is half of the weight for $y. If <span class="math inline">\sigma_y</span> gets closer to zero, then the weight for <span class="math inline">x</span> decreases as <span class="math inline">y</span> gets better signal-to-noise ratio.</p>
 </section>
-<section id="optimal-contract-with-performance-measures" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="optimal-contract-with-performance-measures"><span class="header-section-number">3.3</span> Optimal contract with Performance Measures</h2>
+<section id="optimal-contract-with-performance-measures" class="level2">
+<h2 class="anchored" data-anchor-id="optimal-contract-with-performance-measures">Optimal contract with Performance Measures</h2>
 </section>
-<section id="recent-papers-in-accounting" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="recent-papers-in-accounting"><span class="header-section-number">3.4</span> Recent papers in Accounting:</h2>
+<section id="recent-papers-in-accounting" class="level2">
+<h2 class="anchored" data-anchor-id="recent-papers-in-accounting">Recent papers in Accounting</h2>
 <ul>
 <li><p><a href="https://link.springer.com/article/10.1007/s11142-015-9339-6#Sec3">Earnings vs.&nbsp;stock-price based incentives in managerial compensation contracts</a></p></li>
 <li><p><a href="https://link.springer.com/article/10.1007/s11142-009-9095-6">Dynamic performance measurement with intangible assets</a></p></li>
@@ -616,13 +654,15 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 </ul>
 </section>
 </section>
-<section id="multiple-action-models" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Multiple-action models</h1>
+<section id="multiple-action-models" class="level1">
+<h1>Multiple-action models</h1>
 <p>This section borrows from <span class="citation" data-cites="Lambert_2001">Lambert (<a href="#ref-Lambert_2001" role="doc-biblioref">2001</a>)</span> Chapter 3 and <span class="citation" data-cites="Bolton_Dewatripont_2005">Bolton and Dewatripont (<a href="#ref-Bolton_Dewatripont_2005" role="doc-biblioref">2005</a>)</span> Chapter 6.</p>
 </section>
-<section id="disclosure-of-private-information" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Disclosure of Private information</h1>
+<section id="disclosure-of-private-information" class="level1">
+<h1>Disclosure of Private information</h1>
 <p>This section borrows from <span class="citation" data-cites="Lambert_2001">Lambert (<a href="#ref-Lambert_2001" role="doc-biblioref">2001</a>)</span> Chapter 4 and <span class="citation" data-cites="Bolton_Dewatripont_2005">Bolton and Dewatripont (<a href="#ref-Bolton_Dewatripont_2005" role="doc-biblioref">2005</a>)</span> Chapter 5.</p>
+
+
 
 </section>
 
@@ -651,8 +691,7 @@ Mirrlees, James A. 1974. <span>“<span class="nocase">Notes on Welfare Economic
 <ol>
 <li id="fn1"><p>Additionally, if the agent has bargaining power, they could negotiate up to 161 for high effort. Analyse the Edgeworth box representation.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section></div></main>
-<!-- /main column -->
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -688,18 +727,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -731,7 +759,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -739,7 +789,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
