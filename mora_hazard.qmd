@@ -91,7 +91,8 @@ In our example, the constraints are:
 
 $$
 0.75 W_E + 0.25 W_F - 63 \geq 81
-$$ $$
+$$
+$$
 0.75 W_E + 0.25 W_F - 63 \geq 0.25 W_E + 0.75 W_F
 $$
 
