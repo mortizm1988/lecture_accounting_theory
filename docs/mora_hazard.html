@@ -256,6 +256,7 @@ window.Quarto = {
 <p>The focus of this class will be moral hazard conflicts arising within a firm, typically between a shareholder (the pricipal) and a manager (the agent). The principal aims to hire the agent for running a risky project, and offers the agent a contract which stablishes the agent’s compensation conditional on the outcome of the risky project. The agent first decides whether to accept the contract and then how much effort put into managing the project. The principal requires informations to infer the value of the project’s outcome and the agent’s effort to be able to compute the agent’s compensation and its own net profits.</p>
 <p>In this setting, accounting is naturally embedded into moral hazard problems. <strong>Accounting information</strong> must have several key characteristics to be useful for decision-making. Accounting information must be relevant, comparable, verifiable, and timeliness. Scholars have studied how these characteristics can be used to design optimal contracts that mitigate moral hazard problems.</p>
 <p>This reading note starts by developing a simple example of a moral hazard problem to illustrate the nature of the problem and the trade-offs involved in solving it. We then move on to a more general moral hazard model, allowing us to add further features to the model. We will also discuss how accounting systems must generate <strong>performance measures</strong>, and how these measures can be used to design optimal contracts. Then, we discuss the role of comparability for <strong>relative performance evaluation</strong> and the role of disclosure of <strong>verifiable</strong> private information in the context of moral hazard. Lastly, we will discuss how the <strong>timeliness</strong> of accounting information can be used to design dynamic incentive contracts.</p>
+<p>The notes borrow heavily from <span class="citation" data-cites="Lambert_2001">Lambert (<a href="#ref-Lambert_2001" role="doc-biblioref">2001</a>)</span>, <span class="citation" data-cites="Bolton_Dewatripont_2005">Bolton and Dewatripont (<a href="#ref-Bolton_Dewatripont_2005" role="doc-biblioref">2005</a>)</span>, and the PhD material elaborated by <a href="https://sites.google.com/site/jeremybertomeu/">Jeremy Bertomeu</a> and <a href="https://olin.wustl.edu/faculty/edwige-cheynel">Edwige Cheynel</a>, available from their website.</p>
 <section id="a-very-simple-example" class="level2">
 <h2 class="anchored" data-anchor-id="a-very-simple-example">A very simple example</h2>
 <p>Let’s assume that a company (principal) hires a manager (agent) responsible for running the business. The company’s outcomes depend on both random factors and the manager’s effort. For now, let’s assume the effort can be either high (A) or low (B), and the company’s outcomes can either be success (E) or failure (F). The company’s profit in the success scenario is $360, and in the failure scenario, it is $200. The probability of success is 75% with high effort and 25% with low effort.</p>
@@ -495,8 +496,8 @@ The relevance of variables not controlled by the agent
 </section>
 <section id="linear-exponential-normal-len-models" class="level1">
 <h1>Linear-exponential-normal (LEN) models</h1>
-<p>Now we develop another widely used model considering linear contracts, normally distributed performance and exponential utility for the agent. The performance outcome is assumed to be equal to effort (in monetary terms) plus noise: <span class="math inline">x=e+\epsilon</span>, with <span class="math inline">\epsilon\sim N(0,\sigma^{2})</span>. We keep considering the principal to be risk neutral while the agent’s utility function is CARA represented by a negative exponential utility function <span class="math inline">u(w,e)=-e^{-\eta\left[w-\psi(e)\right]}</span>, with <span class="math inline">\psi(e)=\frac{1}{2}ce^{2}</span>. Therefore, the principal only cares about the expected cost of motivating the agent to accept the contract and exert effort and not about risk sharing.</p>
-<p>In these models, the contract follows a linear form such as <span class="math inline">w=t+sx</span> where <span class="math inline">t</span> is a fix component and <span class="math inline">s</span> is the performance-related component.</p>
+<p>Now we develop another widely used model considering linear contracts, normally distributed performance and exponential utility for the agent. The performance outcome is assumed to be equal to effort (in monetary terms) plus noise: <span class="math inline">x=e+\epsilon</span>, with <span class="math inline">\epsilon\sim N(0,\sigma^{2})</span>. We keep considering the principal to be risk neutral while the agent’s utility function is CARA represented by a negative exponential utility function <span class="math inline">u(w,e)=-e^{-\eta\left[w-\psi(e)\right]}</span>, with <span class="math inline">\psi(e)=\frac{1}{2}ce^{2}</span>. Therefore, the principal only cares about the expected cost of motivating the agent to accept the contract and exert effort and not about how much risk he bears.</p>
+<p>In these models, the compensaiton follows a linear form such as <span class="math inline">w=t+sx</span> where <span class="math inline">t</span> is a fix component and <span class="math inline">s</span> is the performance-related component.</p>
 <p>The problem for the principal is then:</p>
 <p><span class="math display"> \underset{e,t,s}{\max}\mathbb{E}\left[x-w\right] </span></p>
 <p>subject to:</p>
@@ -520,7 +521,7 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 \end{align*}
 </span></p>
 <p>so the variable compensation is high when the cost of effort <span class="math inline">c</span> is low, the degree of risk aversion <span class="math inline">\eta</span> is low, and randomness of the output <span class="math inline">\sigma</span> is low.</p>
-<div id="dc5f841d" class="cell" data-execution_count="1">
+<div id="59d6c1fa" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -553,7 +554,7 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 </div>
 </div>
 </div>
-<div id="aad2132f" class="cell" data-execution_count="2">
+<div id="816e521e" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the utility of the agent and principal for different values of sigma</span></span>
@@ -592,7 +593,7 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 \frac{\beta_x}{\beta_y} = \frac{1-2\frac{\rho \sigma_x \sigma_y}{\sigma_y^2}}{\sigma_x^2}\frac{\sigma_y^2}{2-\frac{\rho \sigma_x \sigma_y}{\sigma_x^2}}
 </span></p>
 <p>Let’s see the comparative statics of the optimal weights for different values of <span class="math inline">\rho</span> and <span class="math inline">\sigma_y</span>. First, let’s assume that both signals have the same noise, <span class="math inline">\sigma_x=\sigma_y=2.5</span>.</p>
-<div id="371d4454" class="cell" data-execution_count="3">
+<div id="f0842a23" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the beta_x/beta_y for different values of rho </span></span>
@@ -619,7 +620,7 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 </div>
 <p>so, if <span class="math inline">\rho=0</span>, the optimal contract weight for <span class="math inline">x</span> is half of the weight for <span class="math inline">y</span>, as this second signal is more sensitive to effort and has the same noise. If <span class="math inline">\rho=-1</span>, then both both signal have full positive weight in the contract. If <span class="math inline">\rho=1</span>, then the signals are substracted from each other in the contract to remove the common noise.</p>
 <p>Now, let’s see the comparative statics for different values of <span class="math inline">\sigma_y</span>, considering <span class="math inline">\rho=0</span> and <span class="math inline">\sigma_x=2.5</span>.</p>
-<div id="7fb485b9" class="cell" data-execution_count="4">
+<div id="0c3e1c69" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the beta_x/beta_y for different values of sigma_y</span></span>
@@ -642,7 +643,7 @@ t^{*} &amp;= \overline{w}-\frac{1-c\eta\sigma^{2}}{2c\left[1+c\eta\sigma^{2}\rig
 </div>
 </div>
 </div>
-<p>Here the red line the same situation than in the previous plot, meaning that when both signals have the same noise, the optimal weight for <span class="math inline">x</span> is half of the weight for $y. If <span class="math inline">\sigma_y</span> gets closer to zero, then the weight for <span class="math inline">x</span> decreases as <span class="math inline">y</span> gets better signal-to-noise ratio.</p>
+<p>Here the red line the same situation than in the previous plot, meaning that when both signals have the same noise, the optimal weight for <span class="math inline">x</span> is half of the weight for <span class="math inline">y</span>. If <span class="math inline">\sigma_y</span> gets closer to zero, then the weight for <span class="math inline">x</span> decreases as <span class="math inline">y</span> gets better signal-to-noise ratio.</p>
 </section>
 <section id="optimal-contract-with-performance-measures" class="level2">
 <h2 class="anchored" data-anchor-id="optimal-contract-with-performance-measures">Optimal contract with performance measures</h2>

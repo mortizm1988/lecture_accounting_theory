@@ -41,6 +41,8 @@ In this setting, accounting is naturally embedded into moral hazard problems. **
 
 This reading note starts by developing a simple example of a moral hazard problem to illustrate the nature of the problem and the trade-offs involved in solving it. We then move on to a more general moral hazard model, allowing us to add further features to the model. We will also discuss how accounting systems must generate **performance measures**, and how these measures can be used to design optimal contracts. Then, we discuss the role of comparability for **relative performance evaluation** and the role of disclosure of **verifiable** private information in the context of moral hazard. Lastly, we will discuss how the **timeliness** of accounting information can be used to design dynamic incentive contracts.
 
+The notes borrow heavily from @Lambert_2001, @Bolton_Dewatripont_2005, and the PhD material elaborated by [Jeremy Bertomeu](https://sites.google.com/site/jeremybertomeu/) and  [Edwige Cheynel](https://olin.wustl.edu/faculty/edwige-cheynel), available from their website.
+
 ## A very simple example
 
 Let’s assume that a company (principal) hires a manager (agent) responsible for running the business. The company’s outcomes depend on both random factors and the manager’s effort. For now, let's assume the effort can be either high (A) or low (B), and the company's outcomes can either be success (E) or failure (F). The company’s profit in the success scenario is \$360, and in the failure scenario, it is \$200. The probability of success is 75% with high effort and 25% with low effort.
@@ -294,9 +296,9 @@ Thus, if the metrics are positively correlated, then their weights have opposite
 
 # Linear-exponential-normal (LEN) models
 
-Now we develop another widely used model considering linear contracts, normally distributed performance and exponential utility for the agent. The performance outcome is assumed to be equal to effort (in monetary terms) plus noise: $x=e+\epsilon$, with $\epsilon\sim N(0,\sigma^{2})$. We keep considering the principal to be risk neutral while the agent's utility function is CARA represented by a negative exponential utility function $u(w,e)=-e^{-\eta\left[w-\psi(e)\right]}$, with $\psi(e)=\frac{1}{2}ce^{2}$. Therefore, the principal only cares about the expected cost of motivating the agent to accept the contract and exert effort and not about risk sharing.
+Now we develop another widely used model considering linear contracts, normally distributed performance and exponential utility for the agent. The performance outcome is assumed to be equal to effort (in monetary terms) plus noise: $x=e+\epsilon$, with $\epsilon\sim N(0,\sigma^{2})$. We keep considering the principal to be risk neutral while the agent's utility function is CARA represented by a negative exponential utility function $u(w,e)=-e^{-\eta\left[w-\psi(e)\right]}$, with $\psi(e)=\frac{1}{2}ce^{2}$. Therefore, the principal only cares about the expected cost of motivating the agent to accept the contract and exert effort and not about how much risk he bears.
 
-In these models, the contract follows a linear form such as $w=t+sx$ where $t$ is a fix component and $s$ is the performance-related component.
+In these models, the compensaiton follows a linear form such as $w=t+sx$ where $t$ is a fix component and $s$ is the performance-related component.
 
 The problem for the principal is then:
 
@@ -430,7 +432,7 @@ plt.title('Relative Optimal Weights')
 plt.show()
 
 ```
-Here the red line the same situation than in the previous plot, meaning that when both signals have the same noise, the optimal weight for $x$ is half of the weight for $y. If $\sigma_y$ gets closer to zero, then the weight for $x$ decreases as $y$ gets better signal-to-noise ratio. 
+Here the red line the same situation than in the previous plot, meaning that when both signals have the same noise, the optimal weight for $x$ is half of the weight for $y$. If $\sigma_y$ gets closer to zero, then the weight for $x$ decreases as $y$ gets better signal-to-noise ratio. 
 
 ## Optimal contract with performance measures
 
