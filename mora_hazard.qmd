@@ -1,5 +1,5 @@
 ---
-title: "Contract Theory and Accounting"
+title: "Agency Theory and Accounting"
 author: "Marcelo Ortiz, Universitat Pompeu Fabra"
 date: "September 2024"
 bibliography: references.bib
@@ -43,7 +43,7 @@ This reading note starts by developing a simple example of a moral hazard proble
 
 The notes borrow heavily from @Lambert_2001, @Bolton_Dewatripont_2005, and the PhD material elaborated by [Jeremy Bertomeu](https://sites.google.com/site/jeremybertomeu/) and  [Edwige Cheynel](https://olin.wustl.edu/faculty/edwige-cheynel), available from their websites.
 
-## A very simple example
+### A very simple example
 
 Let’s assume that a company (principal) hires a manager (agent) responsible for running the business. The company’s outcomes depend on both random factors and the manager’s effort. For now, let's assume the effort can be either high (A) or low (B), and the company's outcomes can either be success (E) or failure (F). The company’s profit in the success scenario is \$360, and in the failure scenario, it is \$200. The probability of success is 75% with high effort and 25% with low effort.
 
@@ -323,7 +323,7 @@ $$
 
 Thus, if the metrics are positively correlated, then their weights have opposite signs. The interpretation is that the positive correlation is driven by an exogenous common factor, and by adjusting $y$ with a negative weight some of the noise driven by the common factor in $x$ is removed.
 
-# Linear-Exponential-Normal (LEN) Models
+# Linear-Exponential-Normal (LEN) Moral Hazard Models
 
 In this section, we develop a widely used model in principal-agent theory that assumes **linear contracts**, **normally distributed performance**, and **exponential utility** for the agent. The performance outcome is modeled as the sum of effort (in monetary terms) and noise:
 
@@ -440,7 +440,7 @@ plt.show()
 
 ```
 
-## Accounting perfomance measures
+## Accounting Perfomance Measures
 As in @sec-general_measures, assume that $x$ is the outcome and $y$ is an additional performance measure, such that:
 
 $$
@@ -518,7 +518,7 @@ plt.show()
 ```
 Here the red line despicts the same situation than in the previous plot, meaning that when both signals have the same noise. The optimal weight for $x$ is half of the weight for $y$. If $\sigma_y$ gets closer to zero, then the weight for $x$ decreases as $y$ gets a better relative  signal-to-noise ratio. 
 
-## Optimal contract with performance measures
+## Optimal Contract with additional Performance Measures
 
 To evaluate how the optimal contract changes with the use of the aggregate performance metric we should compute the aggregated signal $\pi(x,y)=\beta_x x+ \beta_y y$ using @eq-optimal_beta. For simplicity, assume $\rho=0$.
 
@@ -594,7 +594,7 @@ plt.show()
 
 We see that the introduction of the additional metric $y$ leads to two effects. First, the optimal effort increases regardless of how noisy is the outcome. Second, performance-related incentive $s$ is lower than the original case for low values of outcome volatility, but is larger when this volatility is high. This is because  for low outcome volatility, the new metric is more sensitive to the agent's effort than the output $x$ alone, being more efficient to motivate the agent. However, for high outcome volatility, the new metric is less sensitive to the agent's effort, so the principal needs to increase the incentive to motivate the agent.
 
-## Suggestions for further reading
+## Suggestions for Further Reading
 
 The literature on moral hazard has expanded the basic model in several important directions. One strand of research introduces stock-price incentives into compensation contracts, as explored by [Kim and Suh (1991)](https://www.sciencedirect.com/science/article/abs/pii/016541019390004Y?via%3Dihub), [Paul (1992)](https://doi.org/10.1093/rfs/5.3.471), [Dutta and Reichelstein (2005)](https://publications.aaahq.org/accounting-review/article/80/4/1069/2836/Stock-Price-Earnings-and-Book-Value-in-Managerial), and [Bernardo et al. (2015)](https://link.springer.com/article/10.1007/s11142-015-9339-6#Sec3).
 
@@ -605,6 +605,64 @@ Finally, dynamic models of moral hazard have also been developed. Notable contri
 
 # Disclosure of private information
 
-This section borrows from @Lambert_2001 Chapter 4 and @Bolton_Dewatripont_2005 Chapter 5.
 
 
+In this section we discuss models where the agent has **private information** that is not observable to the principal, which introduces challenges in aligning incentives. The agent's private information can relate to various factors, such as their skill, expertise, or the profitability of investment opportunities. This informational asymmetry means that the agent holds an **information rent** which allows him to potentially extract more value than he could if the principal were fully informed. The key challenge for the principal is to design contracts that minimize these rents while still providing incentives for the agent to act in the firm's best interest.
+
+
+
+Let $x$ and $y$ be the outcome and additional metric, both observable at the end of the game. The agent’s private information signal $m$ has a priori probability density function $G(m)$. As before, the agent's effort is $e$. Once the signal is received, the density function of the outcome and the other metric is updated to be $f(x,y|e,m)$. The models differs in three aspects: First, when does the agent receive the signal $m$, second, whether the agent can leave the contract after observing $m$, and third, whether the agent can communicate $m$ to the principal in a trustfull way.
+
+## Principal's Problem
+
+We start with the scenario where the agent acquires private information after signing the contract but before choosing his action. He is unable to leave after observing the signal and cannot communicate the signal to the principal. After receiving the private information, the agent can adjust his effort level on the signal, meaning $e(m)$. The optimal compensation $w(x,y)$, cannot depend on the signal $m$ because the agent cannot communicate it to the principal. 
+
+The principal's problem is
+
+$$
+\begin{aligned}
+    \max_{w(x,y),e(m)} \quad & \mathbb{E}_{x, y, m} \left[ G[x - w(x,y)] | e(m) \right] \\
+    \text{subject to} \quad & \mathbb{E}_{x, y, m} \left[ U[w(x, y)| e(m)] - V[e(m)] \right] \geq \underline{U} \text{ for all } m, \quad & \text{(PCs)}\\
+    & e(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y) | e] - V(e) \right] \text{ for each signal } m \quad & \text{(ICCs)}
+\end{aligned}
+$$
+
+Notice that now the principal's problem include a set of PCs and ICCs, each of them for a different signal $m$. To avoid that the agent to leave after observing bad realizations of the signal, the principal should offer a contract that is better than the outside options for every realization, not just in expectations. This implies that the principal obtain an excess level of utility, called **information rent**, derived from the fact that the agent earns the minimal acceptable level of utility just in the realization of the worst signal, and earns in excess to this minimal level in the other realizations. The principal can reduce the information rent by forcing the agent to truthfully report the private information. In those cases, the principal can use this information as an additional metric to adjust the contract to reduce the information rent.
+However,  given the private nature of the information and the incentive scheme, the principal knows that the agent has incentive to misreport the signal. Let $\hat{m}(m)$ be the report that the agent sends after observing $m$. The principal can design a contract that depends on the reported signal, $w(x,y,\hat{m})$. The principal's problem is then
+
+
+
+$$
+\begin{aligned}
+    \max_{w(x,y),e(m), \hat{m}(m)} \quad & \mathbb{E}_{x, y, m} \left[ G[x - w(x,y,\hat{m})] | e(m) \right] \\
+    \text{subject to} \quad & \mathbb{E}_{x, y| m} \left[ U[w(x, y,\hat{m})| e(m)] - V[e(m)] \right] \geq \underline{U} \text{ for all } m,  \\
+    & e(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y,\hat{m}) | e] - V(e) \right] \text{ for each } m \quad  \\
+    & \hat{m}(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y,\hat{m}) | e] - V(e) \right] \text{ for all } m \\
+\end{aligned}
+$$
+
+The first set of constraints consists of the minimal acceptable utility constraints, the second set comprises the incentive compatibility constraints on the agent’s effort, and the third set includes the incentive compatibility constraints on the agent’s reporting strategy.
+
+## Relevation Principle
+
+ As the set of possible strategies is very large, the problem for the principal is difficult to solve. A shorcut developed in the literature was the **Relevation Principle**. The revelation principle states that any proposed mechanism that involves nontruthful reporting by the agent can be duplicated or beaten in terms of expected utilities by an equilibrium mechanism in which truthful reporting is induced. The cost for forcing the agent to tell the trut is that the principal must commit to not use the information as fully as he would if the truthful message did not have to be motivated. The revelation principle is a very helpful tool for researchers because it reduces the number of alternative reporting strategies needed to be considered. This allows researchers to focus on reporting strategies that encourage truthful reporting. To apply the relevation principal to our problem, we should substitute the report by the true signal, $\hat{m}=m, and set the contract such that it ensures that the best reporting strategy for the agent is to tell the truth.
+
+
+$$
+\begin{aligned}
+    \max_{w(x,y),e(m), \hat{m}(m)} \quad & \mathbb{E}_{x, y, m} \left[ G[x - w(x,y,m)] | e(m) \right] \\
+    \text{subject to} \quad & \mathbb{E}_{x, y| m} \left[ U[w(x, y,m)| e(m)] - V[e(m)] \right] \geq \underline{U} \text{ for all } m,  \\
+    & e(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y,m) | e] - V(e) \right] \text{ for each } m \quad  \\
+    & m(m) \text{ is the } \hat{m}(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y,\hat{m}) | e] - V(e) \right] \text{ for all } m \\
+\end{aligned}
+$$
+
+In these models, the principal's welfare loss is due to the information rent of the agent, which exists even in contexts with risk neutral agents. For this reason, mos of the model examine private information issues using risk neutral agents, so they can avoid the complexities that result when risk aversion and risk sharing issues are also present.
+
+## Aplication to Capital Budgeting
+
+Pending
+
+## Aplication to Transfer Pricing
+
+Pending
