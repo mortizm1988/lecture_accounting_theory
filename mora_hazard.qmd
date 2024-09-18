@@ -542,10 +542,10 @@ $$
 
 obtaining optimal effort equals to 
 $$
-e^*=\frac{s}{c} \left[\frac{\sigma_y^2+4\sigma_x^2}{\sigma_x^2+\sigma_y^2} \right]
+e^*=\frac{s}{c} \frac{\partial \mu_{\pi}(e)}{\partial e} =\frac{s}{c} \left[\frac{\sigma_y^2+4\sigma_x^2}{\sigma_x^2+\sigma_y^2} \right]
 $${#eq-effort_with_signals}
 
-Again, for any given performance incentive $s$, the principal can infer the optimal effort of the agent. Relative to our initial result ($e^*=s/c$),  @eq-effort_with_signals shows that having the aggregated metric $\pi$ in the contract increases the optimal effort level for any given value of performance incentive $s$. This is because the aggregated metric is more sensitive to the agent's effort than output alone.
+Again, for any given performance incentive $s$, the principal can infer the optimal effort of the agent. Relative to our initial result ($e^*=s/c$),  @eq-effort_with_signals shows that having the aggregated metric $\pi$ in the contract increases the optimal effort level for any given value of performance incentive $s$ as much as the sensitivity of expected value of $\pi$ to the agent's effort is higher than one.
 
 The updated principal's problem is
 $$
@@ -557,7 +557,7 @@ $$
 Obtaining
 
 $$
-s^* = \frac{\frac{\sigma_y^2 + 4\sigma_x^2}{\sigma_x^2 + \sigma_y^2}}{\left( \frac{\sigma_y^2 + 4\sigma_x^2}{\sigma_x^2 + \sigma_y^2} \right)^2 + c n \sigma_{\pi}^2}
+s^* = \frac{\frac{\partial \mu_{\pi}(e)}{\partial e}}{\left(\frac{\partial \mu_{\pi}(e)}{\partial e}\right)^2+c n \sigma_{\pi}^2} =\frac{\frac{\sigma_y^2 + 4\sigma_x^2}{\sigma_x^2 + \sigma_y^2}}{\left( \frac{\sigma_y^2 + 4\sigma_x^2}{\sigma_x^2 + \sigma_y^2} \right)^2 + c n \sigma_{\pi}^2}
 $$
 
 The next figure compares the optimal effort and compensation terms for different values of $\sigma_x$ with our previous result for the case without the additional metric.
@@ -594,22 +594,17 @@ plt.show()
 
 We see that the introduction of the additional metric $y$ leads to two effects. First, the optimal effort increases regardless of how noisy is the outcome. Second, performance-related incentive $s$ is lower than the original case for low values of outcome volatility, but is larger when this volatility is high. This is because  for low outcome volatility, the new metric is more sensitive to the agent's effort than the output $x$ alone, being more efficient to motivate the agent. However, for high outcome volatility, the new metric is less sensitive to the agent's effort, so the principal needs to increase the incentive to motivate the agent.
 
+## Suggestions for further reading
 
+The literature on moral hazard has expanded the basic model in several important directions. One strand of research introduces stock-price incentives into compensation contracts, as explored by [Kim and Suh (1991)](https://www.sciencedirect.com/science/article/abs/pii/016541019390004Y?via%3Dihub), [Paul (1992)](https://doi.org/10.1093/rfs/5.3.471), [Dutta and Reichelstein (2005)](https://publications.aaahq.org/accounting-review/article/80/4/1069/2836/Stock-Price-Earnings-and-Book-Value-in-Managerial), and [Bernardo et al. (2015)](https://link.springer.com/article/10.1007/s11142-015-9339-6#Sec3).
 
-# Multiple-action models
+Another line of research extends the set of actions available to managers, as highlighted by [Holmstrom and Milgrom (1991)](https://people.duke.edu/~qc2/BA532/1991%20JLEO%20Holmstrom%20Milgrom.pdf), [Feltham and Xie (1994)](https://edisciplinas.usp.br/pluginfile.php/159924/mod_resource/content/1/FX.pdf), [Bushman and Indjejikian (1993)](https://doi.org/10.1016/0165-4101(93)90003-X), and [Paul (1992)](https://doi.org/10.1093/rfs/5.3.471).
 
-This section borrows from @Lambert_2001 Chapter 3 and @Bolton_Dewatripont_2005 Chapter 6.
+Finally, dynamic models of moral hazard have also been developed. Notable contributions in this area include [Holmstrom and Milgrom (1987)](https://www.jstor.org/stable/1913238), [Dutta and Reichelstein (1999)](https://link.springer.com/article/10.1023/A:1009634201495), [Corona (2009)](https://link.springer.com/article/10.1007/s11142-009-9095-6), [Cvitanić et al. (2016)](https://doi.org/10.1287/mnsc.2016.2493), and [Ai et al. (2023)](https://academic.oup.com/rfs/article-abstract/36/4/1408/6675503?redirectedFrom=fulltext).
+
 
 # Disclosure of private information
 
 This section borrows from @Lambert_2001 Chapter 4 and @Bolton_Dewatripont_2005 Chapter 5.
 
 
-# Suggestions for further reading
-
-- [Earnings vs. stock-price based incentives in managerial compensation contracts ](https://link.springer.com/article/10.1007/s11142-015-9339-6#Sec3)
-
-- [Dynamic performance measurement with intangible assets](https://link.springer.com/article/10.1007/s11142-009-9095-6)
-    
-- [Dynamic performance measurement](https://www.nowpublishers.com/article/Details/ACC-007)
-- [Timeliness, Accuracy, and Relevance in Dynamic Incentive Contracts](https://www.nowpublishers.com/article/Details/ACC-063)

@@ -198,10 +198,9 @@ window.Quarto = {
   <li><a href="#optimal-compensation-terms-1" id="toc-optimal-compensation-terms-1" class="nav-link" data-scroll-target="#optimal-compensation-terms-1"><span class="header-section-number">3.3</span> Optimal Compensation Terms</a></li>
   <li><a href="#accounting-perfomance-measures" id="toc-accounting-perfomance-measures" class="nav-link" data-scroll-target="#accounting-perfomance-measures"><span class="header-section-number">3.4</span> Accounting perfomance measures</a></li>
   <li><a href="#optimal-contract-with-performance-measures" id="toc-optimal-contract-with-performance-measures" class="nav-link" data-scroll-target="#optimal-contract-with-performance-measures"><span class="header-section-number">3.5</span> Optimal contract with performance measures</a></li>
+  <li><a href="#suggestions-for-further-reading" id="toc-suggestions-for-further-reading" class="nav-link" data-scroll-target="#suggestions-for-further-reading"><span class="header-section-number">3.6</span> Suggestions for further reading</a></li>
   </ul></li>
-  <li><a href="#multiple-action-models" id="toc-multiple-action-models" class="nav-link" data-scroll-target="#multiple-action-models"><span class="header-section-number">4</span> Multiple-action models</a></li>
-  <li><a href="#disclosure-of-private-information" id="toc-disclosure-of-private-information" class="nav-link" data-scroll-target="#disclosure-of-private-information"><span class="header-section-number">5</span> Disclosure of private information</a></li>
-  <li><a href="#suggestions-for-further-reading" id="toc-suggestions-for-further-reading" class="nav-link" data-scroll-target="#suggestions-for-further-reading"><span class="header-section-number">6</span> Suggestions for further reading</a></li>
+  <li><a href="#disclosure-of-private-information" id="toc-disclosure-of-private-information" class="nav-link" data-scroll-target="#disclosure-of-private-information"><span class="header-section-number">4</span> Disclosure of private information</a></li>
   </ul>
 </nav>
 </nav>
@@ -578,7 +577,7 @@ t^{*} &amp;= \overline{w} - \frac{1 - c\eta\sigma^{2}}{2c\left(1 + c\eta\sigma^{
 <li>The <strong>variance</strong> of the performance measure <span class="math inline">\sigma^{2}</span> is low.</li>
 </ul>
 <p>The following graphs shows the comparative statics of the optimal contract terms and utilities for different values of <span class="math inline">\sigma</span>.</p>
-<div id="40df40ef" class="cell" data-execution_count="1">
+<div id="9ea2a937" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -611,7 +610,7 @@ t^{*} &amp;= \overline{w} - \frac{1 - c\eta\sigma^{2}}{2c\left(1 + c\eta\sigma^{
 </div>
 </div>
 </div>
-<div id="db78b9ac" class="cell" data-execution_count="2">
+<div id="371baf58" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the utility of the agent and principal for different values of sigma</span></span>
@@ -666,7 +665,7 @@ x = e + \epsilon_x \quad \text{and} \quad y = 2e + \epsilon_y
 \frac{\beta_x}{\beta_y} = \frac{1 - 2\frac{\rho \sigma_x \sigma_y}{\sigma_y^2}}{\sigma_x^2} \cdot \frac{\sigma_y^2}{2 - \frac{\rho \sigma_x \sigma_y}{\sigma_x^2}}
 </span></p>
 <p>Let’s see the comparative statics of the optimal weights for different values of <span class="math inline">\rho</span> and <span class="math inline">\sigma_y</span>. First, let’s assume that both metrics have the same noise, <span class="math inline">\sigma_x=\sigma_y=1.25</span>.</p>
-<div id="4da2b809" class="cell" data-execution_count="3">
+<div id="47bf088c" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the beta_x/beta_y for different values of rho </span></span>
@@ -693,7 +692,7 @@ x = e + \epsilon_x \quad \text{and} \quad y = 2e + \epsilon_y
 </div>
 <p>so, if <span class="math inline">\rho=0</span>, the optimal weight for <span class="math inline">x</span> is half of the weight for <span class="math inline">y</span>, as this second signal is more sensitive to effort and has the same noise. If <span class="math inline">\rho=-1</span>, then both both signal have full positive weight in the contract. If <span class="math inline">\rho=1</span>, then the signals are substracted from each other in the contract to remove the common noise.</p>
 <p>Now, let’s see the comparative statics for different values of <span class="math inline">\sigma_y</span>, considering <span class="math inline">\rho=0</span> and <span class="math inline">\sigma_x=1.25</span>.</p>
-<div id="bb27f3ea" class="cell" data-execution_count="4">
+<div id="9a79fb9c" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the beta_x/beta_y for different values of sigma_y</span></span>
@@ -736,9 +735,9 @@ x = e + \epsilon_x \quad \text{and} \quad y = 2e + \epsilon_y
 e \in\arg\max\hat{w}(e)=t+s\mu_{\pi}-\frac{1}{2}ce^{2}-s^{2}\eta\frac{\sigma_{\pi}^2 }{2}
 </span></p>
 <p>obtaining optimal effort equals to <span id="eq-effort_with_signals"><span class="math display">
-e^*=\frac{s}{c} \left[\frac{\sigma_y^2+4\sigma_x^2}{\sigma_x^2+\sigma_y^2} \right]
+e^*=\frac{s}{c} \frac{\partial \mu_{\pi}(e)}{\partial e} =\frac{s}{c} \left[\frac{\sigma_y^2+4\sigma_x^2}{\sigma_x^2+\sigma_y^2} \right]
 \tag{9}</span></span></p>
-<p>Again, for any given performance incentive <span class="math inline">s</span>, the principal can infer the optimal effort of the agent. Relative to our initial result (<span class="math inline">e^*=s/c</span>), <a href="#eq-effort_with_signals" class="quarto-xref">Equation&nbsp;9</a> shows that having the aggregated metric <span class="math inline">\pi</span> in the contract increases the optimal effort level for any given value of performance incentive <span class="math inline">s</span>. This is because the aggregated metric is more sensitive to the agent’s effort than output alone.</p>
+<p>Again, for any given performance incentive <span class="math inline">s</span>, the principal can infer the optimal effort of the agent. Relative to our initial result (<span class="math inline">e^*=s/c</span>), <a href="#eq-effort_with_signals" class="quarto-xref">Equation&nbsp;9</a> shows that having the aggregated metric <span class="math inline">\pi</span> in the contract increases the optimal effort level for any given value of performance incentive <span class="math inline">s</span> as much as the sensitivity of expected value of <span class="math inline">\pi</span> to the agent’s effort is higher than one.</p>
 <p>The updated principal’s problem is <span class="math display">
 \begin{align*}
 \underset{t, s}{\max} \quad &amp; \mathbb{E}[x(e^*) - t - s \cdot x(e^*)] \\
@@ -746,10 +745,10 @@ e^*=\frac{s}{c} \left[\frac{\sigma_y^2+4\sigma_x^2}{\sigma_x^2+\sigma_y^2} \righ
 \end{align*}
 </span> Obtaining</p>
 <p><span class="math display">
-s^* = \frac{\frac{\sigma_y^2 + 4\sigma_x^2}{\sigma_x^2 + \sigma_y^2}}{\left( \frac{\sigma_y^2 + 4\sigma_x^2}{\sigma_x^2 + \sigma_y^2} \right)^2 + c n \sigma_{\pi}^2}
+s^* = \frac{\frac{\partial \mu_{\pi}(e)}{\partial e}}{\left(\frac{\partial \mu_{\pi}(e)}{\partial e}\right)^2+c n \sigma_{\pi}^2} =\frac{\frac{\sigma_y^2 + 4\sigma_x^2}{\sigma_x^2 + \sigma_y^2}}{\left( \frac{\sigma_y^2 + 4\sigma_x^2}{\sigma_x^2 + \sigma_y^2} \right)^2 + c n \sigma_{\pi}^2}
 </span></p>
 <p>The next figure compares the optimal effort and compensation terms for different values of <span class="math inline">\sigma_x</span> with our previous result for the case without the additional metric.</p>
-<div id="b0f50a86" class="cell" data-execution_count="5">
+<div id="29a76ee9" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>c<span class="op">=</span><span class="fl">0.8</span> <span class="co"># cost of effort</span></span>
@@ -789,23 +788,16 @@ s^* = \frac{\frac{\sigma_y^2 + 4\sigma_x^2}{\sigma_x^2 + \sigma_y^2}}{\left( \fr
 </div>
 <p>We see that the introduction of the additional metric <span class="math inline">y</span> leads to two effects. First, the optimal effort increases regardless of how noisy is the outcome. Second, performance-related incentive <span class="math inline">s</span> is lower than the original case for low values of outcome volatility, but is larger when this volatility is high. This is because for low outcome volatility, the new metric is more sensitive to the agent’s effort than the output <span class="math inline">x</span> alone, being more efficient to motivate the agent. However, for high outcome volatility, the new metric is less sensitive to the agent’s effort, so the principal needs to increase the incentive to motivate the agent.</p>
 </section>
+<section id="suggestions-for-further-reading" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="suggestions-for-further-reading"><span class="header-section-number">3.6</span> Suggestions for further reading</h2>
+<p>The literature on moral hazard has expanded the basic model in several important directions. One strand of research introduces stock-price incentives into compensation contracts, as explored by <a href="https://www.sciencedirect.com/science/article/abs/pii/016541019390004Y?via%3Dihub">Kim and Suh (1991)</a>, <a href="https://doi.org/10.1093/rfs/5.3.471">Paul (1992)</a>, <a href="https://publications.aaahq.org/accounting-review/article/80/4/1069/2836/Stock-Price-Earnings-and-Book-Value-in-Managerial">Dutta and Reichelstein (2005)</a>, and <a href="https://link.springer.com/article/10.1007/s11142-015-9339-6#Sec3">Bernardo et al.&nbsp;(2015)</a>.</p>
+<p>Another line of research extends the set of actions available to managers, as highlighted by <a href="https://people.duke.edu/~qc2/BA532/1991%20JLEO%20Holmstrom%20Milgrom.pdf">Holmstrom and Milgrom (1991)</a>, <a href="https://edisciplinas.usp.br/pluginfile.php/159924/mod_resource/content/1/FX.pdf">Feltham and Xie (1994)</a>, <a href="https://doi.org/10.1016/0165-4101(93)90003-X">Bushman and Indjejikian (1993)</a>, and <a href="https://doi.org/10.1093/rfs/5.3.471">Paul (1992)</a>.</p>
+<p>Finally, dynamic models of moral hazard have also been developed. Notable contributions in this area include <a href="https://www.jstor.org/stable/1913238">Holmstrom and Milgrom (1987)</a>, <a href="https://link.springer.com/article/10.1023/A:1009634201495">Dutta and Reichelstein (1999)</a>, <a href="https://link.springer.com/article/10.1007/s11142-009-9095-6">Corona (2009)</a>, <a href="https://doi.org/10.1287/mnsc.2016.2493">Cvitanić et al.&nbsp;(2016)</a>, and <a href="https://academic.oup.com/rfs/article-abstract/36/4/1408/6675503?redirectedFrom=fulltext">Ai et al.&nbsp;(2023)</a>.</p>
 </section>
-<section id="multiple-action-models" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Multiple-action models</h1>
-<p>This section borrows from <span class="citation" data-cites="Lambert_2001">Lambert (<a href="#ref-Lambert_2001" role="doc-biblioref">2001</a>)</span> Chapter 3 and <span class="citation" data-cites="Bolton_Dewatripont_2005">Bolton and Dewatripont (<a href="#ref-Bolton_Dewatripont_2005" role="doc-biblioref">2005</a>)</span> Chapter 6.</p>
 </section>
-<section id="disclosure-of-private-information" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Disclosure of private information</h1>
+<section id="disclosure-of-private-information" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Disclosure of private information</h1>
 <p>This section borrows from <span class="citation" data-cites="Lambert_2001">Lambert (<a href="#ref-Lambert_2001" role="doc-biblioref">2001</a>)</span> Chapter 4 and <span class="citation" data-cites="Bolton_Dewatripont_2005">Bolton and Dewatripont (<a href="#ref-Bolton_Dewatripont_2005" role="doc-biblioref">2005</a>)</span> Chapter 5.</p>
-</section>
-<section id="suggestions-for-further-reading" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Suggestions for further reading</h1>
-<ul>
-<li><p><a href="https://link.springer.com/article/10.1007/s11142-015-9339-6#Sec3">Earnings vs.&nbsp;stock-price based incentives in managerial compensation contracts</a></p></li>
-<li><p><a href="https://link.springer.com/article/10.1007/s11142-009-9095-6">Dynamic performance measurement with intangible assets</a></p></li>
-<li><p><a href="https://www.nowpublishers.com/article/Details/ACC-007">Dynamic performance measurement</a></p></li>
-<li><p><a href="https://www.nowpublishers.com/article/Details/ACC-063">Timeliness, Accuracy, and Relevance in Dynamic Incentive Contracts</a></p></li>
-</ul>
 
 
 
