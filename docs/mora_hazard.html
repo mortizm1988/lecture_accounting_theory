@@ -580,7 +580,7 @@ t^{*} &amp;= \overline{w} - \frac{1 - c\eta\sigma^{2}}{2c\left(1 + c\eta\sigma^{
 <li>The <strong>variance</strong> of the performance measure <span class="math inline">\sigma^{2}</span> is low.</li>
 </ul>
 <p>The following graphs shows the comparative statics of the optimal contract terms and utilities for different values of <span class="math inline">\sigma</span>.</p>
-<div id="b6581e46" class="cell" data-execution_count="1">
+<div id="426a81f4" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -613,7 +613,7 @@ t^{*} &amp;= \overline{w} - \frac{1 - c\eta\sigma^{2}}{2c\left(1 + c\eta\sigma^{
 </div>
 </div>
 </div>
-<div id="d8315902" class="cell" data-execution_count="2">
+<div id="a5fc27a5" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the utility of the agent and principal for different values of sigma</span></span>
@@ -668,7 +668,7 @@ x = e + \epsilon_x \quad \text{and} \quad y = 2e + \epsilon_y
 \frac{\beta_x}{\beta_y} = \frac{1 - 2\frac{\rho \sigma_x \sigma_y}{\sigma_y^2}}{\sigma_x^2} \cdot \frac{\sigma_y^2}{2 - \frac{\rho \sigma_x \sigma_y}{\sigma_x^2}}
 </span></p>
 <p>Let’s see the comparative statics of the optimal weights for different values of <span class="math inline">\rho</span> and <span class="math inline">\sigma_y</span>. First, let’s assume that both metrics have the same noise, <span class="math inline">\sigma_x=\sigma_y=1.25</span>.</p>
-<div id="a5afde78" class="cell" data-execution_count="3">
+<div id="10ef2961" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the beta_x/beta_y for different values of rho </span></span>
@@ -695,7 +695,7 @@ x = e + \epsilon_x \quad \text{and} \quad y = 2e + \epsilon_y
 </div>
 <p>so, if <span class="math inline">\rho=0</span>, the optimal weight for <span class="math inline">x</span> is half of the weight for <span class="math inline">y</span>, as this second signal is more sensitive to effort and has the same noise. If <span class="math inline">\rho=-1</span>, then both both signal have full positive weight in the contract. If <span class="math inline">\rho=1</span>, then the signals are substracted from each other in the contract to remove the common noise.</p>
 <p>Now, let’s see the comparative statics for different values of <span class="math inline">\sigma_y</span>, considering <span class="math inline">\rho=0</span> and <span class="math inline">\sigma_x=1.25</span>.</p>
-<div id="2d652be6" class="cell" data-execution_count="4">
+<div id="c782ae73" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the beta_x/beta_y for different values of sigma_y</span></span>
@@ -751,7 +751,7 @@ e^*=\frac{s}{c} \frac{\partial \mu_{\pi}(e)}{\partial e} =\frac{s}{c} \left[\fra
 s^* = \frac{\frac{\partial \mu_{\pi}(e)}{\partial e}}{\left(\frac{\partial \mu_{\pi}(e)}{\partial e}\right)^2+c n \sigma_{\pi}^2} =\frac{\frac{\sigma_y^2 + 4\sigma_x^2}{\sigma_x^2 + \sigma_y^2}}{\left( \frac{\sigma_y^2 + 4\sigma_x^2}{\sigma_x^2 + \sigma_y^2} \right)^2 + c n \sigma_{\pi}^2}
 </span></p>
 <p>The next figure compares the optimal effort and compensation terms for different values of <span class="math inline">\sigma_x</span> with our previous result for the case without the additional metric.</p>
-<div id="3ecb8804" class="cell" data-execution_count="5">
+<div id="bc646221" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>c<span class="op">=</span><span class="fl">0.8</span> <span class="co"># cost of effort</span></span>
