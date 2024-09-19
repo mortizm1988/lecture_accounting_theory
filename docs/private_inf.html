@@ -22,7 +22,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -129,9 +149,13 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#principals-problem" id="toc-principals-problem" class="nav-link" data-scroll-target="#principals-problem"><span class="header-section-number">1.1</span> Principal’s Problem</a></li>
   <li><a href="#relevation-principle" id="toc-relevation-principle" class="nav-link" data-scroll-target="#relevation-principle"><span class="header-section-number">1.2</span> Relevation Principle</a></li>
-  <li><a href="#aplication-to-capital-budgeting" id="toc-aplication-to-capital-budgeting" class="nav-link" data-scroll-target="#aplication-to-capital-budgeting"><span class="header-section-number">1.3</span> Aplication to Capital Budgeting</a></li>
-  <li><a href="#aplication-to-transfer-pricing" id="toc-aplication-to-transfer-pricing" class="nav-link" data-scroll-target="#aplication-to-transfer-pricing"><span class="header-section-number">1.4</span> Aplication to Transfer Pricing</a></li>
   </ul></li>
+  <li><a href="#budgeting" id="toc-budgeting" class="nav-link" data-scroll-target="#budgeting"><span class="header-section-number">2</span> Budgeting</a>
+  <ul class="collapse">
+  <li><a href="#first-best-solution" id="toc-first-best-solution" class="nav-link" data-scroll-target="#first-best-solution"><span class="header-section-number">2.1</span> First Best Solution</a></li>
+  <li><a href="#communication-strategies" id="toc-communication-strategies" class="nav-link" data-scroll-target="#communication-strategies"><span class="header-section-number">2.2</span> Communication Strategies</a></li>
+  </ul></li>
+  <li><a href="#charge-for-capital" id="toc-charge-for-capital" class="nav-link" data-scroll-target="#charge-for-capital"><span class="header-section-number">3</span> Charge for Capital</a></li>
   </ul>
 </nav>
 </nav>
@@ -179,32 +203,33 @@ window.Quarto = {
 <p>Let <span class="math inline">x</span> and <span class="math inline">y</span> be the outcome and additional metric, both observable at the end of the game. The agent’s private information signal <span class="math inline">m</span> has a priori probability density function <span class="math inline">G(m)</span>. As before, the agent’s effort is <span class="math inline">e</span>. Once the signal is received, the density function of the outcome and the other metric is updated to be <span class="math inline">f(x,y|e,m)</span>. The models differs in three aspects: First, when does the agent receive the signal <span class="math inline">m</span>, second, whether the agent can leave the contract after observing <span class="math inline">m</span>, and third, whether the agent can communicate <span class="math inline">m</span> to the principal in a trustfull way.</p>
 <section id="principals-problem" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="principals-problem"><span class="header-section-number">1.1</span> Principal’s Problem</h2>
-<p>We start with the scenario where the agent acquires private information after signing the contract but before choosing his action. He is unable to leave after observing the signal and cannot communicate the signal to the principal. After receiving the private information, the agent can adjust his effort level on the signal, meaning <span class="math inline">e(m)</span>. The optimal compensation <span class="math inline">w(x,y)</span>, cannot depend on the signal <span class="math inline">m</span> because the agent cannot communicate it to the principal.</p>
+<p>We start with the scenario where the agent acquires private information after signing the contract but before choosing his action. He is unable to leave after observing the signal and cannot communicate the signal to the principal. After receiving the private information, the agent can adjust his effort level on the signal, meaning <span class="math inline">e(m)</span>. The optimal compensation <span class="math inline">w(x,y)</span> cannot depend on the signal <span class="math inline">m</span> because the agent cannot communicate it to the principal.</p>
 <p>The principal’s problem is</p>
 <p><span class="math display">
 \begin{aligned}
     \max_{w(x,y),e(m)} \quad &amp; \mathbb{E}_{x, y, m} \left[ G[x - w(x,y)] | e(m) \right] \\
     \text{subject to} \quad &amp; \mathbb{E}_{x, y, m} \left[ U[w(x, y)| e(m)] - V[e(m)] \right] \geq \underline{U} \text{ for all } m, \quad &amp; \text{(PCs)}\\
-    &amp; e(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y) | e] - V(e) \right] \text{ for each signal } m \quad &amp; \text{(ICCs)}
+    &amp; e(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y) | e] - V(e) \right] \text{ for each } m \quad &amp; \text{(ICCs)}
 \end{aligned}
 </span></p>
-<p>Notice that now the principal’s problem include a set of PCs and ICCs, each of them for a different signal <span class="math inline">m</span>. To avoid that the agent to leave after observing bad realizations of the signal, the principal should offer a contract that is better than the outside options for every realization, not just in expectations. This implies that the principal obtain an excess level of utility, called <strong>information rent</strong>, derived from the fact that the agent earns the minimal acceptable level of utility just in the realization of the worst signal, and earns in excess to this minimal level in the other realizations. The principal can reduce the information rent by forcing the agent to truthfully report the private information. In those cases, the principal can use this information as an additional metric to adjust the contract to reduce the information rent. However, given the private nature of the information and the incentive scheme, the principal knows that the agent has incentive to misreport the signal. Let <span class="math inline">\hat{m}(m)</span> be the report that the agent sends after observing <span class="math inline">m</span>. The principal can design a contract that depends on the reported signal, <span class="math inline">w(x,y,\hat{m})</span>. The principal’s problem is then</p>
+<p>Notice that now the principal’s problem include a set of PCs and ICCs, each of them for a different signal <span class="math inline">m</span>. To avoid that the agent to leave after observing bad realizations of the signal, the principal should offer a contract that is better than the outside options for every realization, not just in expectations. This implies that the agent obtains an excess level of utility, called <strong>information rent</strong>, derived from the fact that the agent earns the minimal acceptable level of utility just in the realization of the worst signal, and earns in excess to this minimal level in the other realizations. The principal can reduce the information rent by forcing the agent to truthfully report the private information. In those cases, the principal can use this information as an additional metric to adjust the contract to reduce the information rent.</p>
+<p>However, given the private nature of the information and the incentive scheme, the principal knows that the agent has incentive to misreport the signal. Let <span class="math inline">\color{blue}\hat{m}(m)</span> be the report that the agent sends after observing <span class="math inline">m</span>. The principal can design a different contract that depends on the reported signal, <span class="math inline">w(x,y,\textcolor{blue}{\hat{m}})</span>. The principal’s problem is then</p>
 <p><span class="math display">
 \begin{aligned}
-    \max_{w(x,y),e(m), \hat{m}(m)} \quad &amp; \mathbb{E}_{x, y, m} \left[ G[x - w(x,y,\hat{m})] | e(m) \right] \\
-    \text{subject to} \quad &amp; \mathbb{E}_{x, y| m} \left[ U[w(x, y,\hat{m})| e(m)] - V[e(m)] \right] \geq \underline{U} \text{ for all } m,  \\
-    &amp; e(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y,\hat{m}) | e] - V(e) \right] \text{ for each } m \quad  \\
-    &amp; \hat{m}(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y,\hat{m}) | e] - V(e) \right] \text{ for all } m \\
+    \max_{w(x,y,\textcolor{blue}{\hat{m}}),e(m), \textcolor{blue}{\hat{m}(m)}} \quad &amp; \mathbb{E}_{x, y, m} \left[ G[x - w(x,y,\textcolor{blue}{\hat{m}})] | e(m) \right] \\
+    \text{subject to} \quad &amp; \mathbb{E}_{x, y| m} \left[ U[w(x, y,\textcolor{blue}{\hat{m}})| e(m)] - V[e(m)] \right] \geq \underline{U} \text{ for all } m,  \\
+    &amp; e(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y,\textcolor{blue}{\hat{m}}) | e] - V(e) \right] \text{ for each } m, \quad  \\
+    &amp; \hat{m}(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y,\textcolor{blue}{\hat{m}}) | e] - V(e) \right] \text{ for all } m \\
 \end{aligned}
 </span></p>
-<p>The first set of constraints consists of the minimal acceptable utility constraints, the second set comprises the incentive compatibility constraints on the agent’s effort, and the third set includes the incentive compatibility constraints on the agent’s reporting strategy.</p>
+<p>The first set of constraints consists of the minimal acceptable utility constraints, the second set comprises the incentive compatibility constraints on the agent’s effort, and the third set includes the incentive compatibility constraints on the agent’s communication strategy.</p>
 </section>
 <section id="relevation-principle" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="relevation-principle"><span class="header-section-number">1.2</span> Relevation Principle</h2>
-<p>As the set of possible strategies is very large, the problem for the principal is difficult to solve. A shorcut developed in the literature was the <strong>Relevation Principle</strong>. The revelation principle states that any proposed mechanism that involves nontruthful reporting by the agent can be duplicated or beaten in terms of expected utilities by an equilibrium mechanism in which truthful reporting is induced. The cost for forcing the agent to tell the trut is that the principal must commit to not use the information as fully as he would if the truthful message did not have to be motivated. The revelation principle is a very helpful tool for researchers because it reduces the number of alternative reporting strategies needed to be considered. This allows researchers to focus on reporting strategies that encourage truthful reporting. To apply the relevation principal to our problem, we should substitute the report by the true signal, $=m, and set the contract such that it ensures that the best reporting strategy for the agent is to tell the truth.</p>
+<p>As the set of possible strategies is very large, the problem for the principal is difficult to solve. A shorcut developed in the literature is the <strong>Relevation Principle</strong>. The revelation principle states that any proposed mechanism that involves nontruthful communication by the agent can be duplicated or beaten in terms of expected utilities by an equilibrium mechanism in which truthful reporting is induced. The cost for forcing the agent to tell the trut is that the principal must commit to not use the information as fully as he would if the truthful message did not have to be motivated. The revelation principle is a very helpful tool for researchers because it reduces the number of alternative reporting strategies needed to be considered. This allows researchers to focus on reporting strategies that encourage truthful reporting. To apply the relevation principal to our problem, we should substitute the report by the true signal, <span class="math inline">\textcolor{blue}{\hat{m}}=m</span>, and set the contract such that it ensures that the best reporting strategy for the agent is to tell the truth.</p>
 <p><span class="math display">
 \begin{aligned}
-    \max_{w(x,y),e(m), \hat{m}(m)} \quad &amp; \mathbb{E}_{x, y, m} \left[ G[x - w(x,y,m)] | e(m) \right] \\
+    \max_{w(x,y,m),e(m), \hat{m}(m)} \quad &amp; \mathbb{E}_{x, y, m} \left[ G[x - w(x,y,m)] | e(m) \right] \\
     \text{subject to} \quad &amp; \mathbb{E}_{x, y| m} \left[ U[w(x, y,m)| e(m)] - V[e(m)] \right] \geq \underline{U} \text{ for all } m,  \\
     &amp; e(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y,m) | e] - V(e) \right] \text{ for each } m \quad  \\
     &amp; m(m) \text{ is the } \hat{m}(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y,\hat{m}) | e] - V(e) \right] \text{ for all } m \\
@@ -212,19 +237,83 @@ window.Quarto = {
 </span></p>
 <p>In these models, the principal’s welfare loss is due to the information rent of the agent, which exists even in contexts with risk neutral agents. For this reason, mos of the model examine private information issues using risk neutral agents, so they can avoid the complexities that result when risk aversion and risk sharing issues are also present.</p>
 </section>
-<section id="aplication-to-capital-budgeting" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="aplication-to-capital-budgeting"><span class="header-section-number">1.3</span> Aplication to Capital Budgeting</h2>
+</section>
+<section id="budgeting" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Budgeting</h1>
+<p>For early contributions see <span class="citation" data-cites="Antle_1985">Antle and Eppen (<a href="#ref-Antle_1985" role="doc-biblioref">1985</a>)</span> and <span class="citation" data-cites="Antle_1997">Antle and Fellingham (<a href="#ref-Antle_1997" role="doc-biblioref">1997</a>)</span>. The model assumed that the agent learn privately the minimal investment amount that will yield a given cash flow <span class="math inline">x</span> (the outcome of the risky project). To obtain this cash flow, it is needed to initially invest <span class="math inline">mx</span>. The principal provides the capital <span class="math inline">z</span> that cover the investment and the agent’s compensation <span class="math inline">w</span>, but the agent can also divert a fraction of <span class="math inline">z</span> for its own benefit.</p>
+<p>The assume a discrete number of potential information signals that the agent can privately observe: <span class="math inline">m \in \{m_1, m_2, \ldots, m_n\}</span>, which are ordered such that <span class="math inline">m_1 &lt; m_2 &lt; \ldots &lt; m_n</span>. The ex-ante probability of observing <span class="math inline">m_i</span> is <span class="math inline">g_i</span>. The principal is risk-neutral with utility function <span class="math inline">G(x,z)=x - z</span>. The agent is also risk neutral with utility function <span class="math inline">U(w)=z-m_ix</span>, meaning the money received from the principal minus how much he invested in the project. As in the initial setting, we assume that the agent can leave after observing a bad signal. So, notice that the the principal makes the decision on the capital <span class="math inline">z</span> needed to obtain <span class="math inline">x</span> based on the communication <span class="math inline">\hat{m}</span>.</p>
+<section id="first-best-solution" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="first-best-solution"><span class="header-section-number">2.1</span> First Best Solution</h2>
+<p>Let’s ignore for now the information assymetry in the cost of the project <span class="math inline">m</span>. The principal’s problem is</p>
+<p><span class="math display">
+\begin{aligned}
+    \max_{x_i, z_i} \quad &amp; \sum_{i=1}^{N} (x_i - z_i) g_i \\
+    \text{subject to} \quad &amp; z_i - m_i x_i \geq \underline{U} \quad \text{for all } i = 1, \dots, N, \\
+    &amp; 0 \leq x_i \leq x_{\max}, \\
+    &amp; 0 \leq z_i.
+\end{aligned}
+</span></p>
+<p>Here the second and third restrictions set bounds on the cashflows and transference for the solution to exist (notice the linearity in the production technology and lack of agent’s wealth). The first restriction is the minimal acceptable utility constraint for the agent regardless of the signal observed. The first restrictions implies that <span class="math inline">z_i^*=\underline{U}+m_i x_i</span>. Inserting this into the objective function, we obtain</p>
+<p><span class="math display">
+\begin{aligned}
+    \max_{x_i} \quad &amp; \sum_{i=1}^{N} (1-m_i)(x_i g_i)-\underline{U}  \\
+\end{aligned}
+</span> which is maximized when <span class="math inline">x_i=x_{\max}</span> if <span class="math inline">m_i\leq 1</span> and <span class="math inline">x_i=0</span> if <span class="math inline">m_i&gt; 1</span>. The intuition is that the expected value of the principa’s profits is at its maximum when the agent invests the maximum amount in the project if the signal indicates that the cost of the project is below the value of the output (i.e., 1.0), and zero otherwise. Consistently, the optimal transfer is</p>
+<p><span class="math display">
+z_i =
+\begin{cases}
+    m_i x_{\max} + \underline{U} &amp; \text{for } m_i \leq 1, \\
+    \underline{U} &amp; \text{for } m_i &gt; 1.
+\end{cases}
+</span> meaning that when the cost of the project is below the value of the output, the transfer should be the minimum acceptable utility plus the cost of the project. In contrast, when the cost is above the value of the output, the principal should transfer the minimum utility of the agent.</p>
+</section>
+<section id="communication-strategies" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="communication-strategies"><span class="header-section-number">2.2</span> Communication Strategies</h2>
+<p>Suppose the agent sees signal <span class="math inline">m_i</span> but reports a higher cost <span class="math inline">m_j</span> to obtain more the resources than needed (<span class="math inline">(m_j-m_i)x_j+\underline{U}</span>). However, there is a limit to how much he will overstate. If the agent claims the cost is too high (over 1), the principal will not provide any resources. Thus, the agent will report a cost slightly under 1 for all <span class="math inline">m_i&lt;1</span>. If the agent observes a cost realization above 1, there is no incentive to lie because the project will not be funded anyway. As previously mentioned, the principal does not need to worry about the agent understating their costs. If he does, he will not receive enough resources to produce the required output, so any lie in this direction will always be uncovered.</p>
+<section id="principals-problem-1" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="principals-problem-1"><span class="header-section-number">2.2.1</span> Principal’s Problem</h3>
+<p>The principal’s problem is to define a set of contract (<span class="math inline">x_i,z_i</span>) that depends on the reported signal, <span class="math inline">z_i(\hat{m})</span> such that the agent’s best reporting strategy is to tell the truth. The principal’s problem is then</p>
+<p><span class="math display">
+\begin{aligned}
+    \max_{x_i, z_i} \quad &amp; \sum_{i=1}^{N} (x_i - z_i) g_i \\
+    \text{subject to} \quad &amp; z_i - m_i x_i \geq \underline{U} \quad \text{for all } i = 1, \dots, N, \\
+    &amp; z_i - m_i x_i \geq z_j - m_i x_j \quad \text{for all } i, j, \\
+    &amp; 0 \leq x_i \leq x_{\max} \quad \text{for all } i, \\
+    &amp; 0 \leq z_i.
+\end{aligned}
+</span></p>
+<p>Notice that this version adds the second set of <span class="math inline">N^2</span> restrictions, which ensures that the agent does not have an incentive to lie about the cost of the project (<strong>truth-telling constraints</strong>, or <strong>self-section restriction</strong>). These restrictions implies that when the agent observes the cost <span class="math inline">m_i</span>, he is better off with the contract (<span class="math inline">x_i,z_i</span>) than with any other combitation (<span class="math inline">x_j,z_j</span>). However, the set of constraints can be reduced to consider the set of 2(N - 1) “adjacent” constraints, meaning that the conditions that the manager prefers the communicate the true cost to the cost immediately above and the cost immediately below dominates the others.</p>
+<p>The upper bound restrictions in the cash flow can also be simplified to a single restriction <span class="math inline">x_N\leq X_{\max}</span></p>
+<p>The <strong>agent’s slack</strong> <span class="math inline">z_i-m_i x_i</span>, decreases weakly in <span class="math inline">i</span> because as <span class="math inline">m_i</span>​ increases (i.e., higher costs), both <span class="math inline">x_i</span>​ and <span class="math inline">z_i</span> decreases in <span class="math inline">i</span>. In the worst realization of <span class="math inline">i</span>, the minimum acceptable utility is is <span class="math inline">z_N-m_N x_N=\theta</span>.</p>
+<p>Let <span class="math inline">k^*</span> be the value of <span class="math inline">i</span> that maximizes the principal’s problem. This implies that <span class="math inline">x_i=0</span> for <span class="math inline">i=1,...,k^*-1</span> and <span class="math inline">x_i=x_{\max}</span> for all <span class="math inline">i=k^*,...,N</span>. Since <span class="math inline">z_1=m_1 x_1+\theta</span>, and then <span class="math inline">z_{i}-z_{i-1}=m_i(x_i-x_{i-1})</span> for <span class="math inline">i=2,...,N</span>, the transfer policy is</p>
+<p><span class="math display">
+z_i =
+\begin{cases}
+    \theta &amp; \text{for } i=1,...,k^*-1, \\
+    m_{k^*} x_{\max} + \theta &amp; \text{for } i=k^*,...,N
+\end{cases}
+</span></p>
+<p>Note that additional resources will be allocated to the agent for all actual costs below the specified threshold. It is noteworthy that the most effective cutoff point is less than 1.0. This implies that the optimal solution involves the principal rejecting certain profitable projects (<strong>capital rationing</strong>). When the principal adjusts the threshold level, it impacts the flexibility the agent has for all lower levels below the threshold. Therefore, by lowering the threshold below 1.0, the principal is sacrificing production in some situations to limit the flexibility the agent has in other situations.</p>
+<p>Pending to add numerical example.</p>
+</section>
+</section>
+</section>
+<section id="charge-for-capital" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Charge for Capital</h1>
 <p>Pending</p>
-</section>
-<section id="aplication-to-transfer-pricing" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="aplication-to-transfer-pricing"><span class="header-section-number">1.4</span> Aplication to Transfer Pricing</h2>
-<p>Pending</p>
+
 
 
 </section>
-</section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Antle_1985" class="csl-entry" role="listitem">
+Antle, Rick, and Gary D. Eppen. 1985. <span>“Capital Rationing and Organizational Slack in Capital Budgeting.”</span> <em>Management Science</em> 31 (2): 163–74. <a href="http://www.jstor.org/stable/2631513">http://www.jstor.org/stable/2631513</a>.
+</div>
+<div id="ref-Antle_1997" class="csl-entry" role="listitem">
+Antle, Rick, and John Fellingham. 1997. <span>“Models of Capital Investments with Private Information and Incentives: A Selective Review.”</span> <em>Journal of Business Finance &amp; Accounting</em> 24 (7-8): 887–908. https://doi.org/<a href="https://doi.org/10.1111/1468-5957.00140">https://doi.org/10.1111/1468-5957.00140</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
