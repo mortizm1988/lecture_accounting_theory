@@ -9,7 +9,7 @@
 <meta name="author" content="Marcelo Ortiz, Universitat Pompeu Fabra">
 <meta name="dcterms.date" content="2024-09-01">
 
-<title>Agency Theory and Accounting</title>
+<title>Optimal Compensation and Accounting</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -197,13 +197,6 @@ window.Quarto = {
   <li><a href="#optimal-contract-with-additional-performance-measures" id="toc-optimal-contract-with-additional-performance-measures" class="nav-link" data-scroll-target="#optimal-contract-with-additional-performance-measures"><span class="header-section-number">3.5</span> Optimal Contract with additional Performance Measures</a></li>
   <li><a href="#suggestions-for-further-reading" id="toc-suggestions-for-further-reading" class="nav-link" data-scroll-target="#suggestions-for-further-reading"><span class="header-section-number">3.6</span> Suggestions for Further Reading</a></li>
   </ul></li>
-  <li><a href="#disclosure-of-private-information" id="toc-disclosure-of-private-information" class="nav-link" data-scroll-target="#disclosure-of-private-information"><span class="header-section-number">4</span> Disclosure of private information</a>
-  <ul class="collapse">
-  <li><a href="#principals-problem-2" id="toc-principals-problem-2" class="nav-link" data-scroll-target="#principals-problem-2"><span class="header-section-number">4.1</span> Principal’s Problem</a></li>
-  <li><a href="#relevation-principle" id="toc-relevation-principle" class="nav-link" data-scroll-target="#relevation-principle"><span class="header-section-number">4.2</span> Relevation Principle</a></li>
-  <li><a href="#aplication-to-capital-budgeting" id="toc-aplication-to-capital-budgeting" class="nav-link" data-scroll-target="#aplication-to-capital-budgeting"><span class="header-section-number">4.3</span> Aplication to Capital Budgeting</a></li>
-  <li><a href="#aplication-to-transfer-pricing" id="toc-aplication-to-transfer-pricing" class="nav-link" data-scroll-target="#aplication-to-transfer-pricing"><span class="header-section-number">4.4</span> Aplication to Transfer Pricing</a></li>
-  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -216,7 +209,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Agency Theory and Accounting</h1>
+<h1 class="title">Optimal Compensation and Accounting</h1>
 </div>
 
 
@@ -262,7 +255,6 @@ window.Quarto = {
 <p>The focus of this class will be moral hazard conflicts arising within a firm, typically between a shareholder (the pricipal) and a manager (the agent). The principal aims to hire the agent for running a risky project, and offers the agent a contract which stablishes the agent’s compensation conditional on the outcome of the risky project. The agent first decides whether to accept the contract and then how much effort put into managing the project. The principal requires informations to infer the value of the project’s outcome and the agent’s effort to be able to compute the agent’s compensation and its own net profits.</p>
 <p>In this setting, accounting is naturally embedded into moral hazard problems. <strong>Accounting information</strong> must have several key characteristics to be useful for decision-making. Accounting information must be relevant, comparable, verifiable, and timeliness. Scholars have studied how these characteristics can be used to design optimal contracts that mitigate moral hazard problems.</p>
 <p>This reading note starts by developing a simple example of a moral hazard problem to illustrate the nature of the problem and the trade-offs involved in solving it. We then move on to a more general moral hazard model, allowing us to add further features to the model. We will also discuss how accounting systems must generate <strong>performance measures</strong>, and how these measures can be used to design optimal contracts. Then, we discuss the role of comparability for <strong>relative performance evaluation</strong> and the role of disclosure of <strong>verifiable</strong> private information in the context of moral hazard. Lastly, we will discuss how the <strong>timeliness</strong> of accounting information can be used to design dynamic incentive contracts.</p>
-<p>The notes borrow heavily from <span class="citation" data-cites="Lambert_2001">Lambert (<a href="#ref-Lambert_2001" role="doc-biblioref">2001</a>)</span>, <span class="citation" data-cites="Bolton_Dewatripont_2005">Bolton and Dewatripont (<a href="#ref-Bolton_Dewatripont_2005" role="doc-biblioref">2005</a>)</span>, and the PhD material elaborated by <a href="https://sites.google.com/site/jeremybertomeu/">Jeremy Bertomeu</a> and <a href="https://olin.wustl.edu/faculty/edwige-cheynel">Edwige Cheynel</a>, available from their websites.</p>
 <section id="a-very-simple-example" class="level3" data-number="1.0.1">
 <h3 data-number="1.0.1" class="anchored" data-anchor-id="a-very-simple-example"><span class="header-section-number">1.0.1</span> A very simple example</h3>
 <p>Let’s assume that a company (principal) hires a manager (agent) responsible for running the business. The company’s outcomes depend on both random factors and the manager’s effort. For now, let’s assume the effort can be either high (A) or low (B), and the company’s outcomes can either be success (E) or failure (F). The company’s profit in the success scenario is $360, and in the failure scenario, it is $200. The probability of success is 75% with high effort and 25% with low effort.</p>
@@ -580,7 +572,7 @@ t^{*} &amp;= \overline{w} - \frac{1 - c\eta\sigma^{2}}{2c\left(1 + c\eta\sigma^{
 <li>The <strong>variance</strong> of the performance measure <span class="math inline">\sigma^{2}</span> is low.</li>
 </ul>
 <p>The following graphs shows the comparative statics of the optimal contract terms and utilities for different values of <span class="math inline">\sigma</span>.</p>
-<div id="426a81f4" class="cell" data-execution_count="1">
+<div id="27f49701" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -613,7 +605,7 @@ t^{*} &amp;= \overline{w} - \frac{1 - c\eta\sigma^{2}}{2c\left(1 + c\eta\sigma^{
 </div>
 </div>
 </div>
-<div id="a5fc27a5" class="cell" data-execution_count="2">
+<div id="064db480" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the utility of the agent and principal for different values of sigma</span></span>
@@ -668,7 +660,7 @@ x = e + \epsilon_x \quad \text{and} \quad y = 2e + \epsilon_y
 \frac{\beta_x}{\beta_y} = \frac{1 - 2\frac{\rho \sigma_x \sigma_y}{\sigma_y^2}}{\sigma_x^2} \cdot \frac{\sigma_y^2}{2 - \frac{\rho \sigma_x \sigma_y}{\sigma_x^2}}
 </span></p>
 <p>Let’s see the comparative statics of the optimal weights for different values of <span class="math inline">\rho</span> and <span class="math inline">\sigma_y</span>. First, let’s assume that both metrics have the same noise, <span class="math inline">\sigma_x=\sigma_y=1.25</span>.</p>
-<div id="10ef2961" class="cell" data-execution_count="3">
+<div id="b1f7aa1c" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the beta_x/beta_y for different values of rho </span></span>
@@ -695,7 +687,7 @@ x = e + \epsilon_x \quad \text{and} \quad y = 2e + \epsilon_y
 </div>
 <p>so, if <span class="math inline">\rho=0</span>, the optimal weight for <span class="math inline">x</span> is half of the weight for <span class="math inline">y</span>, as this second signal is more sensitive to effort and has the same noise. If <span class="math inline">\rho=-1</span>, then both both signal have full positive weight in the contract. If <span class="math inline">\rho=1</span>, then the signals are substracted from each other in the contract to remove the common noise.</p>
 <p>Now, let’s see the comparative statics for different values of <span class="math inline">\sigma_y</span>, considering <span class="math inline">\rho=0</span> and <span class="math inline">\sigma_x=1.25</span>.</p>
-<div id="c782ae73" class="cell" data-execution_count="4">
+<div id="11a7ee56" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the beta_x/beta_y for different values of sigma_y</span></span>
@@ -751,7 +743,7 @@ e^*=\frac{s}{c} \frac{\partial \mu_{\pi}(e)}{\partial e} =\frac{s}{c} \left[\fra
 s^* = \frac{\frac{\partial \mu_{\pi}(e)}{\partial e}}{\left(\frac{\partial \mu_{\pi}(e)}{\partial e}\right)^2+c n \sigma_{\pi}^2} =\frac{\frac{\sigma_y^2 + 4\sigma_x^2}{\sigma_x^2 + \sigma_y^2}}{\left( \frac{\sigma_y^2 + 4\sigma_x^2}{\sigma_x^2 + \sigma_y^2} \right)^2 + c n \sigma_{\pi}^2}
 </span></p>
 <p>The next figure compares the optimal effort and compensation terms for different values of <span class="math inline">\sigma_x</span> with our previous result for the case without the additional metric.</p>
-<div id="bc646221" class="cell" data-execution_count="5">
+<div id="9f74bc37" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>c<span class="op">=</span><span class="fl">0.8</span> <span class="co"># cost of effort</span></span>
@@ -796,54 +788,6 @@ s^* = \frac{\frac{\partial \mu_{\pi}(e)}{\partial e}}{\left(\frac{\partial \mu_{
 <p>The literature on moral hazard has expanded the basic model in several important directions. One strand of research introduces stock-price incentives into compensation contracts, as explored by <a href="https://www.sciencedirect.com/science/article/abs/pii/016541019390004Y?via%3Dihub">Kim and Suh (1991)</a>, <a href="https://doi.org/10.1093/rfs/5.3.471">Paul (1992)</a>, <a href="https://publications.aaahq.org/accounting-review/article/80/4/1069/2836/Stock-Price-Earnings-and-Book-Value-in-Managerial">Dutta and Reichelstein (2005)</a>, and <a href="https://link.springer.com/article/10.1007/s11142-015-9339-6#Sec3">Bernardo et al.&nbsp;(2015)</a>.</p>
 <p>Another line of research extends the set of actions available to managers, as highlighted by <a href="https://people.duke.edu/~qc2/BA532/1991%20JLEO%20Holmstrom%20Milgrom.pdf">Holmstrom and Milgrom (1991)</a>, <a href="https://edisciplinas.usp.br/pluginfile.php/159924/mod_resource/content/1/FX.pdf">Feltham and Xie (1994)</a>, <a href="https://doi.org/10.1016/0165-4101(93)90003-X">Bushman and Indjejikian (1993)</a>, and <a href="https://doi.org/10.1093/rfs/5.3.471">Paul (1992)</a>.</p>
 <p>Finally, dynamic models of moral hazard have also been developed. Notable contributions in this area include <a href="https://www.jstor.org/stable/1913238">Holmstrom and Milgrom (1987)</a>, <a href="https://link.springer.com/article/10.1023/A:1009634201495">Dutta and Reichelstein (1999)</a>, <a href="https://link.springer.com/article/10.1007/s11142-009-9095-6">Corona (2009)</a>, <a href="https://doi.org/10.1287/mnsc.2016.2493">Cvitanić et al.&nbsp;(2016)</a>, and <a href="https://academic.oup.com/rfs/article-abstract/36/4/1408/6675503?redirectedFrom=fulltext">Ai et al.&nbsp;(2023)</a>.</p>
-</section>
-</section>
-<section id="disclosure-of-private-information" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Disclosure of private information</h1>
-<p>In this section we discuss models where the agent has <strong>private information</strong> that is not observable to the principal, which introduces challenges in aligning incentives. The agent’s private information can relate to various factors, such as their skill, expertise, or the profitability of investment opportunities. This informational asymmetry means that the agent holds an <strong>information rent</strong> which allows him to potentially extract more value than he could if the principal were fully informed. The key challenge for the principal is to design contracts that minimize these rents while still providing incentives for the agent to act in the firm’s best interest.</p>
-<p>Let <span class="math inline">x</span> and <span class="math inline">y</span> be the outcome and additional metric, both observable at the end of the game. The agent’s private information signal <span class="math inline">m</span> has a priori probability density function <span class="math inline">G(m)</span>. As before, the agent’s effort is <span class="math inline">e</span>. Once the signal is received, the density function of the outcome and the other metric is updated to be <span class="math inline">f(x,y|e,m)</span>. The models differs in three aspects: First, when does the agent receive the signal <span class="math inline">m</span>, second, whether the agent can leave the contract after observing <span class="math inline">m</span>, and third, whether the agent can communicate <span class="math inline">m</span> to the principal in a trustfull way.</p>
-<section id="principals-problem-2" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="principals-problem-2"><span class="header-section-number">4.1</span> Principal’s Problem</h2>
-<p>We start with the scenario where the agent acquires private information after signing the contract but before choosing his action. He is unable to leave after observing the signal and cannot communicate the signal to the principal. After receiving the private information, the agent can adjust his effort level on the signal, meaning <span class="math inline">e(m)</span>. The optimal compensation <span class="math inline">w(x,y)</span>, cannot depend on the signal <span class="math inline">m</span> because the agent cannot communicate it to the principal.</p>
-<p>The principal’s problem is</p>
-<p><span class="math display">
-\begin{aligned}
-    \max_{w(x,y),e(m)} \quad &amp; \mathbb{E}_{x, y, m} \left[ G[x - w(x,y)] | e(m) \right] \\
-    \text{subject to} \quad &amp; \mathbb{E}_{x, y, m} \left[ U[w(x, y)| e(m)] - V[e(m)] \right] \geq \underline{U} \text{ for all } m, \quad &amp; \text{(PCs)}\\
-    &amp; e(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y) | e] - V(e) \right] \text{ for each signal } m \quad &amp; \text{(ICCs)}
-\end{aligned}
-</span></p>
-<p>Notice that now the principal’s problem include a set of PCs and ICCs, each of them for a different signal <span class="math inline">m</span>. To avoid that the agent to leave after observing bad realizations of the signal, the principal should offer a contract that is better than the outside options for every realization, not just in expectations. This implies that the principal obtain an excess level of utility, called <strong>information rent</strong>, derived from the fact that the agent earns the minimal acceptable level of utility just in the realization of the worst signal, and earns in excess to this minimal level in the other realizations. The principal can reduce the information rent by forcing the agent to truthfully report the private information. In those cases, the principal can use this information as an additional metric to adjust the contract to reduce the information rent. However, given the private nature of the information and the incentive scheme, the principal knows that the agent has incentive to misreport the signal. Let <span class="math inline">\hat{m}(m)</span> be the report that the agent sends after observing <span class="math inline">m</span>. The principal can design a contract that depends on the reported signal, <span class="math inline">w(x,y,\hat{m})</span>. The principal’s problem is then</p>
-<p><span class="math display">
-\begin{aligned}
-    \max_{w(x,y),e(m), \hat{m}(m)} \quad &amp; \mathbb{E}_{x, y, m} \left[ G[x - w(x,y,\hat{m})] | e(m) \right] \\
-    \text{subject to} \quad &amp; \mathbb{E}_{x, y| m} \left[ U[w(x, y,\hat{m})| e(m)] - V[e(m)] \right] \geq \underline{U} \text{ for all } m,  \\
-    &amp; e(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y,\hat{m}) | e] - V(e) \right] \text{ for each } m \quad  \\
-    &amp; \hat{m}(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y,\hat{m}) | e] - V(e) \right] \text{ for all } m \\
-\end{aligned}
-</span></p>
-<p>The first set of constraints consists of the minimal acceptable utility constraints, the second set comprises the incentive compatibility constraints on the agent’s effort, and the third set includes the incentive compatibility constraints on the agent’s reporting strategy.</p>
-</section>
-<section id="relevation-principle" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="relevation-principle"><span class="header-section-number">4.2</span> Relevation Principle</h2>
-<p>As the set of possible strategies is very large, the problem for the principal is difficult to solve. A shorcut developed in the literature was the <strong>Relevation Principle</strong>. The revelation principle states that any proposed mechanism that involves nontruthful reporting by the agent can be duplicated or beaten in terms of expected utilities by an equilibrium mechanism in which truthful reporting is induced. The cost for forcing the agent to tell the trut is that the principal must commit to not use the information as fully as he would if the truthful message did not have to be motivated. The revelation principle is a very helpful tool for researchers because it reduces the number of alternative reporting strategies needed to be considered. This allows researchers to focus on reporting strategies that encourage truthful reporting. To apply the relevation principal to our problem, we should substitute the report by the true signal, $=m, and set the contract such that it ensures that the best reporting strategy for the agent is to tell the truth.</p>
-<p><span class="math display">
-\begin{aligned}
-    \max_{w(x,y),e(m), \hat{m}(m)} \quad &amp; \mathbb{E}_{x, y, m} \left[ G[x - w(x,y,m)] | e(m) \right] \\
-    \text{subject to} \quad &amp; \mathbb{E}_{x, y| m} \left[ U[w(x, y,m)| e(m)] - V[e(m)] \right] \geq \underline{U} \text{ for all } m,  \\
-    &amp; e(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y,m) | e] - V(e) \right] \text{ for each } m \quad  \\
-    &amp; m(m) \text{ is the } \hat{m}(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y,\hat{m}) | e] - V(e) \right] \text{ for all } m \\
-\end{aligned}
-</span></p>
-<p>In these models, the principal’s welfare loss is due to the information rent of the agent, which exists even in contexts with risk neutral agents. For this reason, mos of the model examine private information issues using risk neutral agents, so they can avoid the complexities that result when risk aversion and risk sharing issues are also present.</p>
-</section>
-<section id="aplication-to-capital-budgeting" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="aplication-to-capital-budgeting"><span class="header-section-number">4.3</span> Aplication to Capital Budgeting</h2>
-<p>Pending</p>
-</section>
-<section id="aplication-to-transfer-pricing" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="aplication-to-transfer-pricing"><span class="header-section-number">4.4</span> Aplication to Transfer Pricing</h2>
-<p>Pending</p>
 
 
 

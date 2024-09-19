@@ -1,0 +1,81 @@
+---
+title: "Private Information and Incentives"
+author: "Marcelo Ortiz, Universitat Pompeu Fabra"
+date: "September 2024"
+bibliography: references.bib
+format:
+    html:
+        toc: true
+        toc-location: left
+        toc-depth: 2
+        toc-expand: true
+        html-math-method: katex
+        number-sections: true
+        code-fold: true
+        code-overflow: wrap
+execute:
+    echo: true
+jupyter: python3
+---
+
+# Communication of Private information
+
+In this section we discuss models where the agent has **private information** that is not observable to the principal, which introduces challenges in aligning incentives. The agent's private information can relate to various factors, such as their skill, expertise, or the profitability of investment opportunities. This informational asymmetry means that the agent holds an **information rent** which allows him to potentially extract more value than he could if the principal were fully informed. The key challenge for the principal is to design contracts that minimize these rents while still providing incentives for the agent to act in the firm's best interest.
+
+
+
+Let $x$ and $y$ be the outcome and additional metric, both observable at the end of the game. The agent’s private information signal $m$ has a priori probability density function $G(m)$. As before, the agent's effort is $e$. Once the signal is received, the density function of the outcome and the other metric is updated to be $f(x,y|e,m)$. The models differs in three aspects: First, when does the agent receive the signal $m$, second, whether the agent can leave the contract after observing $m$, and third, whether the agent can communicate $m$ to the principal in a trustfull way.
+
+## Principal's Problem
+
+We start with the scenario where the agent acquires private information after signing the contract but before choosing his action. He is unable to leave after observing the signal and cannot communicate the signal to the principal. After receiving the private information, the agent can adjust his effort level on the signal, meaning $e(m)$. The optimal compensation $w(x,y)$, cannot depend on the signal $m$ because the agent cannot communicate it to the principal. 
+
+The principal's problem is
+
+$$
+\begin{aligned}
+    \max_{w(x,y),e(m)} \quad & \mathbb{E}_{x, y, m} \left[ G[x - w(x,y)] | e(m) \right] \\
+    \text{subject to} \quad & \mathbb{E}_{x, y, m} \left[ U[w(x, y)| e(m)] - V[e(m)] \right] \geq \underline{U} \text{ for all } m, \quad & \text{(PCs)}\\
+    & e(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y) | e] - V(e) \right] \text{ for each signal } m \quad & \text{(ICCs)}
+\end{aligned}
+$$
+
+Notice that now the principal's problem include a set of PCs and ICCs, each of them for a different signal $m$. To avoid that the agent to leave after observing bad realizations of the signal, the principal should offer a contract that is better than the outside options for every realization, not just in expectations. This implies that the principal obtain an excess level of utility, called **information rent**, derived from the fact that the agent earns the minimal acceptable level of utility just in the realization of the worst signal, and earns in excess to this minimal level in the other realizations. The principal can reduce the information rent by forcing the agent to truthfully report the private information. In those cases, the principal can use this information as an additional metric to adjust the contract to reduce the information rent.
+However,  given the private nature of the information and the incentive scheme, the principal knows that the agent has incentive to misreport the signal. Let $\hat{m}(m)$ be the report that the agent sends after observing $m$. The principal can design a contract that depends on the reported signal, $w(x,y,\hat{m})$. The principal's problem is then
+
+
+
+$$
+\begin{aligned}
+    \max_{w(x,y),e(m), \hat{m}(m)} \quad & \mathbb{E}_{x, y, m} \left[ G[x - w(x,y,\hat{m})] | e(m) \right] \\
+    \text{subject to} \quad & \mathbb{E}_{x, y| m} \left[ U[w(x, y,\hat{m})| e(m)] - V[e(m)] \right] \geq \underline{U} \text{ for all } m,  \\
+    & e(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y,\hat{m}) | e] - V(e) \right] \text{ for each } m \quad  \\
+    & \hat{m}(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y,\hat{m}) | e] - V(e) \right] \text{ for all } m \\
+\end{aligned}
+$$
+
+The first set of constraints consists of the minimal acceptable utility constraints, the second set comprises the incentive compatibility constraints on the agent’s effort, and the third set includes the incentive compatibility constraints on the agent’s reporting strategy.
+
+## Relevation Principle
+
+ As the set of possible strategies is very large, the problem for the principal is difficult to solve. A shorcut developed in the literature was the **Relevation Principle**. The revelation principle states that any proposed mechanism that involves nontruthful reporting by the agent can be duplicated or beaten in terms of expected utilities by an equilibrium mechanism in which truthful reporting is induced. The cost for forcing the agent to tell the trut is that the principal must commit to not use the information as fully as he would if the truthful message did not have to be motivated. The revelation principle is a very helpful tool for researchers because it reduces the number of alternative reporting strategies needed to be considered. This allows researchers to focus on reporting strategies that encourage truthful reporting. To apply the relevation principal to our problem, we should substitute the report by the true signal, $\hat{m}=m, and set the contract such that it ensures that the best reporting strategy for the agent is to tell the truth.
+
+
+$$
+\begin{aligned}
+    \max_{w(x,y),e(m), \hat{m}(m)} \quad & \mathbb{E}_{x, y, m} \left[ G[x - w(x,y,m)] | e(m) \right] \\
+    \text{subject to} \quad & \mathbb{E}_{x, y| m} \left[ U[w(x, y,m)| e(m)] - V[e(m)] \right] \geq \underline{U} \text{ for all } m,  \\
+    & e(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y,m) | e] - V(e) \right] \text{ for each } m \quad  \\
+    & m(m) \text{ is the } \hat{m}(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y,\hat{m}) | e] - V(e) \right] \text{ for all } m \\
+\end{aligned}
+$$
+
+In these models, the principal's welfare loss is due to the information rent of the agent, which exists even in contexts with risk neutral agents. For this reason, mos of the model examine private information issues using risk neutral agents, so they can avoid the complexities that result when risk aversion and risk sharing issues are also present.
+
+## Aplication to Capital Budgeting
+
+Pending
+
+## Aplication to Transfer Pricing
+
+Pending
