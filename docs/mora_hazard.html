@@ -254,7 +254,7 @@ window.Quarto = {
 <p>These two objectives often conflict. There is a substitution effect: when one party is overly shielded from risk, they may lack the incentive to take efficient actions that benefit the other party. As a result, designing an optimal compensation or incentive scheme requires balancing risk-sharing with providing the right incentives.</p>
 <p>The focus of this class will be moral hazard conflicts arising within a firm, typically between a shareholder (the pricipal) and a manager (the agent). The principal aims to hire the agent for running a risky project, and offers the agent a contract which stablishes the agent’s compensation conditional on the outcome of the risky project. The agent first decides whether to accept the contract and then how much effort put into managing the project. The principal requires informations to infer the value of the project’s outcome and the agent’s effort to be able to compute the agent’s compensation and its own net profits.</p>
 <p>In this setting, accounting is naturally embedded into moral hazard problems. <strong>Accounting information</strong> must have several key characteristics to be useful for decision-making. Accounting information must be relevant, comparable, verifiable, and timeliness. Scholars have studied how these characteristics can be used to design optimal contracts that mitigate moral hazard problems.</p>
-<p>This reading note starts by developing a simple example of a moral hazard problem to illustrate the nature of the problem and the trade-offs involved in solving it. We then move on to a more general moral hazard model, allowing us to add further features to the model. We will also discuss how accounting systems must generate <strong>performance measures</strong>, and how these measures can be used to design optimal contracts. Then, we discuss the role of comparability for <strong>relative performance evaluation</strong> and the role of disclosure of <strong>verifiable</strong> private information in the context of moral hazard. Lastly, we will discuss how the <strong>timeliness</strong> of accounting information can be used to design dynamic incentive contracts.</p>
+<p>This reading note starts by developing a simple example of a moral hazard problem to illustrate the nature of the problem and the trade-offs involved in solving it. We then move on to a more general moral hazard model, allowing us to add further features to the model. We will also discuss how accounting systems must generate <strong>performance measures</strong>, and how these measures can be used to design optimal contracts. Lastly, we refer to the literature on <strong>relative performance evaluation</strong> and <strong>dynamic incentive contracts</strong>.</p>
 <section id="a-very-simple-example" class="level3" data-number="1.0.1">
 <h3 data-number="1.0.1" class="anchored" data-anchor-id="a-very-simple-example"><span class="header-section-number">1.0.1</span> A very simple example</h3>
 <p>Let’s assume that a company (principal) hires a manager (agent) responsible for running the business. The company’s outcomes depend on both random factors and the manager’s effort. For now, let’s assume the effort can be either high (A) or low (B), and the company’s outcomes can either be success (E) or failure (F). The company’s profit in the success scenario is $360, and in the failure scenario, it is $200. The probability of success is 75% with high effort and 25% with low effort.</p>
@@ -572,7 +572,7 @@ t^{*} &amp;= \overline{w} - \frac{1 - c\eta\sigma^{2}}{2c\left(1 + c\eta\sigma^{
 <li>The <strong>variance</strong> of the performance measure <span class="math inline">\sigma^{2}</span> is low.</li>
 </ul>
 <p>The following graphs shows the comparative statics of the optimal contract terms and utilities for different values of <span class="math inline">\sigma</span>.</p>
-<div id="27f49701" class="cell" data-execution_count="1">
+<div id="7caa392e" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -605,7 +605,7 @@ t^{*} &amp;= \overline{w} - \frac{1 - c\eta\sigma^{2}}{2c\left(1 + c\eta\sigma^{
 </div>
 </div>
 </div>
-<div id="064db480" class="cell" data-execution_count="2">
+<div id="b78322ef" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the utility of the agent and principal for different values of sigma</span></span>
@@ -660,7 +660,7 @@ x = e + \epsilon_x \quad \text{and} \quad y = 2e + \epsilon_y
 \frac{\beta_x}{\beta_y} = \frac{1 - 2\frac{\rho \sigma_x \sigma_y}{\sigma_y^2}}{\sigma_x^2} \cdot \frac{\sigma_y^2}{2 - \frac{\rho \sigma_x \sigma_y}{\sigma_x^2}}
 </span></p>
 <p>Let’s see the comparative statics of the optimal weights for different values of <span class="math inline">\rho</span> and <span class="math inline">\sigma_y</span>. First, let’s assume that both metrics have the same noise, <span class="math inline">\sigma_x=\sigma_y=1.25</span>.</p>
-<div id="b1f7aa1c" class="cell" data-execution_count="3">
+<div id="10ddf182" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the beta_x/beta_y for different values of rho </span></span>
@@ -687,7 +687,7 @@ x = e + \epsilon_x \quad \text{and} \quad y = 2e + \epsilon_y
 </div>
 <p>so, if <span class="math inline">\rho=0</span>, the optimal weight for <span class="math inline">x</span> is half of the weight for <span class="math inline">y</span>, as this second signal is more sensitive to effort and has the same noise. If <span class="math inline">\rho=-1</span>, then both both signal have full positive weight in the contract. If <span class="math inline">\rho=1</span>, then the signals are substracted from each other in the contract to remove the common noise.</p>
 <p>Now, let’s see the comparative statics for different values of <span class="math inline">\sigma_y</span>, considering <span class="math inline">\rho=0</span> and <span class="math inline">\sigma_x=1.25</span>.</p>
-<div id="11a7ee56" class="cell" data-execution_count="4">
+<div id="d3dc9020" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the beta_x/beta_y for different values of sigma_y</span></span>
@@ -743,7 +743,7 @@ e^*=\frac{s}{c} \frac{\partial \mu_{\pi}(e)}{\partial e} =\frac{s}{c} \left[\fra
 s^* = \frac{\frac{\partial \mu_{\pi}(e)}{\partial e}}{\left(\frac{\partial \mu_{\pi}(e)}{\partial e}\right)^2+c n \sigma_{\pi}^2} =\frac{\frac{\sigma_y^2 + 4\sigma_x^2}{\sigma_x^2 + \sigma_y^2}}{\left( \frac{\sigma_y^2 + 4\sigma_x^2}{\sigma_x^2 + \sigma_y^2} \right)^2 + c n \sigma_{\pi}^2}
 </span></p>
 <p>The next figure compares the optimal effort and compensation terms for different values of <span class="math inline">\sigma_x</span> with our previous result for the case without the additional metric.</p>
-<div id="9f74bc37" class="cell" data-execution_count="5">
+<div id="bc166fae" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>c<span class="op">=</span><span class="fl">0.8</span> <span class="co"># cost of effort</span></span>
