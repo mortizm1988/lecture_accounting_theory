@@ -133,14 +133,14 @@ The upper bound restrictions in the cash flow can also be simplified to a single
 
 The **agent's slack**  $z_i-m_i x_i$, decreases weakly in $i$ because as $m_i$​ increases (i.e., higher costs), both $x_i$​ and $z_i$ decreases in $i$. In the worst realization of $i$, the minimum acceptable utility is  is $z_N-m_N x_N=\theta$.
 
-Let $k^*$ be the value of $i$ that maximizes the principal's problem. This implies that $x_i=0$ for $i=1,...,k^*-1$ and $x_i=x_{\max}$ for all $i=k^*,...,N$. Since $z_1=m_1 x_1+\theta$, and then $z_{i}-z_{i-1}=m_i(x_i-x_{i-1})$ for $i=2,...,N$, the transfer policy is
+Let $k^*$ be the value of $i$ that maximizes the principal's problem. This implies that $x_i=x_{\max}$ for $i=1,...,k^*$ and $x_i=0$ for all $i=k^*+1,...,N$. Since $z_1=m_1 x_1+\theta$, and then $z_{i}-z_{i-1}=m_i(x_i-x_{i-1})$ for $i=2,...,N$, the transfer policy is
 
 
 $$
 z_i = 
 \begin{cases} 
-    \theta & \text{for } i=1,...,k^*-1, \\
-    m_{k^*} x_{\max} + \theta & \text{for } i=k^*,...,N
+    m_{k^*} x_{\max} & \text{for } i=1,...,k^*, \\
+    0 & \text{for } i=k^*+1,...,N
 \end{cases}
 $$
 
