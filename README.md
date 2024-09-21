@@ -4,7 +4,7 @@ These lecture notes cover an introductory course on Accounting and Economics. Th
 
 - [Optimal Compensation](https://marceloortizm.com/theory_lecture_notes/mora_hazard.html) We start by developing a simple example of a moral hazard problem to illustrate the nature of the problem and the trade-offs involved in solving it. We then develop a general moral hazard model, allowing us to add further features to the model. We discuss how accounting systems must generate **performance measures**, and how these measures can be used to design optimal contracts. We refer to studies focusing on **relative performance evaluation** and how to incorporate **stock-based compensation** in the model. 
 
-- [Capital Budgeting and the Charge for Capital](https://marceloortizm.com/theory_lecture_notes/private_inf.html) We develop a general model of communication of private information, and then apply it for **capital budgeting** and **charging the agent for capital allocated**. 
+- [Capital Budgeting](https://marceloortizm.com/theory_lecture_notes/private_inf.html) We develop a general model of communication of private information, and then apply it for **capital budgeting**. We show how **capital rationing** and **organizational slack** can be the output of an *ex ante* efficient design in settings where the manager has private information about the project's characteristics.
 
 Pending topics:
 
