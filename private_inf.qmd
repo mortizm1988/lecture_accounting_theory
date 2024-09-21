@@ -254,3 +254,7 @@ In  @tbl-budgeting-output we can see the two key insights from this type of mode
 
 1. The optimal cutoff is $m_{k^*}=0.5$, which implies that the principal will not fund any project with a minimal cost above 0.5. Notice that for $0.6\leq m < 1$, the profits of the investment outweight the costs, so, the principal is **rationing the resources**.
 2. For $m\leq 0.4$, the principal still transfers $m_{k^*}x_{max}$ to the agent, which is the more the resources needed for the project. The agent is rewarded for communicating the the true minimal cost of the project.
+
+
+# Suggestions for Further Reading
+Several studies have look at budgeting capital investment in multiple time periods in contexts where the manager has better informaton, see for example, [Rogerson 1997](https://www.journals.uchicago.edu/doi/full/10.1086/591909). A benefit of looking at multi-period settings, is that we can differentiate cash flows from accounting earnings. In that sense,[Reichelstein (2000)](https://www.jstor.org/stable/2672933?seq=1) compares performance measures based only on realized cash flows with the residual accounting income; while [Durra and Reichelstein (2002)](https://link.springer.com/article/10.1023/A:1020238405769) apply the inter-temporal setting to analyze the optimal capital charge for investment decision for divisional managers with superior information.

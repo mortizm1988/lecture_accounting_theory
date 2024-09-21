@@ -180,5 +180,12 @@
     "title": "Private Information and Incentives",
     "section": "2.1 Principal and Agent’s Preferences",
     "text": "2.1 Principal and Agent’s Preferences\nThe principal is risk-neutral with utility function G(x,z)=x - z. The agent is also risk neutral with utility function U(w)=z-m_ix, meaning the money transfered by the principal minus the cost project observed privately. As in the initial setting, we assume that the agent can leave after observing a bad signal. Notice that the principal makes the decision on the transference z needed to obtain x based on the communication of the reported costs \\hat{m} provided at the beginning."
+  },
+  {
+    "objectID": "private_inf.html#suggestions-for-further-reading",
+    "href": "private_inf.html#suggestions-for-further-reading",
+    "title": "Private Information and Incentives",
+    "section": "2.4 Suggestions for Further Reading",
+    "text": "2.4 Suggestions for Further Reading\nSeveral studies have look at budgeting capital investment in multiple time periods in contexts where the manager has better informaton, see for example, Rogerson 1997. A benefit of looking at multi-period settings, is that we can differentiate cash flows from accounting earnings. In that sense,Reichelstein (2000) compares performance measures based only on realized cash flows with the residual accounting income; while Durra and Reichelstein (2002) apply the inter-temporal setting to analyze the optimal capital charge for investment decision for divisional managers with superior information."
   }
 ]
