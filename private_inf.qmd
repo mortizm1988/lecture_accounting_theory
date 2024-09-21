@@ -24,7 +24,7 @@ In this section we discuss models where the agent has **private information** th
 
 
 
-Let $x$ and $y$ be the outcome and additional metric, both observable at the end of the game. The agent’s private information signal $m$ has a priori probability density function $G(m)$. As before, the agent's effort is $e$. Once the signal is received, the density function of the outcome and the other metric is updated to be $f(x,y|e,m)$. The models differs in three aspects: First, when does the agent receive the signal $m$, second, whether the agent can leave the contract after observing $m$, and third, whether the agent can communicate $m$ to the principal in a trustfull way.
+Let $x$ and $y$ be the outcome and additional metric, both observable at the end of the game. The agent’s private information signal $m$ has a priori probability density function $g(m)$. As before, the agent's effort is $e$. Once the signal is received, the density function of the outcome and the other metric is updated to be $f(x,y|e,m)$. The models differs in three aspects: First, when does the agent receive the signal $m$, second, whether the agent can leave the contract after observing $m$, and third, whether the agent can communicate $m$ to the principal in a truthtfull way.
 
 ## Principal's Problem
 
@@ -59,15 +59,15 @@ The first set of constraints consists of the minimal acceptable utility constrai
 
 ## Relevation Principle
 
- As the set of possible strategies is very large, the problem for the principal is difficult to solve. A shorcut developed in the literature is the **Relevation Principle**. The revelation principle states that any proposed mechanism that involves nontruthful communication by the agent can be duplicated or beaten in terms of expected utilities by an equilibrium mechanism in which truthful reporting is induced. The cost for forcing the agent to tell the trut is that the principal must commit to not use the information as fully as he would if the truthful message did not have to be motivated. The revelation principle is a very helpful tool for researchers because it reduces the number of alternative reporting strategies needed to be considered. This allows researchers to focus on reporting strategies that encourage truthful reporting. To apply the relevation principal to our problem, we should substitute the report by the true signal, $\textcolor{blue}{\hat{m}}=m$, and set the contract such that it ensures that the best reporting strategy for the agent is to tell the truth.
+ As the set of possible strategies is very large, the problem for the principal is difficult to solve. A shorcut developed in the literature is the **Relevation Principle**. The revelation principle states that any proposed mechanism that involves nontruthful communication by the agent can be duplicated or beaten in terms of expected utilities by an equilibrium mechanism in which truthful reporting is induced. The cost for forcing the agent to tell the trut is that the principal must commit to not use the information as fully as he would if the truthful message did not have to be motivated. The revelation principle is a very helpful tool for researchers because it reduces the number of alternative reporting strategies needed to be considered. This allows researchers to focus on reporting strategies that encourage truthful reporting. To apply the relevation principal to our problem, we should substitute the report by the true signal, $\textcolor{blue}{\hat{m}}=\textcolor{green}{m}$, and set the contract such that it ensures that the best reporting strategy for the agent is to tell the truth.
 
 
 $$
 \begin{aligned}
-    \max_{w(x,y,m),e(m), \hat{m}(m)} \quad & \mathbb{E}_{x, y, m} \left[ G[x - w(x,y,m)] | e(m) \right] \\
-    \text{subject to} \quad & \mathbb{E}_{x, y| m} \left[ U[w(x, y,m)| e(m)] - V[e(m)] \right] \geq \underline{U} \text{ for all } m,  \\
-    & e(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y,m) | e] - V(e) \right] \text{ for each } m \quad  \\
-    & m(m) \text{ is the } \hat{m}(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y,\hat{m}) | e] - V(e) \right] \text{ for all } m \\
+    \max_{w(x,y,\textcolor{green}{m}),e(\textcolor{green}{m}), \textcolor{green}{m}} \quad & \mathbb{E}_{x, y, m} \left[ G[x - w(x,y,\textcolor{green}{m})] | e(m) \right] \\
+    \text{subject to} \quad & \mathbb{E}_{x, y| m} \left[ U[w(x, y,\textcolor{green}{m})| e(m)] - V[e(m)] \right] \geq \underline{U} \text{ for all } m,  \\
+    & e(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y,\textcolor{green}{m}) | e] - V(e) \right] \text{ for each } m \quad  \\
+    & m(m) \text{ is the } \hat{m}(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y,\textcolor{green}{m}) | e] - V(e) \right] \text{ for all } m \\
 \end{aligned}
 $$
 
@@ -75,12 +75,18 @@ In these models, the principal's welfare loss is due to the information rent of 
 
 # Budgeting
 
-For early contributions see @Antle_1985 and @Antle_1997. The model assumed that the agent learn privately the minimal investment amount that will yield a given cash flow $x$ (the outcome of the risky project). To obtain this cash flow, it is needed to initially invest $mx$. The principal provides the capital $z$ that cover the investment and the agent's compensation $w$, but the agent can also divert a fraction of $z$ for its own benefit.
+The literature has studied the optimal budgeting of projects when the agent has private information about the true cost of the project. The main takeaway from these studies is that  the optimal budgeting involves the principal providing more resources than the actual cost of the project to incentivize the agent to reveal the true cost. In other words, in these settings, a budget that consider more funds for **organizational slack** is efficient. This is because the agent has an incentive to overstate the cost of the project to extract more resources than needed. The principal can reduce the information rent by forcing the agent to tell the truth. The cost for forcing the agent to tell the truth is that the principal must commit to not use the information as fully as he would if the truthful message did not have to be motivated. The optimal solution involves the principal rejecting certain profitable projects, a phenomenon known as **capital rationing**. While both effects, the organizational slack and the capital rationing, are seen as *ex post* inefficiencies, they can also manifest as *ex ante* efficient organizational designs in information assymetry settings. are in stark contrast with the first best solution, where the principal provides the minimum resources needed to fund the project. For early contributions see @Antle_1985 and @Antle_1997. 
 
-The assume a discrete number of potential information signals that the agent can privately observe: $m \in \{m_1, m_2, \ldots, m_n\}$, which are ordered such that $m_1 < m_2 < \ldots < m_n$. The ex-ante probability of observing $m_i$ is $g_i$.  The principal is risk-neutral with utility function $G(x,z)=x - z$. The agent is also risk neutral with utility function $U(w)=z-m_ix$, meaning the money received from the principal minus how much he invested in the project. As in the initial setting, we assume that the agent can leave after observing a bad  signal. So, notice that the the principal makes the decision on the capital $z$ needed to obtain $x$ based on the communication $\hat{m}$.
+The model assumes that the agent privately learns the minimal investment amount, $mx$, needed for a project that generates a cash flow, $x$, with certainty. The project cannot start with less investment. It's important to note that $m$ is interpreted as the initial minimal cost of the project. Notice that this implies that the rate of return on investment with cost $m_i$ is $r_i=1/m_i-1$, which is negative if $m_i>1$, meaning that the investment is not profitable for a principal with a cost of capital of 1. The principal transfer to the agent the capital $z$ which covers the initial investment cost and the agent's compensation. However, the agent can also divert a fraction of $z$ for its own benefit, which is referred to as **organizational slack** in the literature.
+
+We assume a discrete number of potential information signals that the agent can privately observe about the minimal cost  $m_1 < m_2 < \ldots < m_n$. The least favorable signal is $m_n$ because it represents the higher cost. The ex-ante probability of observing $m_i$ is $g_i$. Notice that some of these costs can be higher than the cost of capital. 
+
+## Principal and Agent's Preferences
+
+The principal is risk-neutral with utility function $G(x,z)=x - z$. The agent is also risk neutral with utility function $U(w)=z-m_ix$, meaning the money transfered by the principal minus the cost project observed privately. As in the initial setting, we assume that the agent can leave after observing a bad signal. Notice that the principal makes the decision on the transference $z$ needed to obtain $x$ based on the communication of the reported costs $\hat{m}$ provided at the beginning.
 
 ## First Best Solution
-Let's ignore for now the information assymetry in the cost of the project $m$. The principal's problem is
+Let's ignore for now the information assymetry in the true cost of the project $m$. The principal's problem is to maximizes the expected value of net profits. Normalizing the unit value of output to be 1, the principal's problem is
 
 $$
 \begin{aligned}
@@ -89,17 +95,20 @@ $$
     & 0 \leq x_i \leq x_{\max}, \\
     & 0 \leq z_i.
 \end{aligned}
-$$
+$${#eq-first_best}
 
-Here the second and third restrictions set bounds on the cashflows and transference for the solution to exist (notice the linearity in the production technology and lack of agent's wealth). The first restriction is the minimal acceptable utility constraint for the agent regardless of the signal observed. 
+Thus the problem for the principal is to find the optimal combination of (cash flow, transference) $(x_i,z_i)$ that maximizes the expected value of the principal's profits subject to the agent's minimal acceptable utility constraint in any scenario of the cost of the project.
+
+In @eq-first_best, the first restriction is the minimal acceptable utility constraint for the agent regardless of the signal observed.  The second and third restrictions set bounds on the cash flows and transference for the solution to exist (notice the linearity in the production technology and lack of agent's wealth).
+
 The first restrictions implies that $z_i^*=\underline{U}+m_i x_i$. Inserting this into the objective function, we obtain  
-
 $$
 \begin{aligned}
     \max_{x_i} \quad & \sum_{i=1}^{N} (1-m_i)(x_i g_i)-\underline{U}  \\
 \end{aligned}
 $$
-which is maximized when $x_i=x_{\max}$ if $m_i\leq 1$ and $x_i=0$ if $m_i> 1$. The intuition is that the expected value of the principa's profits is at its maximum when the agent invests the maximum amount in the project if the signal indicates that the cost of the project is below the value of the output (i.e., 1.0), and zero otherwise. Consistently, the optimal transfer is
+
+which is maximized when $x_i=x_{\max}$ if $m_i\leq 1$ and $x_i=0$ if $m_i> 1$. The intuition is that the expected value of the principal's profits is at its maximum when the project generates the highest possible cash flows if the signal indicates that the project is profitable. Consistently, the optimal transfer is
 
 $$
 z_i = 
@@ -108,13 +117,15 @@ z_i =
     \underline{U} & \text{for } m_i > 1.
 \end{cases}
 $$
- meaning that when the cost of the project is below the value of the output, the transfer should be the minimum acceptable utility plus the cost of the project. In contrast, when the cost is above the value of the output, the principal should transfer the minimum utility of the agent.
+
+When the project cost is high compared to the cost of capital, the principal should transfer the minimum acceptable utility. On the other hand, when the cost is in a profitable range, the principal should increase the transfer amount to fund the profitable investment, leading to largest cash flows.
 
 ## Communication Strategies
 
-Suppose the agent sees signal $m_i$ but reports a higher cost $m_j$ to obtain more the resources than needed ($(m_j-m_i)x_j+\underline{U}$). However, there is a limit to how much he will overstate. If the agent claims the cost is too high (over 1), the principal will not provide any resources. Thus, the agent will report a cost slightly under 1 for all $m_i<1$. If the agent observes a cost realization above 1, there is no incentive to lie because the project will not be funded anyway. As previously mentioned, the principal does not need to worry about the agent understating their costs. If he does, he will not receive enough resources to produce the required output, so any lie in this direction will always be uncovered.
+Suppose the agent privately sees signal $m_i$ but reports a higher cost $m_j$ to obtain more the resources than needed ($(m_j-m_i)x_j$). However, there is a limit to how much he will overstate. If the agent claims the cost is too high (over 1), the principal will not provide any resources. Thus, the agent will report a cost slightly under 1 for all $m_i<1$. If the agent observes a cost realization above 1, there is no incentive to lie because the project will not be funded anyway. As previously mentioned, the principal does not need to worry about the agent understating the costs. If he does, the project will not receive the minimal funding to produce the required output, so any lie in this direction will always be uncovered.
 
 ### Principal's Problem
+
 The principal's problem is to define a set of contract ($x_i,z_i$) that depends on the reported signal, $z_i(\hat{m})$ such that the agent's best reporting strategy is to tell the truth. The principal's problem is then
 
 $$
@@ -125,15 +136,16 @@ $$
     & 0 \leq x_i \leq x_{\max} \quad \text{for all } i, \\
     & 0 \leq z_i.
 \end{aligned}
-$$
+$${#eq-second_best}
 
-Notice that this version adds the second set of $N^2$ restrictions, which ensures that the agent does not have an incentive to lie about the cost of the project (**truth-telling constraints**, or **self-section restriction**). These restrictions implies that when the agent observes the cost $m_i$, he is better off with the contract ($x_i,z_i$) than with any other combitation ($x_j,z_j$). However, the set of constraints can be reduced to consider the set of 2(N - 1) "adjacent" constraints, meaning that the conditions that the manager prefers the communicate the true cost to the cost immediately above and the cost immediately below dominates the others.
+Notice that this version adds the second set of $N^2$ restrictions, which ensures that the agent does not have an incentive to lie about the cost of the project (the ICCs, also called **truth-telling constraints**). Obviously, the agent's reported costs $m_j$ does not affect the underlying true cost of the project $m_i$. This is why the true cost $m_i$ is at each side of the ICCs.
+In other words, the ICCs implies that when the agent observes the cost $m_i$, he is better off with the contract ($x_i,z_i$) than with any other combitation ($x_j,z_j$). This set of constraints can be reduced to the set of 2(N - 1) "adjacent" constraints, meaning that the manager must prefers the communicate the true cost to the cost immediately above and the cost immediately below dominates.
 
-The upper bound restrictions in the cash flow can also be simplified to a single restriction $x_N\leq X_{\max}$
+The upper bound restrictions in the cash flow can also be simplified to a single restriction $x_N\leq X_{\max}$.
 
 The **agent's slack**  $z_i-m_i x_i$, decreases weakly in $i$ because as $m_i$​ increases (i.e., higher costs), both $x_i$​ and $z_i$ decreases in $i$. In the worst realization of $i$, the minimum acceptable utility is  is $z_N-m_N x_N=\theta$.
 
-Let $k^*$ be the value of $i$ that maximizes the principal's problem. This implies that $x_i=x_{\max}$ for $i=1,...,k^*$ and $x_i=0$ for all $i=k^*+1,...,N$. Since $z_1=m_1 x_1+\theta$, and then $z_{i}-z_{i-1}=m_i(x_i-x_{i-1})$ for $i=2,...,N$, the transfer policy is
+Let $k^*$ be the value of $i$ that maximizes the principal's problem. This implies that $x_i=x_{\max}$ for $i=1,\ldots,k^*$ and $x_i=0$ for all $i=k^*+1,\ldots,N$. Since $z_1=m_1 x_1+\theta$, and then $z_{i}-z_{i-1}=m_i(x_i-x_{i-1})$ for $i=2, \ldots, N$, the transfer policy is
 
 
 $$
@@ -144,9 +156,104 @@ z_i =
 \end{cases}
 $$
 
-Note that additional resources will be allocated to the agent for all actual costs below the specified threshold. It is noteworthy that the most effective cutoff point is less than 1.0. This implies that the optimal solution involves the principal rejecting certain profitable projects (**capital rationing**). When the principal adjusts the  threshold level, it impacts the flexibility the agent has for all lower levels below the threshold. Therefore, by lowering the threshold below 1.0, the principal is sacrificing production in some situations to limit the flexibility the agent has in other situations.
+Compare with the first best, we see that here the agent receives slack for all cost realization below the threshold ($m_{k^*} x_{\max}>m_{i} x_{\max}$ for all $i<k^*$). The principal provides additional more funds than the actual investment cost to incentive the agent to reveal the truth. But, how much is the new cutoff? the cutoff is less than 1.0. This implies that the optimal solution involves the principal rejecting certain profitable projects (**capital rationing**). When the principal adjusts the  cutoff, it impacts the flexibility the agent has for all lower levels below that point. Therefore, the principal's trade-off is to balance the cost of setting the cutoff too high (paying for slack) and too low (foregoing profitable projects).
 
-Pending to add numerical example.
+We can see this by solving numerically the linear program in @eq-second_best considering the real cost $m$ being a uniform discrete variable  defined between 0.1 and 1.5, and $\theta=0$.
+
+```{python}
+#| label: tbl-budgeting-output
+#| tbl-cap: Numerical Example
+from IPython.display import Markdown
+from tabulate import tabulate
+import numpy as np
+from scipy.optimize import linprog
+import pandas as pd
+
+# Parameters
+m = np.arange(0.1, 1.6, 0.1)
+N = len(m)
+theta = 0
+x_max = 10
+g = np.array([1/N] * N) # Uniform distribution of signals
+
+# Objective function: maximize sum of (x_i - z_i) * g_i
+# Notice this is equivalent to minimiza  sum of z_i * g_i -x_i * g_i 
+# c is a one-dimensional vector of size 2N: [x_1, z_1, x_2, z_2, ..., x_N, z_N]
+c = np.zeros(2 * N)
+for i in range(N):
+    c[2 * i] = -g[i]  # Coefficient for x_i
+    c[2 * i + 1] = g[i]  # Coefficient for z_i
+
+# Inequality constraints for participation and incentive compatibility
+A = []
+b = []
+
+# Participation constraints: z_i - m_i * x_i >= theta (agent's minimal utility constraint)
+# The constraint is a one-dimensional vector of size 2N to multiply with [x_1, z_1, x_2, z_2, ..., x_N, z_N]
+for i in range(N):
+    constraint = [0] * (2 * N)  # Create a 2N-dimensional row, for matching dimension with ICCs
+    constraint[2 * i] = -m[i]   # Coefficient for x_i
+    constraint[2 * i + 1] = 1   # Coefficient for z_i
+    A.append(constraint)
+    b.append(theta)
+
+# Incentive compatibility constraints I: [z_i - m_i * x_i] -[z_{i-1} - m_{i} * x_{i-1}] >= 0 
+# The constraint is a one-dimensional vector of size 2N to multiply with [x_1, z_1, x_2, z_2, ..., x_N, z_N]
+for i in range(1, N):
+    constraint = [0] * (2 * N)  # Create a 2N-dimensional row
+    constraint[2 * i] = -m[i]  # Coefficient for x_i
+    constraint[2 * i + 1] = 1  # Coefficient for z_i
+    constraint[2 * (i - 1)] = m[i]  # Coefficient for x_{i-1}
+    constraint[2 * (i - 1) + 1] = -1  # Coefficient for z_{i-1}
+    A.append(constraint)
+    b.append(0)
+
+# Incentive compatibility constraints II: [z_i - m_i * x_i]-[z_{i+1} - m_{i} * x_{i+1}] >= 0 
+for i in range(N - 1):
+    constraint = [0] * (2 * N)  # Create a 2N-dimensional row
+    constraint[2 * i] = -m[i]  # Coefficient for x_i
+    constraint[2 * i + 1] = 1  # Coefficient for z_i
+    constraint[2 * (i + 1)] = m[i]  # Coefficient for x_{i+1}
+    constraint[2 * (i + 1) + 1] = -1  # Coefficient for z_{i+1}
+    A.append(constraint)
+    b.append(0)
+
+# Convert A and b to numpy arrays for linprog function: A*constraints <= b
+A = np.array(A) * -1  # Multiply A by -1 to convert the inequality to the form Ax <= b
+b = np.array(b) * -1  
+
+# %%
+# Bounds: 0 <= x_i <= x_max, 0 <= z_i
+x_bounds = [(0, x_max)] * N
+z_bounds = [(0, None)] * N
+bounds = []
+for i in range(N):
+    bounds.append(x_bounds[i])
+    bounds.append(z_bounds[i])
+
+# Solve the linear programming problem
+res = linprog(c, A_ub=A, b_ub=b, bounds=bounds, method='highs')
+
+# %%
+# Check if the optimization was successful
+if res.success:
+    x = res.x[::2]  # Extract the budget values from the solution, they are in even indices
+    z= res.x[1::2]
+    # the slack is transfers{i} -m{i}*cashflow{i}
+    slack =  z- m *   x
+    investment= m * x
+    # Create a dataframe for the results
+    df = pd.DataFrame({'Cost m': m,  'Budget Z': z, "Investment": investment , 'Slack': slack, 'Cash flow X': x,})
+    # Print the results as markdown using the tabulate package
+    display(Markdown(tabulate(df, headers='keys', tablefmt='pipe', showindex=False)))
+else:
+    print("Optimization failed. Check the constraints or problem formulation.")
+```
+
+In  @tbl-budgeting-output we can see the two key insights from this type of models.
+
+1. The optimal cutoff is $m_{k^*}=0.5$, which implies that the principal will not fund any project with a minimal cost above 0.5. Notice that for $0.6\leq m < 1$, the profits of the investment outweight the costs, so, the principal is **rationing the resources**.
+2. For $m\leq 0.4$, the principal still transfers $m_{k^*}x_{max}$ to the agent, which is the more the resources needed for the project. The agent is rewarded for communicating the the true minimal cost of the project.
 
 # Charge for Capital
 

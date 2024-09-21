@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -152,8 +186,9 @@ window.Quarto = {
   </ul></li>
   <li><a href="#budgeting" id="toc-budgeting" class="nav-link" data-scroll-target="#budgeting"><span class="header-section-number">2</span> Budgeting</a>
   <ul class="collapse">
-  <li><a href="#first-best-solution" id="toc-first-best-solution" class="nav-link" data-scroll-target="#first-best-solution"><span class="header-section-number">2.1</span> First Best Solution</a></li>
-  <li><a href="#communication-strategies" id="toc-communication-strategies" class="nav-link" data-scroll-target="#communication-strategies"><span class="header-section-number">2.2</span> Communication Strategies</a></li>
+  <li><a href="#principal-and-agents-preferences" id="toc-principal-and-agents-preferences" class="nav-link" data-scroll-target="#principal-and-agents-preferences"><span class="header-section-number">2.1</span> Principal and Agent’s Preferences</a></li>
+  <li><a href="#first-best-solution" id="toc-first-best-solution" class="nav-link" data-scroll-target="#first-best-solution"><span class="header-section-number">2.2</span> First Best Solution</a></li>
+  <li><a href="#communication-strategies" id="toc-communication-strategies" class="nav-link" data-scroll-target="#communication-strategies"><span class="header-section-number">2.3</span> Communication Strategies</a></li>
   </ul></li>
   <li><a href="#charge-for-capital" id="toc-charge-for-capital" class="nav-link" data-scroll-target="#charge-for-capital"><span class="header-section-number">3</span> Charge for Capital</a></li>
   </ul>
@@ -200,7 +235,7 @@ window.Quarto = {
 <section id="communication-of-private-information" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Communication of Private information</h1>
 <p>In this section we discuss models where the agent has <strong>private information</strong> that is not observable to the principal, which introduces challenges in aligning incentives. The agent’s private information can relate to various factors, such as their skill, expertise, or the profitability of investment opportunities. This informational asymmetry means that the agent holds an <strong>information rent</strong> which allows him to potentially extract more value than he could if the principal were fully informed. The key challenge for the principal is to design contracts that minimize these rents while still providing incentives for the agent to act in the firm’s best interest.</p>
-<p>Let <span class="math inline">x</span> and <span class="math inline">y</span> be the outcome and additional metric, both observable at the end of the game. The agent’s private information signal <span class="math inline">m</span> has a priori probability density function <span class="math inline">G(m)</span>. As before, the agent’s effort is <span class="math inline">e</span>. Once the signal is received, the density function of the outcome and the other metric is updated to be <span class="math inline">f(x,y|e,m)</span>. The models differs in three aspects: First, when does the agent receive the signal <span class="math inline">m</span>, second, whether the agent can leave the contract after observing <span class="math inline">m</span>, and third, whether the agent can communicate <span class="math inline">m</span> to the principal in a trustfull way.</p>
+<p>Let <span class="math inline">x</span> and <span class="math inline">y</span> be the outcome and additional metric, both observable at the end of the game. The agent’s private information signal <span class="math inline">m</span> has a priori probability density function <span class="math inline">g(m)</span>. As before, the agent’s effort is <span class="math inline">e</span>. Once the signal is received, the density function of the outcome and the other metric is updated to be <span class="math inline">f(x,y|e,m)</span>. The models differs in three aspects: First, when does the agent receive the signal <span class="math inline">m</span>, second, whether the agent can leave the contract after observing <span class="math inline">m</span>, and third, whether the agent can communicate <span class="math inline">m</span> to the principal in a truthtfull way.</p>
 <section id="principals-problem" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="principals-problem"><span class="header-section-number">1.1</span> Principal’s Problem</h2>
 <p>We start with the scenario where the agent acquires private information after signing the contract but before choosing his action. He is unable to leave after observing the signal and cannot communicate the signal to the principal. After receiving the private information, the agent can adjust his effort level on the signal, meaning <span class="math inline">e(m)</span>. The optimal compensation <span class="math inline">w(x,y)</span> cannot depend on the signal <span class="math inline">m</span> because the agent cannot communicate it to the principal.</p>
@@ -226,13 +261,13 @@ window.Quarto = {
 </section>
 <section id="relevation-principle" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="relevation-principle"><span class="header-section-number">1.2</span> Relevation Principle</h2>
-<p>As the set of possible strategies is very large, the problem for the principal is difficult to solve. A shorcut developed in the literature is the <strong>Relevation Principle</strong>. The revelation principle states that any proposed mechanism that involves nontruthful communication by the agent can be duplicated or beaten in terms of expected utilities by an equilibrium mechanism in which truthful reporting is induced. The cost for forcing the agent to tell the trut is that the principal must commit to not use the information as fully as he would if the truthful message did not have to be motivated. The revelation principle is a very helpful tool for researchers because it reduces the number of alternative reporting strategies needed to be considered. This allows researchers to focus on reporting strategies that encourage truthful reporting. To apply the relevation principal to our problem, we should substitute the report by the true signal, <span class="math inline">\textcolor{blue}{\hat{m}}=m</span>, and set the contract such that it ensures that the best reporting strategy for the agent is to tell the truth.</p>
+<p>As the set of possible strategies is very large, the problem for the principal is difficult to solve. A shorcut developed in the literature is the <strong>Relevation Principle</strong>. The revelation principle states that any proposed mechanism that involves nontruthful communication by the agent can be duplicated or beaten in terms of expected utilities by an equilibrium mechanism in which truthful reporting is induced. The cost for forcing the agent to tell the trut is that the principal must commit to not use the information as fully as he would if the truthful message did not have to be motivated. The revelation principle is a very helpful tool for researchers because it reduces the number of alternative reporting strategies needed to be considered. This allows researchers to focus on reporting strategies that encourage truthful reporting. To apply the relevation principal to our problem, we should substitute the report by the true signal, <span class="math inline">\textcolor{blue}{\hat{m}}=\textcolor{green}{m}</span>, and set the contract such that it ensures that the best reporting strategy for the agent is to tell the truth.</p>
 <p><span class="math display">
 \begin{aligned}
-    \max_{w(x,y,m),e(m), \hat{m}(m)} \quad &amp; \mathbb{E}_{x, y, m} \left[ G[x - w(x,y,m)] | e(m) \right] \\
-    \text{subject to} \quad &amp; \mathbb{E}_{x, y| m} \left[ U[w(x, y,m)| e(m)] - V[e(m)] \right] \geq \underline{U} \text{ for all } m,  \\
-    &amp; e(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y,m) | e] - V(e) \right] \text{ for each } m \quad  \\
-    &amp; m(m) \text{ is the } \hat{m}(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y,\hat{m}) | e] - V(e) \right] \text{ for all } m \\
+    \max_{w(x,y,\textcolor{green}{m}),e(\textcolor{green}{m}), \textcolor{green}{m}} \quad &amp; \mathbb{E}_{x, y, m} \left[ G[x - w(x,y,\textcolor{green}{m})] | e(m) \right] \\
+    \text{subject to} \quad &amp; \mathbb{E}_{x, y| m} \left[ U[w(x, y,\textcolor{green}{m})| e(m)] - V[e(m)] \right] \geq \underline{U} \text{ for all } m,  \\
+    &amp; e(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y,\textcolor{green}{m}) | e] - V(e) \right] \text{ for each } m \quad  \\
+    &amp; m(m) \text{ is the } \hat{m}(m) \in \arg\max \mathbb{E}_{x, y | m} \left[ U[w(x, y,\textcolor{green}{m}) | e] - V(e) \right] \text{ for all } m \\
 \end{aligned}
 </span></p>
 <p>In these models, the principal’s welfare loss is due to the information rent of the agent, which exists even in contexts with risk neutral agents. For this reason, mos of the model examine private information issues using risk neutral agents, so they can avoid the complexities that result when risk aversion and risk sharing issues are also present.</p>
@@ -240,40 +275,49 @@ window.Quarto = {
 </section>
 <section id="budgeting" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Budgeting</h1>
-<p>For early contributions see <span class="citation" data-cites="Antle_1985">Antle and Eppen (<a href="#ref-Antle_1985" role="doc-biblioref">1985</a>)</span> and <span class="citation" data-cites="Antle_1997">Antle and Fellingham (<a href="#ref-Antle_1997" role="doc-biblioref">1997</a>)</span>. The model assumed that the agent learn privately the minimal investment amount that will yield a given cash flow <span class="math inline">x</span> (the outcome of the risky project). To obtain this cash flow, it is needed to initially invest <span class="math inline">mx</span>. The principal provides the capital <span class="math inline">z</span> that cover the investment and the agent’s compensation <span class="math inline">w</span>, but the agent can also divert a fraction of <span class="math inline">z</span> for its own benefit.</p>
-<p>The assume a discrete number of potential information signals that the agent can privately observe: <span class="math inline">m \in \{m_1, m_2, \ldots, m_n\}</span>, which are ordered such that <span class="math inline">m_1 &lt; m_2 &lt; \ldots &lt; m_n</span>. The ex-ante probability of observing <span class="math inline">m_i</span> is <span class="math inline">g_i</span>. The principal is risk-neutral with utility function <span class="math inline">G(x,z)=x - z</span>. The agent is also risk neutral with utility function <span class="math inline">U(w)=z-m_ix</span>, meaning the money received from the principal minus how much he invested in the project. As in the initial setting, we assume that the agent can leave after observing a bad signal. So, notice that the the principal makes the decision on the capital <span class="math inline">z</span> needed to obtain <span class="math inline">x</span> based on the communication <span class="math inline">\hat{m}</span>.</p>
-<section id="first-best-solution" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="first-best-solution"><span class="header-section-number">2.1</span> First Best Solution</h2>
-<p>Let’s ignore for now the information assymetry in the cost of the project <span class="math inline">m</span>. The principal’s problem is</p>
-<p><span class="math display">
+<p>The literature has studied the optimal budgeting of projects when the agent has private information about the true cost of the project. The main takeaway from these studies is that the optimal budgeting involves the principal providing more resources than the actual cost of the project to incentivize the agent to reveal the true cost. In other words, in these settings, a budget that consider more funds for <strong>organizational slack</strong> is efficient. This is because the agent has an incentive to overstate the cost of the project to extract more resources than needed. The principal can reduce the information rent by forcing the agent to tell the truth. The cost for forcing the agent to tell the truth is that the principal must commit to not use the information as fully as he would if the truthful message did not have to be motivated. The optimal solution involves the principal rejecting certain profitable projects, a phenomenon known as <strong>capital rationing</strong>. While both effects, the organizational slack and the capital rationing, are seen as <em>ex post</em> inefficiencies, they can also manifest as <em>ex ante</em> efficient organizational designs in information assymetry settings. are in stark contrast with the first best solution, where the principal provides the minimum resources needed to fund the project. For early contributions see <span class="citation" data-cites="Antle_1985">Antle and Eppen (<a href="#ref-Antle_1985" role="doc-biblioref">1985</a>)</span> and <span class="citation" data-cites="Antle_1997">Antle and Fellingham (<a href="#ref-Antle_1997" role="doc-biblioref">1997</a>)</span>.</p>
+<p>The model assumes that the agent privately learns the minimal investment amount, <span class="math inline">mx</span>, needed for a project that generates a cash flow, <span class="math inline">x</span>, with certainty. The project cannot start with less investment. It’s important to note that <span class="math inline">m</span> is interpreted as the initial minimal cost of the project. Notice that this implies that the rate of return on investment with cost <span class="math inline">m_i</span> is <span class="math inline">r_i=1/m_i-1</span>, which is negative if <span class="math inline">m_i&gt;1</span>, meaning that the investment is not profitable for a principal with a cost of capital of 1. The principal transfer to the agent the capital <span class="math inline">z</span> which covers the initial investment cost and the agent’s compensation. However, the agent can also divert a fraction of <span class="math inline">z</span> for its own benefit, which is referred to as <strong>organizational slack</strong> in the literature.</p>
+<p>We assume a discrete number of potential information signals that the agent can privately observe about the minimal cost <span class="math inline">m_1 &lt; m_2 &lt; \ldots &lt; m_n</span>. The least favorable signal is <span class="math inline">m_n</span> because it represents the higher cost. The ex-ante probability of observing <span class="math inline">m_i</span> is <span class="math inline">g_i</span>. Notice that some of these costs can be higher than the cost of capital.</p>
+<section id="principal-and-agents-preferences" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="principal-and-agents-preferences"><span class="header-section-number">2.1</span> Principal and Agent’s Preferences</h2>
+<p>The principal is risk-neutral with utility function <span class="math inline">G(x,z)=x - z</span>. The agent is also risk neutral with utility function <span class="math inline">U(w)=z-m_ix</span>, meaning the money transfered by the principal minus the cost project observed privately. As in the initial setting, we assume that the agent can leave after observing a bad signal. Notice that the principal makes the decision on the transference <span class="math inline">z</span> needed to obtain <span class="math inline">x</span> based on the communication of the reported costs <span class="math inline">\hat{m}</span> provided at the beginning.</p>
+</section>
+<section id="first-best-solution" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="first-best-solution"><span class="header-section-number">2.2</span> First Best Solution</h2>
+<p>Let’s ignore for now the information assymetry in the true cost of the project <span class="math inline">m</span>. The principal’s problem is to maximizes the expected value of net profits. Normalizing the unit value of output to be 1, the principal’s problem is</p>
+<p><span id="eq-first_best"><span class="math display">
 \begin{aligned}
     \max_{x_i, z_i} \quad &amp; \sum_{i=1}^{N} (x_i - z_i) g_i \\
     \text{subject to} \quad &amp; z_i - m_i x_i \geq \underline{U} \quad \text{for all } i = 1, \dots, N, \\
     &amp; 0 \leq x_i \leq x_{\max}, \\
     &amp; 0 \leq z_i.
 \end{aligned}
-</span></p>
-<p>Here the second and third restrictions set bounds on the cashflows and transference for the solution to exist (notice the linearity in the production technology and lack of agent’s wealth). The first restriction is the minimal acceptable utility constraint for the agent regardless of the signal observed. The first restrictions implies that <span class="math inline">z_i^*=\underline{U}+m_i x_i</span>. Inserting this into the objective function, we obtain</p>
-<p><span class="math display">
+\tag{1}</span></span></p>
+<p>Thus the problem for the principal is to find the optimal combination of (cash flow, transference) <span class="math inline">(x_i,z_i)</span> that maximizes the expected value of the principal’s profits subject to the agent’s minimal acceptable utility constraint in any scenario of the cost of the project.</p>
+<p>In <a href="#eq-first_best" class="quarto-xref">Equation&nbsp;1</a>, the first restriction is the minimal acceptable utility constraint for the agent regardless of the signal observed. The second and third restrictions set bounds on the cash flows and transference for the solution to exist (notice the linearity in the production technology and lack of agent’s wealth).</p>
+<p>The first restrictions implies that <span class="math inline">z_i^*=\underline{U}+m_i x_i</span>. Inserting this into the objective function, we obtain<br>
+<span class="math display">
 \begin{aligned}
     \max_{x_i} \quad &amp; \sum_{i=1}^{N} (1-m_i)(x_i g_i)-\underline{U}  \\
 \end{aligned}
-</span> which is maximized when <span class="math inline">x_i=x_{\max}</span> if <span class="math inline">m_i\leq 1</span> and <span class="math inline">x_i=0</span> if <span class="math inline">m_i&gt; 1</span>. The intuition is that the expected value of the principa’s profits is at its maximum when the agent invests the maximum amount in the project if the signal indicates that the cost of the project is below the value of the output (i.e., 1.0), and zero otherwise. Consistently, the optimal transfer is</p>
+</span></p>
+<p>which is maximized when <span class="math inline">x_i=x_{\max}</span> if <span class="math inline">m_i\leq 1</span> and <span class="math inline">x_i=0</span> if <span class="math inline">m_i&gt; 1</span>. The intuition is that the expected value of the principal’s profits is at its maximum when the project generates the highest possible cash flows if the signal indicates that the project is profitable. Consistently, the optimal transfer is</p>
 <p><span class="math display">
 z_i =
 \begin{cases}
     m_i x_{\max} + \underline{U} &amp; \text{for } m_i \leq 1, \\
     \underline{U} &amp; \text{for } m_i &gt; 1.
 \end{cases}
-</span> meaning that when the cost of the project is below the value of the output, the transfer should be the minimum acceptable utility plus the cost of the project. In contrast, when the cost is above the value of the output, the principal should transfer the minimum utility of the agent.</p>
+</span></p>
+<p>When the project cost is high compared to the cost of capital, the principal should transfer the minimum acceptable utility. On the other hand, when the cost is in a profitable range, the principal should increase the transfer amount to fund the profitable investment, leading to largest cash flows.</p>
 </section>
-<section id="communication-strategies" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="communication-strategies"><span class="header-section-number">2.2</span> Communication Strategies</h2>
-<p>Suppose the agent sees signal <span class="math inline">m_i</span> but reports a higher cost <span class="math inline">m_j</span> to obtain more the resources than needed (<span class="math inline">(m_j-m_i)x_j+\underline{U}</span>). However, there is a limit to how much he will overstate. If the agent claims the cost is too high (over 1), the principal will not provide any resources. Thus, the agent will report a cost slightly under 1 for all <span class="math inline">m_i&lt;1</span>. If the agent observes a cost realization above 1, there is no incentive to lie because the project will not be funded anyway. As previously mentioned, the principal does not need to worry about the agent understating their costs. If he does, he will not receive enough resources to produce the required output, so any lie in this direction will always be uncovered.</p>
-<section id="principals-problem-1" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="principals-problem-1"><span class="header-section-number">2.2.1</span> Principal’s Problem</h3>
+<section id="communication-strategies" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="communication-strategies"><span class="header-section-number">2.3</span> Communication Strategies</h2>
+<p>Suppose the agent privately sees signal <span class="math inline">m_i</span> but reports a higher cost <span class="math inline">m_j</span> to obtain more the resources than needed (<span class="math inline">(m_j-m_i)x_j</span>). However, there is a limit to how much he will overstate. If the agent claims the cost is too high (over 1), the principal will not provide any resources. Thus, the agent will report a cost slightly under 1 for all <span class="math inline">m_i&lt;1</span>. If the agent observes a cost realization above 1, there is no incentive to lie because the project will not be funded anyway. As previously mentioned, the principal does not need to worry about the agent understating the costs. If he does, the project will not receive the minimal funding to produce the required output, so any lie in this direction will always be uncovered.</p>
+<section id="principals-problem-1" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="principals-problem-1"><span class="header-section-number">2.3.1</span> Principal’s Problem</h3>
 <p>The principal’s problem is to define a set of contract (<span class="math inline">x_i,z_i</span>) that depends on the reported signal, <span class="math inline">z_i(\hat{m})</span> such that the agent’s best reporting strategy is to tell the truth. The principal’s problem is then</p>
-<p><span class="math display">
+<p><span id="eq-second_best"><span class="math display">
 \begin{aligned}
     \max_{x_i, z_i} \quad &amp; \sum_{i=1}^{N} (x_i - z_i) g_i \\
     \text{subject to} \quad &amp; z_i - m_i x_i \geq \underline{U} \quad \text{for all } i = 1, \dots, N, \\
@@ -281,11 +325,11 @@ z_i =
     &amp; 0 \leq x_i \leq x_{\max} \quad \text{for all } i, \\
     &amp; 0 \leq z_i.
 \end{aligned}
-</span></p>
-<p>Notice that this version adds the second set of <span class="math inline">N^2</span> restrictions, which ensures that the agent does not have an incentive to lie about the cost of the project (<strong>truth-telling constraints</strong>, or <strong>self-section restriction</strong>). These restrictions implies that when the agent observes the cost <span class="math inline">m_i</span>, he is better off with the contract (<span class="math inline">x_i,z_i</span>) than with any other combitation (<span class="math inline">x_j,z_j</span>). However, the set of constraints can be reduced to consider the set of 2(N - 1) “adjacent” constraints, meaning that the conditions that the manager prefers the communicate the true cost to the cost immediately above and the cost immediately below dominates the others.</p>
-<p>The upper bound restrictions in the cash flow can also be simplified to a single restriction <span class="math inline">x_N\leq X_{\max}</span></p>
+\tag{2}</span></span></p>
+<p>Notice that this version adds the second set of <span class="math inline">N^2</span> restrictions, which ensures that the agent does not have an incentive to lie about the cost of the project (the ICCs, also called <strong>truth-telling constraints</strong>). Obviously, the agent’s reported costs <span class="math inline">m_j</span> does not affect the underlying true cost of the project <span class="math inline">m_i</span>. This is why the true cost <span class="math inline">m_i</span> is at each side of the ICCs. In other words, the ICCs implies that when the agent observes the cost <span class="math inline">m_i</span>, he is better off with the contract (<span class="math inline">x_i,z_i</span>) than with any other combitation (<span class="math inline">x_j,z_j</span>). This set of constraints can be reduced to the set of 2(N - 1) “adjacent” constraints, meaning that the manager must prefers the communicate the true cost to the cost immediately above and the cost immediately below dominates.</p>
+<p>The upper bound restrictions in the cash flow can also be simplified to a single restriction <span class="math inline">x_N\leq X_{\max}</span>.</p>
 <p>The <strong>agent’s slack</strong> <span class="math inline">z_i-m_i x_i</span>, decreases weakly in <span class="math inline">i</span> because as <span class="math inline">m_i</span>​ increases (i.e., higher costs), both <span class="math inline">x_i</span>​ and <span class="math inline">z_i</span> decreases in <span class="math inline">i</span>. In the worst realization of <span class="math inline">i</span>, the minimum acceptable utility is is <span class="math inline">z_N-m_N x_N=\theta</span>.</p>
-<p>Let <span class="math inline">k^*</span> be the value of <span class="math inline">i</span> that maximizes the principal’s problem. This implies that <span class="math inline">x_i=x_{\max}</span> for <span class="math inline">i=1,...,k^*</span> and <span class="math inline">x_i=0</span> for all <span class="math inline">i=k^*+1,...,N</span>. Since <span class="math inline">z_1=m_1 x_1+\theta</span>, and then <span class="math inline">z_{i}-z_{i-1}=m_i(x_i-x_{i-1})</span> for <span class="math inline">i=2,...,N</span>, the transfer policy is</p>
+<p>Let <span class="math inline">k^*</span> be the value of <span class="math inline">i</span> that maximizes the principal’s problem. This implies that <span class="math inline">x_i=x_{\max}</span> for <span class="math inline">i=1,\ldots,k^*</span> and <span class="math inline">x_i=0</span> for all <span class="math inline">i=k^*+1,\ldots,N</span>. Since <span class="math inline">z_1=m_1 x_1+\theta</span>, and then <span class="math inline">z_{i}-z_{i-1}=m_i(x_i-x_{i-1})</span> for <span class="math inline">i=2, \ldots, N</span>, the transfer policy is</p>
 <p><span class="math display">
 z_i =
 \begin{cases}
@@ -293,8 +337,232 @@ z_i =
     0 &amp; \text{for } i=k^*+1,...,N
 \end{cases}
 </span></p>
-<p>Note that additional resources will be allocated to the agent for all actual costs below the specified threshold. It is noteworthy that the most effective cutoff point is less than 1.0. This implies that the optimal solution involves the principal rejecting certain profitable projects (<strong>capital rationing</strong>). When the principal adjusts the threshold level, it impacts the flexibility the agent has for all lower levels below the threshold. Therefore, by lowering the threshold below 1.0, the principal is sacrificing production in some situations to limit the flexibility the agent has in other situations.</p>
-<p>Pending to add numerical example.</p>
+<p>Compare with the first best, we see that here the agent receives slack for all cost realization below the threshold (<span class="math inline">m_{k^*} x_{\max}&gt;m_{i} x_{\max}</span> for all <span class="math inline">i&lt;k^*</span>). The principal provides additional more funds than the actual investment cost to incentive the agent to reveal the truth. But, how much is the new cutoff? the cutoff is less than 1.0. This implies that the optimal solution involves the principal rejecting certain profitable projects (<strong>capital rationing</strong>). When the principal adjusts the cutoff, it impacts the flexibility the agent has for all lower levels below that point. Therefore, the principal’s trade-off is to balance the cost of setting the cutoff too high (paying for slack) and too low (foregoing profitable projects).</p>
+<p>We can see this by solving numerically the linear program in <a href="#eq-second_best" class="quarto-xref">Equation&nbsp;2</a> considering the real cost <span class="math inline">m</span> being a uniform discrete variable defined between 0.1 and 1.5, and <span class="math inline">\theta=0</span>.</p>
+<div class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Markdown</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tabulate <span class="im">import</span> tabulate</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> linprog</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> np.arange(<span class="fl">0.1</span>, <span class="fl">1.6</span>, <span class="fl">0.1</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="bu">len</span>(m)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>x_max <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> np.array([<span class="dv">1</span><span class="op">/</span>N] <span class="op">*</span> N) <span class="co"># Uniform distribution of signals</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Objective function: maximize sum of (x_i - z_i) * g_i</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Notice this is equivalent to minimiza  sum of z_i * g_i -x_i * g_i </span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># c is a one-dimensional vector of size 2N: [x_1, z_1, x_2, z_2, ..., x_N, z_N]</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> np.zeros(<span class="dv">2</span> <span class="op">*</span> N)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(N):</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    c[<span class="dv">2</span> <span class="op">*</span> i] <span class="op">=</span> <span class="op">-</span>g[i]  <span class="co"># Coefficient for x_i</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    c[<span class="dv">2</span> <span class="op">*</span> i <span class="op">+</span> <span class="dv">1</span>] <span class="op">=</span> g[i]  <span class="co"># Coefficient for z_i</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Inequality constraints for participation and incentive compatibility</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> []</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> []</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Participation constraints: z_i - m_i * x_i &gt;= theta (agent's minimal utility constraint)</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co"># The constraint is a one-dimensional vector of size 2N to multiply with [x_1, z_1, x_2, z_2, ..., x_N, z_N]</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(N):</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    constraint <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> (<span class="dv">2</span> <span class="op">*</span> N)  <span class="co"># Create a 2N-dimensional row, for matching dimension with ICCs</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    constraint[<span class="dv">2</span> <span class="op">*</span> i] <span class="op">=</span> <span class="op">-</span>m[i]   <span class="co"># Coefficient for x_i</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    constraint[<span class="dv">2</span> <span class="op">*</span> i <span class="op">+</span> <span class="dv">1</span>] <span class="op">=</span> <span class="dv">1</span>   <span class="co"># Coefficient for z_i</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    A.append(constraint)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    b.append(theta)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Incentive compatibility constraints I: [z_i - m_i * x_i] -[z_{i-1} - m_{i} * x_{i-1}] &gt;= 0 </span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co"># The constraint is a one-dimensional vector of size 2N to multiply with [x_1, z_1, x_2, z_2, ..., x_N, z_N]</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, N):</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    constraint <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> (<span class="dv">2</span> <span class="op">*</span> N)  <span class="co"># Create a 2N-dimensional row</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    constraint[<span class="dv">2</span> <span class="op">*</span> i] <span class="op">=</span> <span class="op">-</span>m[i]  <span class="co"># Coefficient for x_i</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    constraint[<span class="dv">2</span> <span class="op">*</span> i <span class="op">+</span> <span class="dv">1</span>] <span class="op">=</span> <span class="dv">1</span>  <span class="co"># Coefficient for z_i</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    constraint[<span class="dv">2</span> <span class="op">*</span> (i <span class="op">-</span> <span class="dv">1</span>)] <span class="op">=</span> m[i]  <span class="co"># Coefficient for x_{i-1}</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    constraint[<span class="dv">2</span> <span class="op">*</span> (i <span class="op">-</span> <span class="dv">1</span>) <span class="op">+</span> <span class="dv">1</span>] <span class="op">=</span> <span class="op">-</span><span class="dv">1</span>  <span class="co"># Coefficient for z_{i-1}</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    A.append(constraint)</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>    b.append(<span class="dv">0</span>)</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Incentive compatibility constraints II: [z_i - m_i * x_i]-[z_{i+1} - m_{i} * x_{i+1}] &gt;= 0 </span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(N <span class="op">-</span> <span class="dv">1</span>):</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    constraint <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> (<span class="dv">2</span> <span class="op">*</span> N)  <span class="co"># Create a 2N-dimensional row</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    constraint[<span class="dv">2</span> <span class="op">*</span> i] <span class="op">=</span> <span class="op">-</span>m[i]  <span class="co"># Coefficient for x_i</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    constraint[<span class="dv">2</span> <span class="op">*</span> i <span class="op">+</span> <span class="dv">1</span>] <span class="op">=</span> <span class="dv">1</span>  <span class="co"># Coefficient for z_i</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    constraint[<span class="dv">2</span> <span class="op">*</span> (i <span class="op">+</span> <span class="dv">1</span>)] <span class="op">=</span> m[i]  <span class="co"># Coefficient for x_{i+1}</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    constraint[<span class="dv">2</span> <span class="op">*</span> (i <span class="op">+</span> <span class="dv">1</span>) <span class="op">+</span> <span class="dv">1</span>] <span class="op">=</span> <span class="op">-</span><span class="dv">1</span>  <span class="co"># Coefficient for z_{i+1}</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    A.append(constraint)</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    b.append(<span class="dv">0</span>)</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert A and b to numpy arrays for linprog function: A*constraints &lt;= b</span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array(A) <span class="op">*</span> <span class="op">-</span><span class="dv">1</span>  <span class="co"># Multiply A by -1 to convert the inequality to the form Ax &lt;= b</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array(b) <span class="op">*</span> <span class="op">-</span><span class="dv">1</span>  </span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="co"># %%</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="co"># Bounds: 0 &lt;= x_i &lt;= x_max, 0 &lt;= z_i</span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>x_bounds <span class="op">=</span> [(<span class="dv">0</span>, x_max)] <span class="op">*</span> N</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>z_bounds <span class="op">=</span> [(<span class="dv">0</span>, <span class="va">None</span>)] <span class="op">*</span> N</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>bounds <span class="op">=</span> []</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(N):</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>    bounds.append(x_bounds[i])</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>    bounds.append(z_bounds[i])</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="co"># Solve the linear programming problem</span></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> linprog(c, A_ub<span class="op">=</span>A, b_ub<span class="op">=</span>b, bounds<span class="op">=</span>bounds, method<span class="op">=</span><span class="st">'highs'</span>)</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="co"># %%</span></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if the optimization was successful</span></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> res.success:</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> res.x[::<span class="dv">2</span>]  <span class="co"># Extract the budget values from the solution, they are in even indices</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>    z<span class="op">=</span> res.x[<span class="dv">1</span>::<span class="dv">2</span>]</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>    <span class="co"># the slack is transfers{i} -m{i}*cashflow{i}</span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>    slack <span class="op">=</span>  z<span class="op">-</span> m <span class="op">*</span>   x</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>    investment<span class="op">=</span> m <span class="op">*</span> x</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create a dataframe for the results</span></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.DataFrame({<span class="st">'Cost m'</span>: m,  <span class="st">'Budget Z'</span>: z, <span class="st">"Investment"</span>: investment , <span class="st">'Slack'</span>: slack, <span class="st">'Cash flow X'</span>: x,})</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Print the results as markdown using the tabulate package</span></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>    display(Markdown(tabulate(df, headers<span class="op">=</span><span class="st">'keys'</span>, tablefmt<span class="op">=</span><span class="st">'pipe'</span>, showindex<span class="op">=</span><span class="va">False</span>)))</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Optimization failed. Check the constraints or problem formulation."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-budgeting-output" class="cell quarto-float anchored" data-execution_count="1">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-budgeting-output-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Numerical Example
+</figcaption>
+<div aria-describedby="tbl-budgeting-output-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display cell-output-markdown">
+<table class="do-not-create-environment cell table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Cost m</th>
+<th style="text-align: right;">Budget Z</th>
+<th style="text-align: right;">Investment</th>
+<th style="text-align: right;">Slack</th>
+<th style="text-align: right;">Cash flow X</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0.1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">0.2</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">0.3</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">0.4</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">0.6</td>
+<td style="text-align: right;">-0</td>
+<td style="text-align: right;">-0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">0.7</td>
+<td style="text-align: right;">-0</td>
+<td style="text-align: right;">-0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">0.8</td>
+<td style="text-align: right;">-0</td>
+<td style="text-align: right;">-0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">0.9</td>
+<td style="text-align: right;">-0</td>
+<td style="text-align: right;">-0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1.1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1.3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1.4</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>In <a href="#tbl-budgeting-output" class="quarto-xref">Table&nbsp;1</a> we can see the two key insights from this type of models.</p>
+<ol type="1">
+<li>The optimal cutoff is <span class="math inline">m_{k^*}=0.5</span>, which implies that the principal will not fund any project with a minimal cost above 0.5. Notice that for <span class="math inline">0.6\leq m &lt; 1</span>, the profits of the investment outweight the costs, so, the principal is <strong>rationing the resources</strong>.</li>
+<li>For <span class="math inline">m\leq 0.4</span>, the principal still transfers <span class="math inline">m_{k^*}x_{max}</span> to the agent, which is the more the resources needed for the project. The agent is rewarded for communicating the the true minimal cost of the project.</li>
+</ol>
 </section>
 </section>
 </section>
