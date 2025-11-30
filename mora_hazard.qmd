@@ -105,7 +105,7 @@ $$
 As it is inefficient for the principal to pay more than needed to influence effort, the previous system of inequations are solved at the equality conditions. The optimal contract in this case involves:
 
 $$
-w_S = 184, \quad W_F = 24.
+w_S = 184, \quad w_F = 24.
 $$
 
 ### Observable Effort, Risk-Averse Agent
