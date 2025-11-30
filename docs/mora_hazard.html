@@ -375,7 +375,7 @@ e \in \arg\max \sum_{i=1}^n p_i(e)U(w(x_i)) - v(e)
 </section>
 <section id="principals-problem" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="principals-problem"><span class="header-section-number">2.2</span> Principal’s Problem</h2>
-<p>In the first stage, the principal designs the contract, taking into account the agent’s optimal behavior (effort choice). The principal maximizes their expected benefit <span class="math inline">B(x_i - w(x_i))</span>, which is the difference between the outcome <span class="math inline">x_i</span> and the agent’s compensation <span class="math inline">w(x_i)</span>. The principal’s problem can be written as:</p>
+<p>In the first stage, the principal designs the contract, taking into account the agent’s optimal behavior (effort choice). The principal maximizes its expected benefit <span class="math inline">B(x_i - w(x_i))</span>, which is based on the difference between the outcome <span class="math inline">x_i</span> and the agent’s compensation <span class="math inline">w(x_i)</span>. The principal’s problem can be written as:</p>
 <p><span id="eq-agent_problem"><span class="math display">
 \begin{aligned}
     \max_{w(x_i), e} \quad &amp; \sum_{i=1}^n p_i(e)[B(x_i - w(x_i))] &amp;  \\
@@ -386,7 +386,7 @@ e \in \arg\max \sum_{i=1}^n p_i(e)U(w(x_i)) - v(e)
 </section>
 <section id="first-order-simplification" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="first-order-simplification"><span class="header-section-number">2.3</span> First-order Simplification</h2>
-<p>Solving the ICC in <a href="#eq-agent_problem" class="quarto-xref">Equation&nbsp;1</a> can be complex. However, under certain conditions, the agent’s optimal effort can be determined by the <strong>first-order condition</strong>. Assuming the agent’s optimal effort is interior, the first-order condition is:</p>
+<p>Solving the ICC in <a href="#eq-agent_problem" class="quarto-xref">Equation&nbsp;1</a> can be complex. However, under certain conditions, the agent’s optimal effort can be determined by the <strong>first-order condition</strong> of the ICC. Assuming the agent’s optimal effort is interior, the first-order condition is:</p>
 <p><span class="math display">
 \sum_{i=1}^n p_i'(e)U(w(x_i)) - v'(e) = 0
 </span></p>
@@ -457,7 +457,7 @@ Sufficient Statistic
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If <span class="math inline">x=e+a_1</span> and <span class="math inline">y=x+a_2</span>, where <span class="math inline">a_1</span> and <span class="math inline">a_2</span> are independent random variables, then <span class="math inline">x</span> is a <strong>sufficient statistic</strong> for <span class="math inline">x</span> and <span class="math inline">y</span> with respect to <span class="math inline">e</span>. In other words, <span class="math inline">y</span> does not add any information about <span class="math inline">e</span> that is not already contained in <span class="math inline">x</span>.</p>
+<p>If <span class="math inline">x=e+a_1</span> and <span class="math inline">y=x+a_2</span>, where <span class="math inline">a_1</span> and <span class="math inline">a_2</span> are independent random variables, then <span class="math inline">x</span> is a <strong>sufficient statistic</strong> for <span class="math inline">y</span> with respect to <span class="math inline">e</span>. In other words, <span class="math inline">y</span> does not add any information about <span class="math inline">e</span> that is not already contained in <span class="math inline">x</span>.</p>
 </div>
 </div>
 <section id="optimal-contract-and-linear-aggregation" class="level3" data-number="2.5.1">
@@ -572,7 +572,7 @@ t^{*} &amp;= \overline{w} - \frac{1 - c\eta\sigma^{2}}{2c\left(1 + c\eta\sigma^{
 <li>The <strong>variance</strong> of the performance measure <span class="math inline">\sigma^{2}</span> is low.</li>
 </ul>
 <p>The following graphs shows the comparative statics of the optimal contract terms and utilities for different values of <span class="math inline">\sigma</span>.</p>
-<div id="e4278863" class="cell" data-execution_count="1">
+<div id="9f8585b9" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -605,7 +605,7 @@ t^{*} &amp;= \overline{w} - \frac{1 - c\eta\sigma^{2}}{2c\left(1 + c\eta\sigma^{
 </div>
 </div>
 </div>
-<div id="3fbe5682" class="cell" data-execution_count="2">
+<div id="4b7c8b12" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the utility of the agent and principal for different values of sigma</span></span>
@@ -660,7 +660,7 @@ x = e + \epsilon_x \quad \text{and} \quad y = 2e + \epsilon_y
 \frac{\beta_x}{\beta_y} = \frac{1 - 2\frac{\rho \sigma_x \sigma_y}{\sigma_y^2}}{\sigma_x^2} \cdot \frac{\sigma_y^2}{2 - \frac{\rho \sigma_x \sigma_y}{\sigma_x^2}}
 </span></p>
 <p>Let’s see the comparative statics of the optimal weights for different values of <span class="math inline">\rho</span> and <span class="math inline">\sigma_y</span>. First, let’s assume that both metrics have the same noise, <span class="math inline">\sigma_x=\sigma_y=1.25</span>.</p>
-<div id="c3a57a53" class="cell" data-execution_count="3">
+<div id="57a82b05" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the beta_x/beta_y for different values of rho </span></span>
@@ -687,7 +687,7 @@ x = e + \epsilon_x \quad \text{and} \quad y = 2e + \epsilon_y
 </div>
 <p>so, if <span class="math inline">\rho=0</span>, the optimal weight for <span class="math inline">x</span> is half of the weight for <span class="math inline">y</span>, as this second signal is more sensitive to effort and has the same noise. If <span class="math inline">\rho=-1</span>, then both both signal have full positive weight in the contract. If <span class="math inline">\rho=1</span>, then the signals are substracted from each other in the contract to remove the common noise.</p>
 <p>Now, let’s see the comparative statics for different values of <span class="math inline">\sigma_y</span>, considering <span class="math inline">\rho=0</span> and <span class="math inline">\sigma_x=1.25</span>.</p>
-<div id="5b0bd02a" class="cell" data-execution_count="4">
+<div id="e7e19238" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the beta_x/beta_y for different values of sigma_y</span></span>
@@ -743,7 +743,7 @@ e^*=\frac{s}{c} \frac{\partial \mu_{\pi}(e)}{\partial e} =\frac{s}{c} \left[\fra
 s^* = \frac{\frac{\partial \mu_{\pi}(e)}{\partial e}}{\left(\frac{\partial \mu_{\pi}(e)}{\partial e}\right)^2+c n \sigma_{\pi}^2} =\frac{\frac{\sigma_y^2 + 4\sigma_x^2}{\sigma_x^2 + \sigma_y^2}}{\left( \frac{\sigma_y^2 + 4\sigma_x^2}{\sigma_x^2 + \sigma_y^2} \right)^2 + c n \sigma_{\pi}^2}
 </span></p>
 <p>The next figure compares the optimal effort and compensation terms for different values of <span class="math inline">\sigma_x</span> with our previous result for the case without the additional metric.</p>
-<div id="21f597c5" class="cell" data-execution_count="5">
+<div id="0cf8c345" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>c<span class="op">=</span><span class="fl">0.8</span> <span class="co"># cost of effort</span></span>
