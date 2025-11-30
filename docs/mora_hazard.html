@@ -536,6 +536,9 @@ w = t + sx
 <p><span class="math display">
 \mathbb{E}\left[u(w, e)\right] = -e^{-\eta\left[t + se - \frac{1}{2}ce^{2} - s^{2}\eta\frac{\sigma^{2}}{2}\right]}
 </span></p>
+<p>Therefore, the Certainty Equivalent (CE) of the agent’s expected utility is: <span class="math display">
+CE = \underbrace{t + se}_{\text{Expected Wage}} - \underbrace{\frac{1}{2}ce^{2}}_{\text{Cost of Effort}} - \underbrace{s^{2}\eta\frac{\sigma^{2}}{2}}_{\text{Risk Premium}}
+</span></p>
 <p>The agent’s incentive compatibility constraint (ICC) can be reformulated as:</p>
 <p><span class="math display">
 e \in \arg\max \hat{w}(e) = t + se - \frac{1}{2}ce^{2} - s^{2}\eta\frac{\sigma^{2}}{2}
@@ -572,20 +575,20 @@ t^{*} &amp;= \overline{w} - \frac{1 - c\eta\sigma^{2}}{2c\left(1 + c\eta\sigma^{
 <li>The <strong>variance</strong> of the performance measure <span class="math inline">\sigma^{2}</span> is low.</li>
 </ul>
 <p>The following graphs shows the comparative statics of the optimal contract terms and utilities for different values of <span class="math inline">\sigma</span>.</p>
-<div id="9f8585b9" class="cell" data-execution_count="1">
+<div id="35d8d3a5" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>c<span class="op">=</span><span class="fl">0.8</span> <span class="co"># cost of effort</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>eta<span class="op">=</span><span class="fl">1.5</span> <span class="co"># risk aversion</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>eta<span class="op">=</span><span class="fl">0.25</span> <span class="co"># risk aversion</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>w<span class="op">=</span><span class="dv">1</span>     <span class="co"># reservation utility</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot s,t,and total, for different values of sigma </span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>sigma <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="fl">2.5</span>,<span class="dv">10</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>sigma <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">10</span>)</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span><span class="op">+</span>c<span class="op">*</span>eta<span class="op">*</span>sigma<span class="op">**</span><span class="dv">2</span>)</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> w <span class="op">-</span> (<span class="dv">1</span><span class="op">-</span>c<span class="op">*</span>eta<span class="op">*</span>sigma<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>c<span class="op">*</span>(<span class="dv">1</span><span class="op">+</span>c<span class="op">*</span>eta<span class="op">*</span>sigma<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span>) </span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> t <span class="op">+</span> s </span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>effort <span class="op">=</span> s<span class="op">/</span>c </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>effort <span class="op">=</span> s<span class="op">/</span>c </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> t <span class="op">+</span> s <span class="op">*</span> effort </span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>plt.plot(sigma, s, label<span class="op">=</span><span class="st">'s'</span>)</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>plt.plot(sigma, t, label<span class="op">=</span><span class="st">'t'</span>)</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>plt.plot(sigma, total, label<span class="op">=</span><span class="st">'total'</span>)</span>
@@ -605,24 +608,51 @@ t^{*} &amp;= \overline{w} - \frac{1 - c\eta\sigma^{2}}{2c\left(1 + c\eta\sigma^{
 </div>
 </div>
 </div>
-<div id="4b7c8b12" class="cell" data-execution_count="2">
+<p>We can also decompose the expected compensation into its components: reservation utility, cost of effort, and risk premium.</p>
+<div id="2686da3e" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the utility of the agent and principal for different values of sigma</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>u_agent <span class="op">=</span> <span class="op">-</span>np.exp(<span class="op">-</span>eta<span class="op">*</span>(t<span class="op">+</span>s<span class="op">*</span>effort<span class="op">-</span><span class="fl">0.5</span><span class="op">*</span>c<span class="op">*</span>effort<span class="op">**</span><span class="dv">2</span><span class="op">-</span>s<span class="op">**</span><span class="dv">2</span><span class="op">*</span>eta<span class="op">*</span>sigma<span class="op">**</span><span class="dv">2</span><span class="op">/</span><span class="dv">2</span>)) </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>u_principal <span class="op">=</span> effort<span class="op">-</span>t<span class="op">-</span>s<span class="op">*</span>effort</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>plt.plot(sigma, u_agent, label<span class="op">=</span><span class="st">'Agent'</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>plt.plot(sigma, u_principal, label<span class="op">=</span><span class="st">'Principal'</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Value of $\sigma$'</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Utility'</span>)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Agent and Principal utility'</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Decomposition of the expected compensation</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>cost_of_effort <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> c <span class="op">*</span> effort<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>risk_premium <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> eta <span class="op">*</span> s<span class="op">**</span><span class="dv">2</span> <span class="op">*</span> sigma<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>reservation_utility <span class="op">=</span> np.full_like(sigma, w)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>plt.stackplot(sigma, reservation_utility, cost_of_effort, risk_premium, </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>              labels<span class="op">=</span>[<span class="st">'Reservation Utility'</span>, <span class="st">'Cost of Effort'</span>, <span class="st">'Risk Premium'</span>], </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>              alpha<span class="op">=</span><span class="fl">0.6</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>plt.plot(sigma, total, label<span class="op">=</span><span class="st">'Total Compensation'</span>, color<span class="op">=</span><span class="st">'black'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'center right'</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Value of $\sigma$'</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Value'</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Components of Expected Compensation'</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="mora_hazard_files/figure-html/cell-3-output-1.png" width="600" height="449" class="figure-img"></p>
+<p><img src="mora_hazard_files/figure-html/cell-3-output-1.png" width="589" height="449" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="231249b2" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the utility of the agent and principal for different values of sigma</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>u_agent <span class="op">=</span> <span class="op">-</span>np.exp(<span class="op">-</span>eta<span class="op">*</span>(t<span class="op">+</span>s<span class="op">*</span>effort<span class="op">-</span><span class="fl">0.5</span><span class="op">*</span>c<span class="op">*</span>effort<span class="op">**</span><span class="dv">2</span><span class="op">-</span>s<span class="op">**</span><span class="dv">2</span><span class="op">*</span>eta<span class="op">*</span>sigma<span class="op">**</span><span class="dv">2</span><span class="op">/</span><span class="dv">2</span>)) </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>u_principal <span class="op">=</span> effort<span class="op">-</span>t<span class="op">-</span>s<span class="op">*</span>effort</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plt.plot(sigma, u_agent, label<span class="op">=</span><span class="st">'Agent'</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.plot(sigma, u_principal, label<span class="op">=</span><span class="st">'Principal'</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Value of $\sigma$'</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Utility'</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Agent and Principal utility'</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="mora_hazard_files/figure-html/cell-4-output-1.png" width="609" height="449" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -660,52 +690,52 @@ x = e + \epsilon_x \quad \text{and} \quad y = 2e + \epsilon_y
 \frac{\beta_x}{\beta_y} = \frac{1 - 2\frac{\rho \sigma_x \sigma_y}{\sigma_y^2}}{\sigma_x^2} \cdot \frac{\sigma_y^2}{2 - \frac{\rho \sigma_x \sigma_y}{\sigma_x^2}}
 </span></p>
 <p>Let’s see the comparative statics of the optimal weights for different values of <span class="math inline">\rho</span> and <span class="math inline">\sigma_y</span>. First, let’s assume that both metrics have the same noise, <span class="math inline">\sigma_x=\sigma_y=1.25</span>.</p>
-<div id="57a82b05" class="cell" data-execution_count="3">
+<div id="3a22a096" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the beta_x/beta_y for different values of rho </span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>rho <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">20</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>sigma_y <span class="op">=</span> <span class="fl">1.25</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>sigma_x <span class="op">=</span> <span class="fl">1.25</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># subplot for rho</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>beta_rho <span class="op">=</span> (<span class="dv">1</span><span class="op">-</span><span class="dv">2</span><span class="op">*</span>(rho<span class="op">*</span>sigma_x<span class="op">*</span>sigma_y)<span class="op">/</span>(sigma_y)<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>(sigma_x<span class="op">**</span><span class="dv">2</span>)<span class="op">*</span>(sigma_y<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>(<span class="dv">2</span><span class="op">-</span>(rho<span class="op">*</span>sigma_x<span class="op">*</span>sigma_y)<span class="op">/</span>(sigma_x)<span class="op">**</span><span class="dv">2</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.plot(rho, beta_rho)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'correlation coefficient'</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># add vertical line in x=0</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">'r'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">## add subtitle</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Relative Optimal Weights'</span>)</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the beta_x/beta_y for different values of rho </span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>rho <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">20</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>sigma_y <span class="op">=</span> <span class="fl">1.25</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>sigma_x <span class="op">=</span> <span class="fl">1.25</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># subplot for rho</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>beta_rho <span class="op">=</span> (<span class="dv">1</span><span class="op">-</span><span class="dv">2</span><span class="op">*</span>(rho<span class="op">*</span>sigma_x<span class="op">*</span>sigma_y)<span class="op">/</span>(sigma_y)<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>(sigma_x<span class="op">**</span><span class="dv">2</span>)<span class="op">*</span>(sigma_y<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>(<span class="dv">2</span><span class="op">-</span>(rho<span class="op">*</span>sigma_x<span class="op">*</span>sigma_y)<span class="op">/</span>(sigma_x)<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>plt.plot(rho, beta_rho)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'correlation coefficient'</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># add vertical line in x=0</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">'r'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">## add subtitle</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Relative Optimal Weights'</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="mora_hazard_files/figure-html/cell-4-output-1.png" width="590" height="449" class="figure-img"></p>
+<p><img src="mora_hazard_files/figure-html/cell-5-output-1.png" width="590" height="449" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>so, if <span class="math inline">\rho=0</span>, the optimal weight for <span class="math inline">x</span> is half of the weight for <span class="math inline">y</span>, as this second signal is more sensitive to effort and has the same noise. If <span class="math inline">\rho=-1</span>, then both both signal have full positive weight in the contract. If <span class="math inline">\rho=1</span>, then the signals are substracted from each other in the contract to remove the common noise.</p>
 <p>Now, let’s see the comparative statics for different values of <span class="math inline">\sigma_y</span>, considering <span class="math inline">\rho=0</span> and <span class="math inline">\sigma_x=1.25</span>.</p>
-<div id="e7e19238" class="cell" data-execution_count="4">
+<div id="c83f4041" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the beta_x/beta_y for different values of sigma_y</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>rho<span class="op">=</span><span class="dv">0</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>sigma_y <span class="op">=</span> np.linspace(<span class="fl">0.1</span>,<span class="fl">2.5</span>,<span class="dv">10</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>sigma_x <span class="op">=</span> <span class="fl">1.25</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># plot for sigma_y</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>beta_sigma_y <span class="op">=</span> (<span class="dv">1</span><span class="op">-</span><span class="dv">2</span><span class="op">*</span>(rho<span class="op">*</span>sigma_x<span class="op">*</span>sigma_y)<span class="op">/</span>(sigma_y)<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>(sigma_x<span class="op">**</span><span class="dv">2</span>)<span class="op">*</span>(sigma_y<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>(<span class="dv">2</span><span class="op">-</span>(rho<span class="op">*</span>sigma_x<span class="op">*</span>sigma_y)<span class="op">/</span>(sigma_x)<span class="op">**</span><span class="dv">2</span>)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span><span class="fl">1.25</span>, color<span class="op">=</span><span class="st">'r'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>plt.plot(sigma_y, beta_sigma_y)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Value of $\sigma_y$'</span>)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Relative Optimal Weights'</span>)</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the beta_x/beta_y for different values of sigma_y</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>rho<span class="op">=</span><span class="dv">0</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>sigma_y <span class="op">=</span> np.linspace(<span class="fl">0.1</span>,<span class="fl">2.5</span>,<span class="dv">10</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>sigma_x <span class="op">=</span> <span class="fl">1.25</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># plot for sigma_y</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>beta_sigma_y <span class="op">=</span> (<span class="dv">1</span><span class="op">-</span><span class="dv">2</span><span class="op">*</span>(rho<span class="op">*</span>sigma_x<span class="op">*</span>sigma_y)<span class="op">/</span>(sigma_y)<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>(sigma_x<span class="op">**</span><span class="dv">2</span>)<span class="op">*</span>(sigma_y<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>(<span class="dv">2</span><span class="op">-</span>(rho<span class="op">*</span>sigma_x<span class="op">*</span>sigma_y)<span class="op">/</span>(sigma_x)<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span><span class="fl">1.25</span>, color<span class="op">=</span><span class="st">'r'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>plt.plot(sigma_y, beta_sigma_y)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Value of $\sigma_y$'</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Relative Optimal Weights'</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="mora_hazard_files/figure-html/cell-5-output-1.png" width="579" height="453" class="figure-img"></p>
+<p><img src="mora_hazard_files/figure-html/cell-6-output-1.png" width="579" height="453" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -743,40 +773,40 @@ e^*=\frac{s}{c} \frac{\partial \mu_{\pi}(e)}{\partial e} =\frac{s}{c} \left[\fra
 s^* = \frac{\frac{\partial \mu_{\pi}(e)}{\partial e}}{\left(\frac{\partial \mu_{\pi}(e)}{\partial e}\right)^2+c n \sigma_{\pi}^2} =\frac{\frac{\sigma_y^2 + 4\sigma_x^2}{\sigma_x^2 + \sigma_y^2}}{\left( \frac{\sigma_y^2 + 4\sigma_x^2}{\sigma_x^2 + \sigma_y^2} \right)^2 + c n \sigma_{\pi}^2}
 </span></p>
 <p>The next figure compares the optimal effort and compensation terms for different values of <span class="math inline">\sigma_x</span> with our previous result for the case without the additional metric.</p>
-<div id="0cf8c345" class="cell" data-execution_count="5">
+<div id="dc0a733e" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>c<span class="op">=</span><span class="fl">0.8</span> <span class="co"># cost of effort</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>eta<span class="op">=</span><span class="fl">1.5</span> <span class="co"># risk aversion</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>w<span class="op">=</span><span class="dv">1</span>     <span class="co"># reservation utility</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># initial contract</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>sigma_x <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="fl">2.5</span>,<span class="dv">10</span>)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>s_old <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span><span class="op">+</span>c<span class="op">*</span>eta<span class="op">*</span>sigma_x<span class="op">**</span><span class="dv">2</span>)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>t_old <span class="op">=</span> w <span class="op">-</span> (<span class="dv">1</span><span class="op">-</span>c<span class="op">*</span>eta<span class="op">*</span>sigma_x<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>c<span class="op">*</span>(<span class="dv">1</span><span class="op">+</span>c<span class="op">*</span>eta<span class="op">*</span>sigma_x<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span>) </span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>effort_old <span class="op">=</span> s_old<span class="op">/</span>c </span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># new contract</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>sigma_y <span class="op">=</span> <span class="fl">1.25</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>sigma_pi2<span class="op">=</span> (sigma_x<span class="op">**</span><span class="dv">2</span><span class="op">*</span>sigma_y<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>((sigma_x<span class="op">**</span><span class="dv">2</span><span class="op">+</span>sigma_y<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span>)<span class="op">*</span>(sigma_y<span class="op">**</span><span class="dv">2</span><span class="op">+</span><span class="dv">4</span><span class="op">*</span>sigma_x<span class="op">**</span><span class="dv">2</span>)</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>pi_sensitivity <span class="op">=</span> (sigma_y<span class="op">**</span><span class="dv">2</span><span class="op">+</span><span class="dv">4</span><span class="op">*</span>sigma_x<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>(sigma_x<span class="op">**</span><span class="dv">2</span><span class="op">+</span>sigma_y<span class="op">**</span><span class="dv">2</span>)</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>s_new<span class="op">=</span> pi_sensitivity<span class="op">/</span>(pi_sensitivity<span class="op">**</span><span class="dv">2</span><span class="op">+</span>c<span class="op">*</span>eta<span class="op">*</span>sigma_pi2)</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>effort_new<span class="op">=</span> (s_new<span class="op">/</span>c)<span class="op">*</span>pi_sensitivity</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>plt.plot(sigma_x, s_old, label<span class="op">=</span><span class="st">'s'</span>, linestyle<span class="op">=</span><span class="st">'solid'</span>,color<span class="op">=</span><span class="st">'blue'</span>)</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>plt.plot(sigma_x, effort_old, label<span class="op">=</span><span class="st">'effort'</span>, linestyle<span class="op">=</span><span class="st">'dashed'</span> ,color<span class="op">=</span><span class="st">'blue'</span>)</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>plt.plot(sigma_x, s_new, label<span class="op">=</span><span class="st">'s with additional metric'</span>, linestyle<span class="op">=</span><span class="st">'solid'</span>,color<span class="op">=</span><span class="st">'green'</span>)</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>plt.plot(sigma_x, effort_new, label<span class="op">=</span><span class="st">'effort with additional metric'</span>, linestyle<span class="op">=</span><span class="st">'dashed'</span>, color<span class="op">=</span><span class="st">'green'</span>)</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span><span class="fl">1.25</span>, color<span class="op">=</span><span class="st">'r'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>)</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co"># render sigma symbol in the x label</span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Value of $\sigma_x$'</span>)</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Value'</span>)</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Optimal contract terms'</span>)</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>c<span class="op">=</span><span class="fl">0.8</span> <span class="co"># cost of effort</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>eta<span class="op">=</span><span class="fl">1.5</span> <span class="co"># risk aversion</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>w<span class="op">=</span><span class="dv">1</span>     <span class="co"># reservation utility</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># initial contract</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>sigma_x <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="fl">2.5</span>,<span class="dv">10</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>s_old <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span><span class="op">+</span>c<span class="op">*</span>eta<span class="op">*</span>sigma_x<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>t_old <span class="op">=</span> w <span class="op">-</span> (<span class="dv">1</span><span class="op">-</span>c<span class="op">*</span>eta<span class="op">*</span>sigma_x<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>c<span class="op">*</span>(<span class="dv">1</span><span class="op">+</span>c<span class="op">*</span>eta<span class="op">*</span>sigma_x<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span>) </span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>effort_old <span class="op">=</span> s_old<span class="op">/</span>c </span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># new contract</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>sigma_y <span class="op">=</span> <span class="fl">1.25</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>sigma_pi2<span class="op">=</span> (sigma_x<span class="op">**</span><span class="dv">2</span><span class="op">*</span>sigma_y<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>((sigma_x<span class="op">**</span><span class="dv">2</span><span class="op">+</span>sigma_y<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span>)<span class="op">*</span>(sigma_y<span class="op">**</span><span class="dv">2</span><span class="op">+</span><span class="dv">4</span><span class="op">*</span>sigma_x<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>pi_sensitivity <span class="op">=</span> (sigma_y<span class="op">**</span><span class="dv">2</span><span class="op">+</span><span class="dv">4</span><span class="op">*</span>sigma_x<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>(sigma_x<span class="op">**</span><span class="dv">2</span><span class="op">+</span>sigma_y<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>s_new<span class="op">=</span> pi_sensitivity<span class="op">/</span>(pi_sensitivity<span class="op">**</span><span class="dv">2</span><span class="op">+</span>c<span class="op">*</span>eta<span class="op">*</span>sigma_pi2)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>effort_new<span class="op">=</span> (s_new<span class="op">/</span>c)<span class="op">*</span>pi_sensitivity</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>plt.plot(sigma_x, s_old, label<span class="op">=</span><span class="st">'s'</span>, linestyle<span class="op">=</span><span class="st">'solid'</span>,color<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>plt.plot(sigma_x, effort_old, label<span class="op">=</span><span class="st">'effort'</span>, linestyle<span class="op">=</span><span class="st">'dashed'</span> ,color<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>plt.plot(sigma_x, s_new, label<span class="op">=</span><span class="st">'s with additional metric'</span>, linestyle<span class="op">=</span><span class="st">'solid'</span>,color<span class="op">=</span><span class="st">'green'</span>)</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>plt.plot(sigma_x, effort_new, label<span class="op">=</span><span class="st">'effort with additional metric'</span>, linestyle<span class="op">=</span><span class="st">'dashed'</span>, color<span class="op">=</span><span class="st">'green'</span>)</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span><span class="fl">1.25</span>, color<span class="op">=</span><span class="st">'r'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>)</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="co"># render sigma symbol in the x label</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Value of $\sigma_x$'</span>)</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Value'</span>)</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Optimal contract terms'</span>)</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="mora_hazard_files/figure-html/cell-6-output-1.png" width="589" height="451" class="figure-img"></p>
+<p><img src="mora_hazard_files/figure-html/cell-7-output-1.png" width="589" height="451" class="figure-img"></p>
 </figure>
 </div>
 </div>

@@ -353,6 +353,11 @@ $$
 \mathbb{E}\left[u(w, e)\right] = -e^{-\eta\left[t + se - \frac{1}{2}ce^{2} - s^{2}\eta\frac{\sigma^{2}}{2}\right]}
 $$
 
+Therefore, the Certainty Equivalent (CE)  of the agent's expected utility is:
+$$
+CE = \underbrace{t + se}_{\text{Expected Wage}} - \underbrace{\frac{1}{2}ce^{2}}_{\text{Cost of Effort}} - \underbrace{s^{2}\eta\frac{\sigma^{2}}{2}}_{\text{Risk Premium}}
+$$
+
 The agent's incentive compatibility constraint (ICC) can be reformulated as:
 
 $$
@@ -403,14 +408,14 @@ The following graphs shows the comparative statics of the optimal contract terms
 import matplotlib.pyplot as plt
 import numpy as np
 c=0.8 # cost of effort
-eta=1.5 # risk aversion
+eta=0.25 # risk aversion
 w=1     # reservation utility
 # Plot s,t,and total, for different values of sigma 
-sigma = np.linspace(0,2.5,10)
+sigma = np.linspace(0,1,10)
 s = 1/(1+c*eta*sigma**2)
 t = w - (1-c*eta*sigma**2)/(2*c*(1+c*eta*sigma**2)**2) 
-total = t + s 
 effort = s/c 
+total = t + s * effort 
 plt.plot(sigma, s, label='s')
 plt.plot(sigma, t, label='t')
 plt.plot(sigma, total, label='total')
@@ -422,6 +427,24 @@ plt.ylabel('Value')
 plt.title('Optimal contract terms')
 plt.show()
 
+```
+We can also decompose the expected compensation into its components: reservation utility, cost of effort, and risk premium.
+
+```{python}
+# Decomposition of the expected compensation
+cost_of_effort = 0.5 * c * effort**2
+risk_premium = 0.5 * eta * s**2 * sigma**2
+reservation_utility = np.full_like(sigma, w)
+
+plt.stackplot(sigma, reservation_utility, cost_of_effort, risk_premium, 
+              labels=['Reservation Utility', 'Cost of Effort', 'Risk Premium'], 
+              alpha=0.6)
+plt.plot(sigma, total, label='Total Compensation', color='black', linestyle='--')
+plt.legend(loc='center right')
+plt.xlabel('Value of $\sigma$')
+plt.ylabel('Value')
+plt.title('Components of Expected Compensation')
+plt.show()
 ```
 
 ```{python}
